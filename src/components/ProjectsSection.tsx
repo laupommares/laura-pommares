@@ -11,6 +11,7 @@ const landings = [
     accentColor: "#d4a96a",
     lines: ["portfolio", "sobre mí", "proceso", "contacto"],
     href: "https://sofiacapuanoph.vercel.app/",
+    image: "/landing-photographer.png",
   },
   {
     id: "L2",
@@ -24,6 +25,7 @@ const landings = [
     accentColor: "#6ee7b7",
     lines: ["enfoque", "programas", "quién acompaña", "consulta"],
     href: "https://julianare.vercel.app/",
+    image: "/landing-nutritionist.png",
   },
   {
     id: "L3",
@@ -37,6 +39,7 @@ const landings = [
     accentColor: "#d4a96a",
     lines: ["filosofía", "clases", "propuestas", "reservar"],
     href: "https://joriarmoniayoga.com/",
+    image: "/landing-yoga.png",
   },
 ];
 
@@ -153,37 +156,42 @@ function LandingCard({ landing }: { landing: (typeof landings)[number] }) {
             className="ml-2 flex-1 h-3 rounded-sm bg-white/10 max-w-30"
           />
         </div>
-        {/* Simulated UI content */}
-        <div className="absolute inset-0 pt-10 px-5 pb-5 flex flex-col gap-3">
-          {/* Hero headline simulation */}
-          <div className="mt-2 space-y-1.5">
-            <div className="h-2 rounded-sm bg-white/70 w-3/4" />
-            <div className="h-2 rounded-sm bg-white/40 w-1/2" />
-          </div>
-          {/* Nav simulation */}
-          <div className="flex gap-2 mt-1">
-            {landing.lines.map((label) => (
-              <span
-                key={label}
-                className="h-1.5 rounded-sm bg-white/25"
-                style={{ width: `${label.length * 7}px` }}
-              />
-            ))}
-          </div>
-          {/* CTA button simulation */}
-          <div
-            className="mt-2 h-6 w-24 rounded-sm"
-            style={{ backgroundColor: `${landing.accentColor}55` }}
+        {/* Content: real screenshot or simulated UI */}
+        {landing.image ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={landing.image}
+            alt={`${landing.title} landing`}
+            className="absolute inset-0 w-full h-full object-cover object-top pt-7"
           />
-          {/* Image placeholder blocks */}
-          <div className="flex-1 mt-2 grid grid-cols-3 gap-2">
-            <div className="rounded-sm bg-white/10 col-span-2" />
-            <div className="flex flex-col gap-2">
-              <div className="rounded-sm bg-white/10 flex-1" />
-              <div className="rounded-sm bg-white/10 flex-1" />
+        ) : (
+          <div className="absolute inset-0 pt-10 px-5 pb-5 flex flex-col gap-3">
+            <div className="mt-2 space-y-1.5">
+              <div className="h-2 rounded-sm bg-white/70 w-3/4" />
+              <div className="h-2 rounded-sm bg-white/40 w-1/2" />
+            </div>
+            <div className="flex gap-2 mt-1">
+              {landing.lines.map((label) => (
+                <span
+                  key={label}
+                  className="h-1.5 rounded-sm bg-white/25"
+                  style={{ width: `${label.length * 7}px` }}
+                />
+              ))}
+            </div>
+            <div
+              className="mt-2 h-6 w-24 rounded-sm"
+              style={{ backgroundColor: `${landing.accentColor}55` }}
+            />
+            <div className="flex-1 mt-2 grid grid-cols-3 gap-2">
+              <div className="rounded-sm bg-white/10 col-span-2" />
+              <div className="flex flex-col gap-2">
+                <div className="rounded-sm bg-white/10 flex-1" />
+                <div className="rounded-sm bg-white/10 flex-1" />
+              </div>
             </div>
           </div>
-        </div>
+        )}
         {/* Accent line at bottom */}
         <div
           className="absolute bottom-0 inset-x-0 h-0.5 opacity-60 group-hover:opacity-100 transition-opacity"
@@ -243,7 +251,7 @@ export default function ProjectsSection() {
           Proyectos Destacados
         </h2>
         <h3 className="font-headline text-headline-lg">
-          Work & Case Studies
+          Trabajos & Casos de estudio
         </h3>
       </div>
       <div className="space-y-40">
