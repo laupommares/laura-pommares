@@ -9,20 +9,20 @@ export default function ContactSection() {
         <div className="flex flex-col md:flex-row items-start md:items-center gap-10">
           <a
             className="text-3xl md:text-4xl font-headline font-bold hover:text-accent transition-colors"
-            href="mailto:hello@laurapommares.com"
+            href="mailto:laurapommares@gmail.com"
           >
-            hello@laurapommares.com
+           laurapommares@gmail.com
           </a>
           <div className="flex gap-8">
             <a
               className="text-sm font-bold border-b-2 border-primary hover:border-accent hover:text-accent transition-all pb-1"
-              href="#"
+              href="https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/"
             >
               LinkedIn
             </a>
             <a
               className="text-sm font-bold border-b-2 border-primary hover:border-accent hover:text-accent transition-all pb-1"
-              href="#"
+              href="https://github.com/laupommares"
             >
               GitHub
             </a>
