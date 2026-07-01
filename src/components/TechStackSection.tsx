@@ -5,21 +5,21 @@ const categories = [
   },
   {
     name: "Backend",
-    items: ["Laravel / PHP", "Livewire", "PostgreSQL", "MySQL"],
+    items: ["Laravel / PHP", "Livewire", "MySQL"],
   },
   {
     name: "Diseño / UX",
-    items: ["Figma", "Design Systems", "WCAG / Accesibilidad", "Framer Motion"],
+    items: ["Figma", "Design Systems", "WCAG / Accesibilidad", "Framer Motion", "Photoshop"],
   },
   {
     name: "Herramientas",
-    items: ["Git / GitHub", "Vercel / Forge", "Docker", "Storybook"],
+    items: ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude"],
   },
 ];
 
 export default function TechStackSection() {
   return (
-    <section className="py-32 bg-surface-alt border-y border-subtle reveal">
+    <section className="py-16 bg-surface-alt border-y border-subtle reveal">
       <div className="px-margin-mobile max-w-container-max mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {categories.map((cat) => (
