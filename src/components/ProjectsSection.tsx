@@ -59,8 +59,9 @@ const projects = [
     result:
       "Optimización del flujo de asignación, carga e informe de estudios entre clínica y médicos.",
     image: {
-      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuD5HuI3X0N2vHoxhiqL90gFwLFeiDUnlS-pQ09nCHWKl93jg_YpIWvuou8SVplXCC4A8bDhkpF406PFENqfA1TLNxtqMxiUUa1_XwpIYUiy5g3zrAzCBprmJgmphJ20VkU72867q_qN-J946ifTlGElPvjETWhvsJAgsCTL7VrOcHvWiDmVmM28laCmkTXlFkR8I8lpvm_u4rOWBbbrRIwZE5BQq25P4kTDUqLNIt2FoOrTEFBSMre7y4ZG_bTbIGavl67O9eT4QA",
-      alt: "Portal Nutricionista",
+      src: "/portal-de-estudios.jpeg",
+      alt: "Portal para Gestión de Estudios Médicos",
+      objectPositionClassName: "object-top",
     },
     imageFirst: true,
   },
@@ -69,6 +70,7 @@ const projects = [
     category: "UX/UI & Frontend Development",
     title: "Plataforma de Gestión de Turnos Médicos",
     challengeLabel: "El Desafío",
+
     challenge:
       "Diseñar un sistema de gestión de turnos que permita coordinar la asignación, reserva e información de estudios entre distintos perfiles: clínica, médicos, pacientes y empresas, manteniendo claridad y rapidez en el flujo.",
     col1Label: "Proceso",
@@ -79,8 +81,9 @@ const projects = [
     result:
       "Diseño de un sistema de turnos con lógica multi-rol, donde cada usuario accede a flujos específicos según su función, optimizando la asignación y seguimiento de estudios clínicos.",
     image: {
-      src: "https://lh3.googleusercontent.com/aida-public/AB6AXuBpLxJ6Md8F1J3qj3hbTK27JNhuLnJelli3le7EylRRE0QysDXV_825sSOo6bN8-Dp8ktv4pF9Bex_fIAQsxIxcEaYA7adGKJkZZUsmnO7PgLAiJflqr1CSPTCmT23OzZsnRT7w3koqlnZEeWii4G0UUXnVKqj6hWYCBoS5Ctk6NlLe08BHmzTt-dLQL74MaXM3955u9_F7zto2efB6iCHwfMT--gm_EK5aJrJpHpYNt_53mpBRmedV6dFhpHEGbuDIot8Q_wyYUA",
+      src: "/portal-de-turnos.jpeg",
       alt: "Marketplace Servicios",
+      objectPositionClassName: "object-top",
     },
     imageFirst: false,
   },
@@ -88,14 +91,22 @@ const projects = [
 
 type Project = (typeof projects)[number];
 
-function ProjectImage({ src, alt }: { src: string; alt: string }) {
+function ProjectImage({
+  src,
+  alt,
+  objectPositionClassName = "object-center",
+}: {
+  src: string;
+  alt: string;
+  objectPositionClassName?: string;
+}) {
   return (
     <div className="aspect-16/10 bg-surface-alt overflow-hidden border border-subtle">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
         alt={alt}
-        className="w-full h-full object-cover case-study-img"
+        className={`w-full h-full object-cover ${objectPositionClassName}`}
       />
     </div>
   );
@@ -266,6 +277,7 @@ export default function ProjectsSection() {
                   <ProjectImage
                     src={project.image.src}
                     alt={project.image.alt}
+                    objectPositionClassName={project.image.objectPositionClassName}
                   />
                 </div>
                 <div className="md:col-span-5 pt-4">
@@ -281,6 +293,7 @@ export default function ProjectsSection() {
                   <ProjectImage
                     src={project.image.src}
                     alt={project.image.alt}
+                    objectPositionClassName={project.image.objectPositionClassName}
                   />
                 </div>
               </>

@@ -32,7 +32,7 @@ export default function HeroSection() {
             <span className="block font-label-mono text-[11px] text-secondary uppercase mb-2">
               Disponibilidad
             </span>
-            <span className="text-sm font-medium">Disponible para nuevas oportunidades</span>
+            <span className="text-sm font-medium">Disponibilidad inmediata</span>
           </div>
         </div>
         <div className="flex flex-wrap gap-6">

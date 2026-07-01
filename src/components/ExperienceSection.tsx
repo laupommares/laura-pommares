@@ -1,11 +1,11 @@
 const roles = [
   {
     title: "Frontend Developer",
-    company: "VALIDA",
+    company: "SOCIALNET",
     period: "Mayo 2024 — Junio 2026",
     description:
       "Desarrollo de interfaces web en frontend para sistemas internos, con foco en accesibilidad, usabilidad y consumo de APIs. Participación en la construcción de componentes reutilizables e integración con backend.",
-    skills: ["React", "Laravel", "Tailwind CSS", "Livewire", "JavaScript"],
+    skills: ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Saas", "Livewire", "Diseño UI/UI", "Accesibilidad", "Figma", "Claude"],
   },
   {
     title: "Frontend Developer & UX/UI Designer (Freelance)",
@@ -13,7 +13,7 @@ const roles = [
     period: "Enero 2025 — Presente",
     description:
       "Diseño y desarrollo de interfaces web para proyectos freelance, incluyendo un portal de gestión de estudios médicos para clínicas y landings enfocadas en conversión. Trabajo completo de frontend, UX/UI e integración con APIs backend.",
-    skills: ["Next.js", "React", "Laravel", "Tailwind", "JavaScript", "Figma"],
+    skills: ["Next.js", "React", "Laravel", "Tailwind", "JavaScript", "Figma", "Claude"],
   },
 ];
 
