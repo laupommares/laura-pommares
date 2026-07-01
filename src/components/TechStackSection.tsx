@@ -5,7 +5,7 @@ const categories = [
   },
   {
     name: "Backend",
-    items: ["Laravel / PHP", "Livewire", "PostgreSQL", "MySQL"],
+    items: ["Laravel / PHP", "Livewire", "MySQL"],
   },
   {
     name: "Diseño / UX",
@@ -13,7 +13,7 @@ const categories = [
   },
   {
     name: "Herramientas",
-    items: ["Git / GitHub", "Jira", "Vercel", "Docker"],
+    items: ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude"],
   },
 ];
 
