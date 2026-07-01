@@ -1,19 +1,19 @@
 const roles = [
   {
-    title: "Desarrolladora Frontend Senior & UX Engineer",
-    company: "Freelance / Independiente",
-    period: "Enero 2021 — Presente",
+    title: "Frontend Developer",
+    company: "SOCIALNET",
+    period: "Mayo 2024 — Junio 2026",
     description:
-      "Arquitectura de interfaces centradas en accesibilidad para clientes internacionales. Desarrollo de librerías de componentes modulares en React y optimización de Core Web Vitals, logrando mejoras del 30% en performance.",
-    skills: ["React", "Laravel", "Tailwind", "Livewire"],
+      "Desarrollo de interfaces web en frontend para sistemas internos, con foco en accesibilidad, usabilidad y consumo de APIs. Participación en la construcción de componentes reutilizables e integración con backend.",
+    skills: ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Saas", "Livewire", "Diseño UI/UI", "Accesibilidad", "Figma", "Claude"],
   },
   {
-    title: "Frontend Web Developer",
-    company: "Agencias Digitales",
-    period: "Marzo 2018 — Dic 2020",
+    title: "Frontend Developer & UX/UI Designer (Freelance)",
+    company: "Independiente",
+    period: "Enero 2025 — Presente",
     description:
-      "Implementación de diseños pixel-perfect desde Figma a código productivo. Colaboración en la definición de tokens de diseño y mantenimiento de flujos de despliegue continuo (CI/CD).",
-    skills: ["Vue.js", "JavaScript", "SASS", "WordPress"],
+      "Diseño y desarrollo de interfaces web para proyectos freelance, incluyendo un portal de gestión de estudios médicos para clínicas y landings enfocadas en conversión. Trabajo completo de frontend, UX/UI e integración con APIs backend.",
+    skills: ["Next.js", "React", "Laravel", "Tailwind", "JavaScript", "Figma", "Claude"],
   },
 ];
 
