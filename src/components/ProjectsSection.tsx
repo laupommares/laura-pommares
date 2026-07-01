@@ -254,7 +254,7 @@ export default function ProjectsSection() {
           Trabajos & Casos de estudio
         </h3>
       </div>
-      <div className="space-y-40">
+      <div className="space-y-30">
         {projects.map((project) => (
           <article
             key={project.num}
