@@ -26,8 +26,8 @@
 
 /* Custom typography utilities */
 @utility text-display {
-  font-size: clamp(48px, 8vw, 96px);
-  line-height: 0.95;
+  font-size: clamp(48px, 8vw, 78px);
+  line-height: 1;
   letter-spacing: -0.05em;
   font-weight: 600;
 }
@@ -63,7 +63,7 @@
 }
 
 @utility mb-section-gap {
-  margin-bottom: 160px;
+  margin-bottom: 120px;
 }
 
 @utility py-section-gap {

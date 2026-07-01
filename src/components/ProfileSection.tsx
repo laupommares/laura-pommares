@@ -15,7 +15,7 @@ export default function ProfileSection() {
             Mi trabajo se centra en transformar ideas complejas en interfaces
             intuitivas y sólidas.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 gap-10">
             <p className="text-secondary leading-relaxed">
               Mi trabajo consiste en transformar diseños en interfaces web modernas, accesibles y fáciles de usar.
               Disfruto desarrollar productos donde el código y la experiencia de usuario se complementan. 

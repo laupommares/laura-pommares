@@ -1,6 +1,6 @@
 export default function ContactSection() {
   return (
-    <section className="px-margin-mobile max-w-container-max mx-auto py-40 reveal" id="contacto">
+    <section className="px-margin-mobile max-w-container-max mx-auto py-30 reveal" id="contacto">
       <div className="max-w-4xl">
         <h2 className="font-headline text-display mb-12">
           Hablemos de tu próximo <br />
