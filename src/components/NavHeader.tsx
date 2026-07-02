@@ -37,7 +37,7 @@ export default function NavHeader() {
         <div className="flex items-center gap-6">
           <a
             className="hidden md:block text-sm font-medium border-b border-primary hover:border-accent hover:text-accent transition-all"
-            href="#"
+            href="/cv-laura-pommares.pdf"
           >
             Descargar CV
           </a>
