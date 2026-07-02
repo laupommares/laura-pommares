@@ -52,7 +52,7 @@ const projects = [
     challenge:
       "Desarrollo de funcionalidades para una plataforma web utilizada por profesionales de la salud para registrar, consultar y gestionar estudios médicos de pacientes en un entorno seguro y centralizado.",
     col1Label: "Rol",
-    col1Value: "Lead Developer",
+    col1Value: "Frontend Developer",
     col2Label: "Stack",
     col2Value: "Laravel · Livewire · Tailwind CSS · JavaScript · Alpine.js",
     resultLabel: "Resultado",
