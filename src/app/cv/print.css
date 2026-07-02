@@ -1,0 +1,22 @@
+@page {
+  size: A4;
+  margin: 14mm 16mm;
+}
+
+.cv-page,
+.cv-page * {
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+@media print {
+  .cv-no-print {
+    display: none !important;
+  }
+  .cv-page {
+    padding: 0 !important;
+  }
+  .cv-avoid-break {
+    break-inside: avoid;
+  }
+}

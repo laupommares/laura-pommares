@@ -1,7 +1,7 @@
 const categories = [
   {
     name: "Frontend",
-    items: ["React / Next.js", "TypeScript", "Tailwind CSS", "Alpine.js"],
+    items: ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Alpine.js"],
   },
   {
     name: "Backend",
@@ -9,11 +9,11 @@ const categories = [
   },
   {
     name: "Diseño / UX",
-    items: ["Figma", "Design Systems", "WCAG / Accesibilidad", "Framer Motion", "Photoshop"],
+    items: ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"],
   },
   {
     name: "Herramientas",
-    items: ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude"],
+    items: ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"],
   },
 ];
 
