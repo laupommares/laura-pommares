@@ -4,8 +4,8 @@ const roles = [
     company: "SOCIALNET",
     period: "Mayo 2024 — Junio 2026",
     description:
-      "Desarrollo de interfaces web en frontend para sistemas internos, con foco en accesibilidad, usabilidad y consumo de APIs. Participación en la construcción de componentes reutilizables e integración con backend.",
-    skills: ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Saas", "Livewire", "Diseño UI/UI", "Accesibilidad", "Figma", "Claude"],
+      "Desarrollo y mantenimiento de interfaces web para sistemas internos utilizando Laravel. Participación en la implementación de componentes reutilizables, mejoras de UX/UI y optimización de la accesibilidad siguiendo buenas prácticas de desarrollo frontend. Colaboración en la evolución de la experiencia de usuario, el SEO técnico y el diseño de interfaces.",
+    skills: ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Saas", "Livewire", "Diseño UI/UI", "Accesibilidad", "Figma", "Claude Code"],
   },
   {
     title: "Frontend Developer & UX/UI Designer (Freelance)",
@@ -13,7 +13,7 @@ const roles = [
     period: "Enero 2025 — Presente",
     description:
       "Diseño y desarrollo de interfaces web para proyectos freelance, incluyendo un portal de gestión de estudios médicos para clínicas y landings enfocadas en conversión. Trabajo completo de frontend, UX/UI e integración con APIs backend.",
-    skills: ["Next.js", "React", "Laravel", "Tailwind", "JavaScript", "Figma", "Claude"],
+    skills: ["Next.js", "React", "Laravel", "Tailwind", "JavaScript", "TypeScript", "Figma", "Claude Code"],
   },
 ];
 

@@ -16,6 +16,14 @@ export default function ContactSection() {
           <div className="flex gap-8">
             <a
               className="text-sm font-bold border-b-2 border-primary hover:border-accent hover:text-accent transition-all pb-1"
+              href="https://wa.me/5492346507655"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
+            <a
+              className="text-sm font-bold border-b-2 border-primary hover:border-accent hover:text-accent transition-all pb-1"
               href="https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/"
             >
               LinkedIn
