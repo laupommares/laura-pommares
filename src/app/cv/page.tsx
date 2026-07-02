@@ -45,7 +45,7 @@ const languages = [
 const projects = [
   {
     title: "Plataforma para Gestión de Estudios Médicos",
-    role: "Lead Developer — Laravel · Livewire · Tailwind CSS",
+    role: "Frontend Developer — Laravel · Livewire · Tailwind CSS",
     result: "Optimización del flujo de asignación, carga e informe de estudios entre clínica y médicos.",
   },
   {
