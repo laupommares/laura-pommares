@@ -20,7 +20,7 @@ export default function SiteFooter() {
           >
             Experiencia
           </a>
-          <a className="hover:text-accent transition-colors" href="#">
+          <a className="hover:text-accent transition-colors" href="/cv-laura-pommares.pdf">
             Descargar CV
           </a>
         </div>

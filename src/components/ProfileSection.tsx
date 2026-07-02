@@ -15,13 +15,15 @@ export default function ProfileSection() {
             Mi trabajo se centra en transformar ideas complejas en interfaces
             intuitivas y sólidas.
           </p>
-          <div className="grid grid-cols-1 gap-10">
+          <div className="grid grid-cols-1 gap-6">
             <p className="text-secondary leading-relaxed">
-              Mi trabajo consiste en transformar diseños en interfaces web modernas, accesibles y fáciles de usar.
-              Disfruto desarrollar productos donde el código y la experiencia de usuario se complementan. 
+              Desarrollo interfaces web modernas, accesibles y mantenibles, transformando diseños en experiencias claras, rápidas y fáciles de usar.
             </p>
             <p className="text-secondary leading-relaxed">
-              Mi formación en UX/UI me permite prestar atención a los detalles visuales, la accesibilidad y la usabilidad, mientras que mi experiencia con React, Next.js y Laravel me ayuda a construir interfaces mantenibles y orientadas a las necesidades del usuario.
+              Mi enfoque combina desarrollo frontend y UX/UI para crear productos donde el diseño, la accesibilidad y el código trabajan en conjunto.
+            </p>
+            <p className="text-secondary leading-relaxed">
+              Trabajo principalmente con React, Next.js y Laravel, siempre buscando construir soluciones escalables y centradas en las necesidades de las personas que las utilizan.
             </p>
           </div>
         </div>

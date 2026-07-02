@@ -44,7 +44,8 @@ export default function HeroSection() {
           </a>
           <a
             className="border border-primary px-10 py-4 text-sm font-medium hover:bg-surface-alt transition-colors inline-flex items-center gap-2"
-            href="#"
+            href="/cv-laura-pommares.pdf"
+            download
           >
             <span className="material-symbols-outlined">download</span>
             Descargar CV
