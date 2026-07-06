@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 export default async function SiteFooter() {
   const t = await getTranslations("Footer");
+
   const tCv = await getTranslations("Cv");
 
   return (

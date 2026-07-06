@@ -2,11 +2,10 @@
   "Nav": {
     "brand": "LAURA POMMARÉS",
     "links": {
-      "experience": "Experiencia",
+      "trajectory": "Trayectoria",
       "projects": "Proyectos",
-      "profile": "Perfil",
-      "education": "Educación",
-      "certifications": "Certificaciones",
+      "stack": "Stack",
+      "education": "Formación",
       "contact": "Contacto"
     },
     "downloadCv": "Descargar CV",
