@@ -16,12 +16,18 @@ export default async function NavHeader() {
         >
           {t("brand")}
         </a>
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-8">
           <a
             className="text-sm font-medium hover:text-accent transition-colors"
             href="#perfil"
           >
             {t("links.trajectory")}
+          </a>
+          <a
+            className="text-sm font-medium hover:text-accent transition-colors"
+            href="#experiencia"
+          >
+            {t("links.experience")}
           </a>
           <a
             className="text-sm font-medium hover:text-accent transition-colors"
@@ -43,9 +49,9 @@ export default async function NavHeader() {
           </a>
           <a
             className="text-sm font-medium hover:text-accent transition-colors"
-            href="#contacto"
+            href="#certificaciones"
           >
-            {t("links.contact")}
+            {t("links.certifications")}
           </a>
         </nav>
         <div className="flex items-center gap-6">
