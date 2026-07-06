@@ -7,7 +7,7 @@ export default function SiteFooter() {
             LAURA POMMARÉS
           </span>
           <p className="font-label-mono text-[10px] text-secondary mt-1">
-            © 2024 — Frontend Developer & UX/UI Designer
+            © 2026 — Frontend Developer & UX/UI Designer
           </p>
         </div>
         <div className="flex gap-12 font-label-mono text-[10px] uppercase tracking-widest font-bold">

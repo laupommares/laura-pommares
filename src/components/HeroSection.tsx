@@ -14,7 +14,7 @@ export default function HeroSection() {
             <span className="block font-label-mono text-[11px] text-secondary uppercase mb-2">
               Ubicación
             </span>
-            <span className="text-sm font-medium">Buenos Aires, ARG</span>
+            <span className="text-sm font-medium">Chivilcoy, Buenos Aires, ARG</span>
           </div>
           <div>
             <span className="block font-label-mono text-[11px] text-secondary uppercase mb-2">
