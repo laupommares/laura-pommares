@@ -15,7 +15,7 @@ export default function Home() {
     <>
       <ScrollEffects />
       <NavHeader />
-      <main className="pt-40">
+      <main className="pt-28 md:pt-40">
         <HeroSection />
         <ProfileSection />
         <ExperienceSection />

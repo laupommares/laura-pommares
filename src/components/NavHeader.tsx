@@ -1,5 +1,6 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import LocaleSwitch from "./LocaleSwitch";
+import MobileNav from "./MobileNav";
 import type { Locale } from "@/i18n/config";
 
 export default async function NavHeader() {
@@ -7,11 +8,20 @@ export default async function NavHeader() {
   const tCv = await getTranslations("Cv");
   const locale = (await getLocale()) as Locale;
 
+  const mobileLinks = [
+    { href: "#perfil", label: t("links.trajectory") },
+    { href: "#experiencia", label: t("links.experience") },
+    { href: "#proyectos", label: t("links.projects") },
+    { href: "#stack", label: t("links.stack") },
+    { href: "#educacion", label: t("links.education") },
+    { href: "#certificaciones", label: t("links.certifications") },
+  ];
+
   return (
     <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-subtle">
       <div className="flex justify-between items-center h-16 px-margin-mobile max-w-container-max mx-auto">
         <a
-          className="text-lg font-bold"
+          className="text-base md:text-lg font-bold"
           href="#"
         >
           {t("brand")}
@@ -54,7 +64,7 @@ export default async function NavHeader() {
             {t("links.certifications")}
           </a>
         </nav>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 md:gap-6">
           <LocaleSwitch currentLocale={locale} />
           <a
             className="hidden md:block text-sm font-medium border-b border-primary hover:border-accent hover:text-accent transition-all"
@@ -68,6 +78,11 @@ export default async function NavHeader() {
           >
             {t("cta")}
           </a>
+          <MobileNav
+            links={mobileLinks}
+            downloadCvHref={tCv("downloadHref")}
+            downloadCvLabel={t("downloadCv")}
+          />
         </div>
       </div>
     </header>
