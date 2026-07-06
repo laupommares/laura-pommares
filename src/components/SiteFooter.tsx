@@ -1,27 +1,31 @@
-export default function SiteFooter() {
+import { getTranslations } from "next-intl/server";
+
+export default async function SiteFooter() {
+  const t = await getTranslations("Footer");
+
   return (
     <footer className="border-t border-subtle py-20 bg-white">
       <div className="flex flex-col md:flex-row justify-between items-center gap-10 px-margin-mobile max-w-container-max mx-auto">
         <div>
           <span className="text-primary font-bold text-lg tracking-tighter">
-            LAURA POMMARÉS
+            {t("brand")}
           </span>
           <p className="font-label-mono text-[10px] text-secondary mt-1">
-            © 2026 — Frontend Developer & UX/UI Designer
+            {t("copyright")}
           </p>
         </div>
         <div className="flex gap-12 font-label-mono text-[10px] uppercase tracking-widest font-bold">
           <a className="hover:text-accent transition-colors" href="#proyectos">
-            Proyectos
+            {t("links.projects")}
           </a>
           <a
             className="hover:text-accent transition-colors"
             href="#experiencia"
           >
-            Experiencia
+            {t("links.experience")}
           </a>
           <a className="hover:text-accent transition-colors" href="/cv-laura-pommares.pdf">
-            Descargar CV
+            {t("links.downloadCv")}
           </a>
         </div>
       </div>

@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
+
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -19,14 +22,16 @@ export const metadata: Metadata = {
     "Especializada en la intersección del código, el pensamiento de producto y el diseño de sistemas escalables.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
     <html
-      lang="es"
+      lang={locale}
       className={`${geistSans.variable} ${jetbrainsMono.variable}`}
     >
       <head>
@@ -36,7 +41,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-primary antialiased selection:bg-accent/10 selection:text-accent">
-        {children}
+        <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
   );

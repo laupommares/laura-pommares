@@ -1,23 +1,11 @@
-const categories = [
-  {
-    name: "Frontend",
-    items: ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Alpine.js"],
-  },
-  {
-    name: "Backend",
-    items: ["Laravel / PHP", "Livewire", "MySQL"],
-  },
-  {
-    name: "Diseño / UX",
-    items: ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"],
-  },
-  {
-    name: "Herramientas",
-    items: ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"],
-  },
-];
+import { getTranslations } from "next-intl/server";
 
-export default function TechStackSection() {
+type CategoryItem = { name: string; items: string[] };
+
+export default async function TechStackSection() {
+  const t = await getTranslations("TechStack");
+  const categories = t.raw("categories") as CategoryItem[];
+
   return (
     <section className="py-16 bg-surface-alt border-y border-subtle reveal">
       <div className="px-margin-mobile max-w-container-max mx-auto">
