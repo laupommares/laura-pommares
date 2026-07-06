@@ -8,7 +8,7 @@ export default async function EducationSection() {
 
   return (
     <section
-      className="px-margin-mobile max-w-container-max mx-auto mb-section-gap mt-30 reveal"
+      className="px-margin-mobile max-w-container-max mx-auto mb-16 md:mb-section-gap mt-16 md:mt-30 reveal"
       id="educacion"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">

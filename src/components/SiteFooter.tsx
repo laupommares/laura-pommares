@@ -32,7 +32,7 @@ export default async function SiteFooter() {
               </a>
             ))}
           </nav>
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 max-md:mx-auto">
             <a
               className="text-sm font-medium border-b border-primary hover:border-accent hover:text-accent transition-all"
               href={tCv("downloadHref")}

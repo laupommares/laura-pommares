@@ -21,7 +21,7 @@ export default async function NavHeader() {
     <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-subtle">
       <div className="flex justify-between items-center h-16 px-margin-mobile max-w-container-max mx-auto">
         <a
-          className="text-lg font-bold"
+          className="text-base md:text-lg font-bold"
           href="#"
         >
           {t("brand")}
@@ -64,7 +64,7 @@ export default async function NavHeader() {
             {t("links.certifications")}
           </a>
         </nav>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4 md:gap-6">
           <LocaleSwitch currentLocale={locale} />
           <a
             className="hidden md:block text-sm font-medium border-b border-primary hover:border-accent hover:text-accent transition-all"
