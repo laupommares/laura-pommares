@@ -25,9 +25,9 @@ export default async function HeroSection() {
             </div>
           ))}
         </div>
-        <div className="flex flex-wrap gap-6">
+        <div className="flex flex-wrap items-center gap-6">
           <a
-            className="bg-primary text-white px-10 py-4 text-sm font-medium hover:bg-accent transition-colors"
+            className="inline-flex items-center justify-center bg-primary text-white px-10 py-4 text-sm font-medium hover:bg-accent transition-colors"
             href="#proyectos"
           >
             {t("viewProjects")}
