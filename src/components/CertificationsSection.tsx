@@ -1,11 +1,11 @@
-const certifications = [
-  { title: "Diseño UX/UI", issuer: "Coderhouse" },
-  { title: "JavaScript Total", issuer: "Udemy" },
-  { title: "PHP (Esencial y Avanzado)", issuer: "LinkedIn Learning" },
-  { title: "Livewire 3 from Scratch", issuer: "Laracasts" },
-];
+import { getTranslations } from "next-intl/server";
 
-export default function CertificationsSection() {
+type CertificationItem = { title: string; issuer: string };
+
+export default async function CertificationsSection() {
+  const t = await getTranslations("Certifications");
+  const certifications = t.raw("items") as CertificationItem[];
+
   return (
     <section
       className="px-margin-mobile max-w-container-max mx-auto reveal"
@@ -14,7 +14,7 @@ export default function CertificationsSection() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <h2 className="font-label-mono text-accent uppercase tracking-widest">
-            Cursos y Certificaciones
+            {t("heading")}
           </h2>
         </div>
         <div className="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8">

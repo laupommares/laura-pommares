@@ -1,12 +1,11 @@
-const studies = [
-  {
-    institution: "Universidad Nacional de Quilmes",
-    degree: "Licenciatura en Comercio Internacional",
-    period: "Mar. 2007 – Dic. 2014",
-  },
-];
+import { getTranslations } from "next-intl/server";
 
-export default function EducationSection() {
+type StudyItem = { institution: string; degree: string; period: string };
+
+export default async function EducationSection() {
+  const t = await getTranslations("Education");
+  const studies = t.raw("studies") as StudyItem[];
+
   return (
     <section
       className="px-margin-mobile max-w-container-max mx-auto mb-section-gap mt-30 reveal"
@@ -15,7 +14,7 @@ export default function EducationSection() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <h2 className="font-label-mono text-accent uppercase tracking-widest">
-            Educación
+            {t("heading")}
           </h2>
         </div>
         <div className="md:col-span-8 space-y-16">
