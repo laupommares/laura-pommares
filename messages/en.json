@@ -1,0 +1,275 @@
+{
+  "Nav": {
+    "brand": "LAURA POMMARÉS",
+    "links": {
+      "trajectory": "Profile",
+      "experience": "Experience",
+      "projects": "Projects",
+      "stack": "Skills",
+      "education": "Education",
+      "certifications": "Certifications"
+    },
+    "downloadCv": "Download CV",
+    "cta": "Get in Touch"
+  },
+  "Hero": {
+    "titleLine1": "Frontend Developer &",
+    "titleLine2": "React · Next.js · UX/UI",
+    "description": "I build modern, accessible, and responsive interfaces with React, Next.js, and Laravel, combining frontend development with a solid foundation in UX/UI to create products that are easy to use and maintain.",
+    "stats": [
+      { "label": "Location", "value": "Chivilcoy, Buenos Aires, ARG" },
+      { "label": "Main Stack", "value": "React / Next.js / Laravel" },
+      { "label": "Focus", "value": "Frontend · UX/UI · Accessibility" },
+      { "label": "Availability", "value": "Immediately available" }
+    ],
+    "viewProjects": "View Projects",
+    "downloadCv": "Download CV"
+  },
+  "Profile": {
+    "heading": "Professional Profile",
+    "lead": "My work focuses on turning complex ideas into intuitive, solid interfaces.",
+    "paragraphs": [
+      "With 2+ years of experience, I build modern, accessible, and maintainable web interfaces, turning designs into clear, fast, and easy-to-use experiences.",
+      "My approach combines frontend development and UX/UI to create products where design, accessibility, and code work together.",
+      "I work mainly with React, Next.js, and Laravel, always aiming to build scalable solutions centered on the needs of the people who use them."
+    ]
+  },
+  "Experience": {
+    "heading": "Professional Experience",
+    "roles": [
+      {
+        "title": "Frontend Developer",
+        "company": "SOCIALNET",
+        "period": "May 2024 — June 2026",
+        "description": "Development and maintenance of web interfaces for internal systems using Laravel. Involved in building reusable components, improving UX/UI, and optimizing accessibility following frontend development best practices. Collaboration on the evolution of the user experience, technical SEO, and interface design.",
+        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Saas", "Livewire", "UI/UX Design", "Accessibility", "Figma", "Claude Code"]
+      },
+      {
+        "title": "Frontend Developer & UX/UI Designer (Freelance)",
+        "company": "Self-employed",
+        "period": "January 2025 — Present",
+        "description": "Design and development of web interfaces for freelance projects, including a medical studies management portal for clinics and conversion-focused landing pages. End-to-end frontend, UX/UI, and backend API integration work.",
+        "skills": ["Next.js", "React", "Laravel", "Tailwind", "JavaScript", "TypeScript", "Figma", "Claude Code"]
+      }
+    ]
+  },
+  "TechStack": {
+    "categories": [
+      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
+      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
+      { "name": "Design / UX", "items": ["Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
+      { "name": "Tools", "items": ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] }
+    ]
+  },
+  "Education": {
+    "heading": "Education",
+    "studies": [
+      {
+        "institution": "National University of Quilmes",
+        "degree": "Bachelor's Degree in International Trade",
+        "period": "Mar. 2007 – Dec. 2014"
+      }
+    ]
+  },
+  "Certifications": {
+    "heading": "Courses & Certifications",
+    "items": [
+      { "title": "UX/UI Design", "issuer": "Coderhouse" },
+      { "title": "JavaScript Total", "issuer": "Udemy" },
+      { "title": "PHP (Essential and Advanced)", "issuer": "LinkedIn Learning" },
+      { "title": "Livewire 3 from Scratch", "issuer": "Laracasts" }
+    ]
+  },
+  "Projects": {
+    "heading": "Featured Projects",
+    "subheading": "Work & Case Studies",
+    "items": [
+      {
+        "num": "01",
+        "category": "Frontend Development with Backend Support",
+        "title": "Medical Studies Management Platform",
+        "challengeLabel": "Problem",
+        "challenge": "Development of features for a web platform used by healthcare professionals to record, review, and manage patients' medical studies in a secure, centralized environment.",
+        "col1Label": "Role",
+        "col1Value": "Frontend Developer",
+        "col2Label": "Stack",
+        "col2Value": "Laravel · Livewire · Tailwind CSS · JavaScript · Alpine.js",
+        "resultLabel": "Result",
+        "result": "Optimized the flow for assigning, uploading, and reporting studies between the clinic and doctors.",
+        "image": { "src": "/portal-de-estudios.jpeg", "alt": "Medical Studies Management Portal", "objectPositionClassName": "object-top" },
+        "imageFirst": true
+      },
+      {
+        "num": "02",
+        "category": "UX/UI & Frontend Development",
+        "title": "Medical Appointment Management Platform",
+        "challengeLabel": "The Challenge",
+        "challenge": "Design an appointment management system that coordinates the assignment, booking, and reporting of studies across different user profiles: clinic, doctors, patients, and companies, while keeping the flow clear and fast.",
+        "col1Label": "Process",
+        "col1Value": "Design Systems & Prototyping",
+        "col2Label": "Technologies",
+        "col2Value": "Next.js & Figma",
+        "resultLabel": "Solution",
+        "result": "Designed an appointment system with multi-role logic, where each user accesses flows specific to their role, optimizing the assignment and tracking of clinical studies.",
+        "image": { "src": "/portal-de-turnos.jpeg", "alt": "Services Marketplace", "objectPositionClassName": "object-top" },
+        "imageFirst": false
+      }
+    ],
+    "landingsLabel": "Also",
+    "landingsHeading": "Landings & One-Pagers",
+    "landingsDescription": "Fast websites with a clear identity and a focus on conversion for independent professionals.",
+    "viewSite": "View site →",
+    "landings": [
+      {
+        "id": "L1",
+        "category": "Fine Art Photography",
+        "title": "Sofía Capuano",
+        "subtitle": "Fine Art Photographer",
+        "description": "Bilingual portfolio for a photographer specializing in weddings, beach sessions, and intimate portraits. Minimalist design focused on natural light and emotion.",
+        "stack": ["Next.js", "Tailwind CSS", "Figma"],
+        "gradient": "from-stone-900 via-amber-950 to-stone-800",
+        "accentColor": "#d4a96a",
+        "lines": ["portfolio", "about me", "process", "contact"],
+        "href": "https://sofiacapuanoph.vercel.app/",
+        "image": "/landing-photographer.png"
+      },
+      {
+        "id": "L2",
+        "category": "Nutrition & Coaching",
+        "title": "Juliana Re",
+        "subtitle": "Nutritionist & Ontological Coach",
+        "description": "Landing page for a nutritionist focused on mindful, intuitive eating. 1:1 programs, group retreats, and family support.",
+        "stack": ["Next.js", "Figma"],
+        "gradient": "from-emerald-950 via-teal-900 to-teal-800",
+        "accentColor": "#6ee7b7",
+        "lines": ["focus", "programs", "who guides you", "consultation"],
+        "href": "https://julianare.vercel.app/",
+        "image": "/landing-nutritionist.png"
+      },
+      {
+        "id": "L3",
+        "category": "Yoga & Wellness",
+        "title": "Jori Armonía Yoga",
+        "subtitle": "Jorgelina Cantone — Yoga Instructor",
+        "description": "Class booking site for a Therapeutic Yoga, Ashtanga Vinyasa, and Prenatal Yoga instructor. Organic design centered on calm and wellbeing.",
+        "stack": ["Next.js", "Figma"],
+        "gradient": "from-stone-800 via-amber-900 to-yellow-950",
+        "accentColor": "#d4a96a",
+        "lines": ["philosophy", "classes", "offerings", "book now"],
+        "href": "https://joriarmoniayoga.com/",
+        "image": "/landing-yoga.png"
+      }
+    ]
+  },
+  "Contact": {
+    "headingLine1": "Let's talk about your next",
+    "headingLine2": "digital product",
+    "email": "laurapommares@gmail.com",
+    "whatsapp": "WhatsApp",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "Footer": {
+    "brand": "LAURA POMMARÉS",
+    "copyright": "© 2026 — Frontend Developer & UX/UI Designer",
+    "links": {
+      "projects": "Projects",
+      "experience": "Experience",
+      "downloadCv": "Download CV"
+    }
+  },
+  "Cv": {
+    "downloadHref": "/cv-laura-pommares-en.pdf"
+  },
+  "CvPage": {
+    "backLink": "← Back to site",
+    "name": "Laura Pommarés",
+    "titleMain": "Frontend Developer",
+    "titleAccent": "& UX/UI Designer",
+    "contact": [
+      { "label": "Email", "value": "laurapommares@gmail.com", "href": "mailto:laurapommares@gmail.com" },
+      { "label": "WhatsApp", "value": "+54 9 2346 507655", "href": "https://wa.me/5492346507655" },
+      { "label": "Location", "value": "Chivilcoy, Buenos Aires, ARG" },
+      { "label": "Portfolio", "value": "laura-pommares.vercel.app", "href": "https://laura-pommares.vercel.app/" },
+      { "label": "LinkedIn", "value": "linkedin.com/in/laura-pommarés", "href": "https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/" },
+      { "label": "GitHub", "value": "github.com/laupommares", "href": "https://github.com/laupommares" }
+    ],
+    "sections": {
+      "profile": "Profile",
+      "experience": "Experience",
+      "projects": "Projects",
+      "stack": "Skills / Tech Stack",
+      "education": "Education",
+      "certifications": "Certifications",
+      "languages": "Languages"
+    },
+    "profileParagraphs": [
+      "With 2+ years of experience, I build modern, accessible, and maintainable web interfaces, turning designs into clear, fast, and easy-to-use experiences.",
+      "My approach combines frontend development and UX/UI to create products where design, accessibility, and code work together.",
+      "I work mainly with React, Next.js, and Laravel, always aiming to build scalable solutions centered on the needs of the people who use them."
+    ],
+    "roles": [
+      {
+        "title": "Frontend Developer",
+        "company": "SOCIALNET",
+        "period": "May 2024 — June 2026",
+        "description": "Development and maintenance of web interfaces for internal systems using Laravel. Involved in building reusable components, improving UX/UI, and optimizing accessibility following frontend development best practices. Collaboration on the evolution of the user experience, technical SEO, and interface design.",
+        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "UI/UX Design", "Accessibility", "Figma", "Claude Code"]
+      },
+      {
+        "title": "Frontend Developer & UX/UI Designer (Freelance)",
+        "company": "Self-employed",
+        "period": "January 2025 — Present",
+        "description": "Design and development of web interfaces for freelance projects, including a medical studies management portal for clinics and conversion-focused landing pages. End-to-end frontend, UX/UI, and backend API integration work.",
+        "skills": ["Next.js", "React", "Laravel", "Tailwind CSS", "JavaScript", "TypeScript", "Figma", "Claude Code"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Medical Studies Management Platform",
+        "role": "Frontend Developer — Laravel · Livewire · Tailwind CSS",
+        "result": "Optimized the flow for assigning, uploading, and reporting studies between the clinic and doctors."
+      },
+      {
+        "title": "Medical Appointment Management Platform",
+        "role": "UX/UI & Frontend — Next.js · Figma",
+        "result": "Appointment system with multi-role logic for clinic, doctors, patients, and companies."
+      },
+      {
+        "title": "Conversion Landing Pages",
+        "role": "Next.js · Figma · Tailwind CSS",
+        "result": "Portfolios and booking sites for independent professionals, focused on identity and conversion.",
+        "clients": [
+          { "name": "Sofía Capuano", "href": "https://sofiacapuanoph.vercel.app/" },
+          { "name": "Juliana Re", "href": "https://julianare.vercel.app/" },
+          { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" }
+        ]
+      }
+    ],
+    "stack": [
+      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
+      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
+      { "name": "Design / UX", "items": ["Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
+      { "name": "Tools", "items": ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] }
+    ],
+    "education": [
+      {
+        "institution": "National University of Quilmes",
+        "degree": "Bachelor's Degree in International Trade",
+        "period": "Mar. 2007 – Dec. 2014"
+      }
+    ],
+    "certifications": [
+      { "title": "UX/UI Design", "issuer": "Coderhouse" },
+      { "title": "JavaScript Total", "issuer": "Udemy" },
+      { "title": "PHP (Essential and Advanced)", "issuer": "LinkedIn Learning" },
+      { "title": "Livewire 3 from Scratch", "issuer": "Laracasts" }
+    ],
+    "languages": [
+      { "name": "Spanish", "level": "Native" },
+      { "name": "Portuguese", "level": "Advanced" },
+      { "name": "English", "level": "B1" }
+    ],
+    "printButton": "Print / Save as PDF"
+  }
+}

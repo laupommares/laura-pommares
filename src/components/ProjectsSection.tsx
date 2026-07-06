@@ -1,95 +1,34 @@
-const landings = [
-  {
-    id: "L1",
-    category: "Fine Art Photography",
-    title: "Sofía Capuano",
-    subtitle: "Fine Art Photographer",
-    description:
-      "Portfolio bilingüe para fotógrafa especializada en bodas, sesiones de playa y retratos íntimos. Diseño minimalista con foco en la luz natural y la emoción.",
-    stack: ["Next.js", "Tailwind CSS", "Figma"],
-    gradient: "from-stone-900 via-amber-950 to-stone-800",
-    accentColor: "#d4a96a",
-    lines: ["portfolio", "sobre mí", "proceso", "contacto"],
-    href: "https://sofiacapuanoph.vercel.app/",
-    image: "/landing-photographer.png",
-  },
-  {
-    id: "L2",
-    category: "Nutrición & Coaching",
-    title: "Juliana Re",
-    subtitle: "Nutricionista & Coach Ontológica",
-    description:
-      "Landing para nutricionista con enfoque en alimentación consciente e intuitiva. Programas 1:1, retiros grupales y acompañamiento familiar.",
-    stack: ["Next.js", "Figma"],
-    gradient: "from-emerald-950 via-teal-900 to-teal-800",
-    accentColor: "#6ee7b7",
-    lines: ["enfoque", "programas", "quién acompaña", "consulta"],
-    href: "https://julianare.vercel.app/",
-    image: "/landing-nutritionist.png",
-  },
-  {
-    id: "L3",
-    category: "Yoga & Bienestar",
-    title: "Jori Armonía Yoga",
-    subtitle: "Jorgelina Cantone — Instructora de Yoga",
-    description:
-      "Sitio de reserva de clases para instructora de Yoga Terapéutico, Ashtanga Vinyasa y Prenatal. Diseño orgánico centrado en calma y bienestar.",
-    stack: ["Next.js", "Figma"],
-    gradient: "from-stone-800 via-amber-900 to-yellow-950",
-    accentColor: "#d4a96a",
-    lines: ["filosofía", "clases", "propuestas", "reservar"],
-    href: "https://joriarmoniayoga.com/",
-    image: "/landing-yoga.png",
-  },
-];
+import { getTranslations } from "next-intl/server";
 
-const projects = [
-  {
-    num: "01",
-    category: "Frontend Development with Backend Support",
-    title: "Plataforma para Gestión de Estudios Médicos",
-    challengeLabel: "Problema",
-    challenge:
-      "Desarrollo de funcionalidades para una plataforma web utilizada por profesionales de la salud para registrar, consultar y gestionar estudios médicos de pacientes en un entorno seguro y centralizado.",
-    col1Label: "Rol",
-    col1Value: "Frontend Developer",
-    col2Label: "Stack",
-    col2Value: "Laravel · Livewire · Tailwind CSS · JavaScript · Alpine.js",
-    resultLabel: "Resultado",
-    result:
-      "Optimización del flujo de asignación, carga e informe de estudios entre clínica y médicos.",
-    image: {
-      src: "/portal-de-estudios.jpeg",
-      alt: "Portal para Gestión de Estudios Médicos",
-      objectPositionClassName: "object-top",
-    },
-    imageFirst: true,
-  },
-  {
-    num: "02",
-    category: "UX/UI & Frontend Development",
-    title: "Plataforma de Gestión de Turnos Médicos",
-    challengeLabel: "El Desafío",
+type ProjectItem = {
+  num: string;
+  category: string;
+  title: string;
+  challengeLabel: string;
+  challenge: string;
+  col1Label: string;
+  col1Value: string;
+  col2Label: string;
+  col2Value: string;
+  resultLabel: string;
+  result: string;
+  image: { src: string; alt: string; objectPositionClassName: string };
+  imageFirst: boolean;
+};
 
-    challenge:
-      "Diseñar un sistema de gestión de turnos que permita coordinar la asignación, reserva e información de estudios entre distintos perfiles: clínica, médicos, pacientes y empresas, manteniendo claridad y rapidez en el flujo.",
-    col1Label: "Proceso",
-    col1Value: "Design Systems & Prototyping",
-    col2Label: "Tecnologías",
-    col2Value: "Next.js & Figma",
-    resultLabel: "Solución",
-    result:
-      "Diseño de un sistema de turnos con lógica multi-rol, donde cada usuario accede a flujos específicos según su función, optimizando la asignación y seguimiento de estudios clínicos.",
-    image: {
-      src: "/portal-de-turnos.jpeg",
-      alt: "Marketplace Servicios",
-      objectPositionClassName: "object-top",
-    },
-    imageFirst: false,
-  },
-];
-
-type Project = (typeof projects)[number];
+type LandingItem = {
+  id: string;
+  category: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  stack: string[];
+  gradient: string;
+  accentColor: string;
+  lines: string[];
+  href: string;
+  image: string;
+};
 
 function ProjectImage({
   src,
@@ -112,7 +51,7 @@ function ProjectImage({
   );
 }
 
-function ProjectContent({ project }: { project: Project }) {
+function ProjectContent({ project }: { project: ProjectItem }) {
   return (
     <>
       <span className="font-label-mono text-secondary uppercase mb-4 block">
@@ -153,7 +92,7 @@ function ProjectContent({ project }: { project: Project }) {
   );
 }
 
-function LandingCard({ landing }: { landing: (typeof landings)[number] }) {
+function LandingCard({ landing, viewSite }: { landing: LandingItem; viewSite: string }) {
   return (
     <article className="group flex flex-col border border-subtle bg-surface-alt overflow-hidden hover:border-accent/40 transition-colors duration-300">
       {/* Browser mockup */}
@@ -242,7 +181,7 @@ function LandingCard({ landing }: { landing: (typeof landings)[number] }) {
               rel="noopener noreferrer"
               className="shrink-0 ml-3 font-label-mono text-[10px] uppercase tracking-widest text-accent hover:underline"
             >
-              Ver sitio →
+              {viewSite}
             </a>
           )}
         </div>
@@ -251,7 +190,12 @@ function LandingCard({ landing }: { landing: (typeof landings)[number] }) {
   );
 }
 
-export default function ProjectsSection() {
+export default async function ProjectsSection() {
+  const t = await getTranslations("Projects");
+  const projects = t.raw("items") as ProjectItem[];
+  const landings = t.raw("landings") as LandingItem[];
+  const viewSite = t("viewSite");
+
   return (
     <section
       className="px-margin-mobile max-w-container-max mx-auto mb-section-gap"
@@ -259,10 +203,10 @@ export default function ProjectsSection() {
     >
       <div className="mb-20 reveal">
         <h2 className="font-label-mono text-accent uppercase tracking-widest mb-4">
-          Proyectos Destacados
+          {t("heading")}
         </h2>
         <h3 className="font-headline text-headline-lg">
-          Trabajos & Casos de estudio
+          {t("subheading")}
         </h3>
       </div>
       <div className="space-y-30">
@@ -307,20 +251,19 @@ export default function ProjectsSection() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
             <span className="font-label-mono text-[11px] uppercase tracking-widest text-secondary block mb-2">
-              También
+              {t("landingsLabel")}
             </span>
             <h3 className="font-headline text-headline-md">
-              Landings & One-Pagers
+              {t("landingsHeading")}
             </h3>
           </div>
           <p className="text-secondary text-sm max-w-xs leading-relaxed">
-            Sitios rápidos, con identidad clara y enfoque en conversión para
-            profesionales independientes.
+            {t("landingsDescription")}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {landings.map((landing) => (
-            <LandingCard key={landing.id} landing={landing} />
+            <LandingCard key={landing.id} landing={landing} viewSite={viewSite} />
           ))}
         </div>
       </div>
