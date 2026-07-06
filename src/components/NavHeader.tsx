@@ -4,6 +4,7 @@ import type { Locale } from "@/i18n/config";
 
 export default async function NavHeader() {
   const t = await getTranslations("Nav");
+  const tCv = await getTranslations("Cv");
   const locale = (await getLocale()) as Locale;
 
   return (
@@ -16,6 +17,12 @@ export default async function NavHeader() {
           {t("brand")}
         </a>
         <nav className="hidden md:flex items-center gap-10">
+                    <a
+            className="text-sm font-medium hover:text-accent transition-colors"
+            href="#perfil"
+          >
+            {t("links.profile")}
+          </a>
           <a
             className="text-sm font-medium hover:text-accent transition-colors"
             href="#experiencia"
@@ -27,12 +34,6 @@ export default async function NavHeader() {
             href="#proyectos"
           >
             {t("links.projects")}
-          </a>
-          <a
-            className="text-sm font-medium hover:text-accent transition-colors"
-            href="#perfil"
-          >
-            {t("links.profile")}
           </a>
           <a
             className="text-sm font-medium hover:text-accent transition-colors"
@@ -57,7 +58,7 @@ export default async function NavHeader() {
           <LocaleSwitch currentLocale={locale} />
           <a
             className="hidden md:block text-sm font-medium border-b border-primary hover:border-accent hover:text-accent transition-all"
-            href="/cv-laura-pommares.pdf"
+            href={tCv("downloadHref")}
           >
             {t("downloadCv")}
           </a>

@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 export default async function HeroSection() {
   const t = await getTranslations("Hero");
+  const tCv = await getTranslations("Cv");
   const stats = t.raw("stats") as { label: string; value: string }[];
 
   return (
@@ -33,7 +34,7 @@ export default async function HeroSection() {
           </a>
           <a
             className="border border-primary px-10 py-4 text-sm font-medium hover:bg-surface-alt transition-colors inline-flex items-center gap-2"
-            href="/cv-laura-pommares.pdf"
+            href={tCv("downloadHref")}
             download
           >
             <span className="material-symbols-outlined">download</span>

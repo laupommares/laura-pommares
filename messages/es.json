@@ -177,5 +177,99 @@
       "experience": "Experiencia",
       "downloadCv": "Descargar CV"
     }
+  },
+  "Cv": {
+    "downloadHref": "/cv-laura-pommares.pdf"
+  },
+  "CvPage": {
+    "backLink": "← Volver al sitio",
+    "name": "Laura Pommarés",
+    "titleMain": "Frontend Developer",
+    "titleAccent": "& UX/UI Designer",
+    "contact": [
+      { "label": "Email", "value": "laurapommares@gmail.com", "href": "mailto:laurapommares@gmail.com" },
+      { "label": "WhatsApp", "value": "+54 9 2346 507655", "href": "https://wa.me/5492346507655" },
+      { "label": "Ubicación", "value": "Chivilcoy, Buenos Aires, ARG" },
+      { "label": "Portfolio", "value": "laura-pommares.vercel.app", "href": "https://laura-pommares.vercel.app/" },
+      { "label": "LinkedIn", "value": "linkedin.com/in/laura-pommarés", "href": "https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/" },
+      { "label": "GitHub", "value": "github.com/laupommares", "href": "https://github.com/laupommares" }
+    ],
+    "sections": {
+      "profile": "Perfil",
+      "experience": "Experiencia",
+      "projects": "Proyectos",
+      "stack": "Stack",
+      "education": "Educación",
+      "certifications": "Certificaciones",
+      "languages": "Idiomas"
+    },
+    "profileParagraphs": [
+      "Desarrollo interfaces web modernas, accesibles y mantenibles, transformando diseños en experiencias claras, rápidas y fáciles de usar.",
+      "Mi enfoque combina desarrollo frontend y UX/UI para crear productos donde el diseño, la accesibilidad y el código trabajan en conjunto.",
+      "Trabajo principalmente con React, Next.js y Laravel, siempre buscando construir soluciones escalables y centradas en las necesidades de las personas que las utilizan."
+    ],
+    "roles": [
+      {
+        "title": "Frontend Developer",
+        "company": "SOCIALNET",
+        "period": "Mayo 2024 — Junio 2026",
+        "description": "Desarrollo y mantenimiento de interfaces web para sistemas internos utilizando Laravel. Participación en la implementación de componentes reutilizables, mejoras de UX/UI y optimización de la accesibilidad siguiendo buenas prácticas de desarrollo frontend. Colaboración en la evolución de la experiencia de usuario, el SEO técnico y el diseño de interfaces.",
+        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "Diseño UI/UX", "Accesibilidad", "Figma", "Claude Code"]
+      },
+      {
+        "title": "Frontend Developer & UX/UI Designer (Freelance)",
+        "company": "Independiente",
+        "period": "Enero 2025 — Presente",
+        "description": "Diseño y desarrollo de interfaces web para proyectos freelance, incluyendo un portal de gestión de estudios médicos para clínicas y landings enfocadas en conversión. Trabajo completo de frontend, UX/UI e integración con APIs backend.",
+        "skills": ["Next.js", "React", "Laravel", "Tailwind CSS", "JavaScript", "TypeScript", "Figma", "Claude Code"]
+      }
+    ],
+    "projects": [
+      {
+        "title": "Plataforma para Gestión de Estudios Médicos",
+        "role": "Frontend Developer — Laravel · Livewire · Tailwind CSS",
+        "result": "Optimización del flujo de asignación, carga e informe de estudios entre clínica y médicos."
+      },
+      {
+        "title": "Plataforma de Gestión de Turnos Médicos",
+        "role": "UX/UI & Frontend — Next.js · Figma",
+        "result": "Sistema de turnos con lógica multi-rol para clínica, médicos, pacientes y empresas."
+      },
+      {
+        "title": "Landings de conversión",
+        "role": "Next.js · Figma · Tailwind CSS",
+        "result": "Portfolios y sitios de reserva para profesionales independientes, con foco en identidad y conversión.",
+        "clients": [
+          { "name": "Sofía Capuano", "href": "https://sofiacapuanoph.vercel.app/" },
+          { "name": "Juliana Re", "href": "https://julianare.vercel.app/" },
+          { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" }
+        ]
+      }
+    ],
+    "stack": [
+      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Alpine.js"] },
+      { "name": "Backend", "items": ["Laravel / PHP", "Livewire", "MySQL"] },
+      { "name": "Diseño / UX", "items": ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
+      { "name": "Herramientas", "items": ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] }
+    ],
+    "education": [
+      {
+        "institution": "Universidad Nacional de Quilmes",
+        "degree": "Licenciatura en Comercio Internacional",
+        "period": "Mar. 2007 – Dic. 2014"
+      }
+    ],
+    "certifications": [
+      { "title": "Diseño UX/UI", "issuer": "Coderhouse" },
+      { "title": "JavaScript Total", "issuer": "Udemy" },
+      { "title": "PHP (Esencial y Avanzado)", "issuer": "LinkedIn Learning" },
+      { "title": "Livewire 3 from Scratch", "issuer": "Laracasts" }
+    ],
+    "languages": [
+      { "name": "Español", "level": "Nativo" },
+      { "name": "Portugués", "level": "Avanzado" },
+      { "name": "Inglés", "level": "B1" }
+    ],
+    "printButton": "Imprimir / Guardar como PDF"
   }
 }
