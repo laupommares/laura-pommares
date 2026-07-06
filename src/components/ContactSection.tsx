@@ -12,7 +12,7 @@ export default async function ContactSection() {
         </h2>
         <div className="flex flex-col md:flex-row items-start md:items-center gap-10">
           <a
-            className="text-3xl md:text-4xl font-headline font-bold hover:text-accent transition-colors"
+            className="text-xl sm:text-2xl md:text-4xl font-headline font-bold hover:text-accent transition-colors break-all"
             href={`mailto:${t("email")}`}
           >
            {t("email")}

@@ -1,11 +1,21 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import LocaleSwitch from "./LocaleSwitch";
+import MobileNav from "./MobileNav";
 import type { Locale } from "@/i18n/config";
 
 export default async function NavHeader() {
   const t = await getTranslations("Nav");
   const tCv = await getTranslations("Cv");
   const locale = (await getLocale()) as Locale;
+
+  const mobileLinks = [
+    { href: "#perfil", label: t("links.trajectory") },
+    { href: "#experiencia", label: t("links.experience") },
+    { href: "#proyectos", label: t("links.projects") },
+    { href: "#stack", label: t("links.stack") },
+    { href: "#educacion", label: t("links.education") },
+    { href: "#certificaciones", label: t("links.certifications") },
+  ];
 
   return (
     <header className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-subtle">
@@ -68,6 +78,11 @@ export default async function NavHeader() {
           >
             {t("cta")}
           </a>
+          <MobileNav
+            links={mobileLinks}
+            downloadCvHref={tCv("downloadHref")}
+            downloadCvLabel={t("downloadCv")}
+          />
         </div>
       </div>
     </header>
