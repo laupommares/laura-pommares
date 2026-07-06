@@ -4,7 +4,7 @@ export default async function ContactSection() {
   const t = await getTranslations("Contact");
 
   return (
-    <section className="px-margin-mobile max-w-container-max mx-auto py-30 reveal" id="contacto">
+    <section className="px-margin-mobile max-w-container-max mx-auto py-16 md:py-30 reveal" id="contacto">
       <div className="max-w-4xl">
         <h2 className="font-headline text-display mb-12">
           {t("headingLine1")} <br />
@@ -12,7 +12,7 @@ export default async function ContactSection() {
         </h2>
         <div className="flex flex-col md:flex-row items-start md:items-center gap-10">
           <a
-            className="text-3xl md:text-4xl font-headline font-bold hover:text-accent transition-colors"
+            className="text-xl sm:text-2xl md:text-4xl font-headline font-bold hover:text-accent transition-colors break-all"
             href={`mailto:${t("email")}`}
           >
            {t("email")}

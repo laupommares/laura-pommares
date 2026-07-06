@@ -6,7 +6,7 @@ export default async function ProfileSection() {
 
   return (
     <section
-      className="px-margin-mobile max-w-container-max mx-auto mb-section-gap reveal"
+      className="px-margin-mobile max-w-container-max mx-auto mb-16 md:mb-section-gap reveal"
       id="perfil"
     >
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
