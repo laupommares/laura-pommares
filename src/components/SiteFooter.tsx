@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 
 export default async function SiteFooter() {
   const t = await getTranslations("Footer");
+  const tCv = await getTranslations("Cv");
 
   return (
     <footer className="border-t border-subtle py-20 bg-white">
@@ -24,7 +25,7 @@ export default async function SiteFooter() {
           >
             {t("links.experience")}
           </a>
-          <a className="hover:text-accent transition-colors" href="/cv-laura-pommares.pdf">
+          <a className="hover:text-accent transition-colors" href={tCv("downloadHref")}>
             {t("links.downloadCv")}
           </a>
         </div>
