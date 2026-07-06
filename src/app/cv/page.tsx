@@ -169,7 +169,10 @@ export default async function CvPage() {
                 <h3 className="text-sm font-bold">{edu.institution}</h3>
                 <span className="font-label-mono text-secondary text-[10px]">{edu.period}</span>
               </div>
-              <p className="text-accent text-xs font-medium">{edu.degree}</p>
+              <p className="text-accent text-xs font-medium mb-1.5">{edu.degree}</p>
+              <span className="inline-block px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[9px] uppercase tracking-wide text-secondary">
+                {t("educationCompletedLabel")}
+              </span>
             </div>
           ))}
         </div>
