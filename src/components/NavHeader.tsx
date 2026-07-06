@@ -11,21 +11,33 @@ export default function NavHeader() {
         <nav className="hidden md:flex items-center gap-10">
           <a
             className="text-sm font-medium hover:text-accent transition-colors"
-            href="#proyectos"
-          >
-            Proyectos
-          </a>
-          <a
-            className="text-sm font-medium hover:text-accent transition-colors"
             href="#experiencia"
           >
             Experiencia
           </a>
           <a
             className="text-sm font-medium hover:text-accent transition-colors"
+            href="#proyectos"
+          >
+            Proyectos
+          </a>
+          <a
+            className="text-sm font-medium hover:text-accent transition-colors"
             href="#perfil"
           >
             Perfil
+          </a>
+          <a
+            className="text-sm font-medium hover:text-accent transition-colors"
+            href="#educacion"
+          >
+            Educación
+          </a>
+          <a
+            className="text-sm font-medium hover:text-accent transition-colors"
+            href="#certificaciones"
+          >
+            Certificaciones
           </a>
           <a
             className="text-sm font-medium hover:text-accent transition-colors"
