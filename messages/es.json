@@ -10,7 +10,7 @@
       "certifications": "Certificaciones"
     },
     "downloadCv": "Descargar CV",
-    "cta": "Escribir"
+    "cta": "Contactar"
   },
   "Hero": {
     "titleLine1": "Frontend Developer &",
@@ -55,14 +55,15 @@
   },
   "TechStack": {
     "categories": [
-      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
+      { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
       { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
       { "name": "Diseño / UX", "items": ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
-      { "name": "Herramientas", "items": ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] }
+      { "name": "Herramientas", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ]
   },
   "Education": {
     "heading": "Educación",
+    "completedLabel": "Título obtenido",
     "studies": [
       {
         "institution": "Universidad Nacional de Quilmes",
@@ -247,10 +248,10 @@
       }
     ],
     "stack": [
-      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
+      { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
       { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
       { "name": "Diseño / UX", "items": ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
-      { "name": "Herramientas", "items": ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] }
+      { "name": "Herramientas", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ],
     "education": [
       {

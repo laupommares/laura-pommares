@@ -20,7 +20,7 @@ export default async function EducationSection() {
         <div className="md:col-span-8 space-y-16">
           {studies.map((study) => (
             <div key={study.institution}>
-              <div className="flex flex-col md:flex-row justify-between mb-1">
+              <div className="flex flex-col md:flex-row justify-between mb-3">
                 <div>
                   <h3 className="text-xl font-bold mb-1">{study.institution}</h3>
                   <p className="text-accent text-sm font-medium">
@@ -31,6 +31,9 @@ export default async function EducationSection() {
                   {study.period}
                 </span>
               </div>
+              <span className="inline-block px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[10px] uppercase tracking-widest text-secondary">
+                {t("completedLabel")}
+              </span>
             </div>
           ))}
         </div>
