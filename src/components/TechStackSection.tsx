@@ -7,7 +7,7 @@ export default async function TechStackSection() {
   const categories = t.raw("categories") as CategoryItem[];
 
   return (
-    <section className="py-16 bg-surface-alt border-y border-subtle reveal">
+    <section className="py-16 bg-surface-alt border-y border-subtle reveal" id="stack">
       <div className="px-margin-mobile max-w-container-max mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {categories.map((cat) => (
