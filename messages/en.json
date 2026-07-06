@@ -5,7 +5,7 @@
       "trajectory": "Profile",
       "experience": "Experience",
       "projects": "Projects",
-      "stack": "Stack",
+      "stack": "Skills",
       "education": "Education",
       "certifications": "Certifications"
     },
@@ -29,7 +29,7 @@
     "heading": "Professional Profile",
     "lead": "My work focuses on turning complex ideas into intuitive, solid interfaces.",
     "paragraphs": [
-      "I build modern, accessible, and maintainable web interfaces, turning designs into clear, fast, and easy-to-use experiences.",
+      "With 2+ years of experience, I build modern, accessible, and maintainable web interfaces, turning designs into clear, fast, and easy-to-use experiences.",
       "My approach combines frontend development and UX/UI to create products where design, accessibility, and code work together.",
       "I work mainly with React, Next.js, and Laravel, always aiming to build scalable solutions centered on the needs of the people who use them."
     ]
@@ -55,8 +55,8 @@
   },
   "TechStack": {
     "categories": [
-      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Alpine.js"] },
-      { "name": "Backend", "items": ["Laravel / PHP", "Livewire", "MySQL"] },
+      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
+      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
       { "name": "Design / UX", "items": ["Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
       { "name": "Tools", "items": ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] }
     ]
@@ -198,13 +198,13 @@
       "profile": "Profile",
       "experience": "Experience",
       "projects": "Projects",
-      "stack": "Stack",
+      "stack": "Skills / Tech Stack",
       "education": "Education",
       "certifications": "Certifications",
       "languages": "Languages"
     },
     "profileParagraphs": [
-      "I build modern, accessible, and maintainable web interfaces, turning designs into clear, fast, and easy-to-use experiences.",
+      "With 2+ years of experience, I build modern, accessible, and maintainable web interfaces, turning designs into clear, fast, and easy-to-use experiences.",
       "My approach combines frontend development and UX/UI to create products where design, accessibility, and code work together.",
       "I work mainly with React, Next.js, and Laravel, always aiming to build scalable solutions centered on the needs of the people who use them."
     ],
@@ -247,8 +247,8 @@
       }
     ],
     "stack": [
-      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Alpine.js"] },
-      { "name": "Backend", "items": ["Laravel / PHP", "Livewire", "MySQL"] },
+      { "name": "Frontend", "items": ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
+      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
       { "name": "Design / UX", "items": ["Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
       { "name": "Tools", "items": ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] }
     ],
