@@ -1,29 +1,17 @@
-const categories = [
-  {
-    name: "Frontend",
-    items: ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Alpine.js"],
-  },
-  {
-    name: "Backend",
-    items: ["Laravel / PHP", "Livewire", "MySQL"],
-  },
-  {
-    name: "Diseño / UX",
-    items: ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"],
-  },
-  {
-    name: "Herramientas",
-    items: ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"],
-  },
-];
+import { getTranslations } from "next-intl/server";
 
-export default function TechStackSection() {
+type CategoryItem = { name: string; items: string[] };
+
+export default async function TechStackSection() {
+  const t = await getTranslations("TechStack");
+  const categories = t.raw("categories") as CategoryItem[];
+
   return (
-    <section className="py-16 bg-surface-alt border-y border-subtle reveal">
+    <section className="py-16 bg-surface-alt border-y border-subtle reveal" id="stack">
       <div className="px-margin-mobile max-w-container-max mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat) => (
-            <div key={cat.name}>
+            <div key={cat.name} className="p-6 bg-background border border-subtle">
               <h4 className="font-label-mono text-[10px] uppercase tracking-widest text-secondary mb-6 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 {cat.name}

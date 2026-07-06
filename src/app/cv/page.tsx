@@ -1,100 +1,52 @@
+import { getTranslations } from "next-intl/server";
 import "./print.css";
 import PrintButton from "./PrintButton";
 
-const contact = [
-  { label: "Email", value: "laurapommares@gmail.com", href: "mailto:laurapommares@gmail.com" },
-  { label: "WhatsApp", value: "+54 9 2346 507655", href: "https://wa.me/5492346507655" },
-  { label: "Ubicación", value: "Chivilcoy, Buenos Aires, ARG" },
-  { label: "Portfolio", value: "laura-pommares.vercel.app", href: "https://laura-pommares.vercel.app/" },
-  { label: "LinkedIn", value: "linkedin.com/in/laura-pommarés", href: "https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/" },
-  { label: "GitHub", value: "github.com/laupommares", href: "https://github.com/laupommares" },
-];
+type ContactItem = { label: string; value: string; href?: string };
+type RoleItem = {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  skills: string[];
+};
+type ProjectItem = {
+  title: string;
+  role: string;
+  result: string;
+  clients?: { name: string; href: string }[];
+};
+type StackCategory = { name: string; items: string[] };
+type EducationItem = { institution: string; degree: string; period: string };
+type CertificationItem = { title: string; issuer: string };
+type LanguageItem = { name: string; level: string };
 
-const roles = [
-  {
-    title: "Frontend Developer",
-    company: "SOCIALNET",
-    period: "Mayo 2024 — Junio 2026",
-    description:
-      "Desarrollo y mantenimiento de interfaces web para sistemas internos utilizando Laravel. Participación en la implementación de componentes reutilizables, mejoras de UX/UI y optimización de la accesibilidad siguiendo buenas prácticas de desarrollo frontend. Colaboración en la evolución de la experiencia de usuario, el SEO técnico y el diseño de interfaces.",
-    skills: ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "Diseño UI/UX", "Accesibilidad", "Figma", "Claude Code"],
-  },
-  {
-    title: "Frontend Developer & UX/UI Designer (Freelance)",
-    company: "Independiente",
-    period: "Enero 2025 — Presente",
-    description:
-      "Diseño y desarrollo de interfaces web para proyectos freelance, incluyendo un portal de gestión de estudios médicos para clínicas y landings enfocadas en conversión. Trabajo completo de frontend, UX/UI e integración con APIs backend.",
-    skills: ["Next.js", "React", "Laravel", "Tailwind CSS", "JavaScript", "TypeScript", "Figma", "Claude Code"],
-  },
-];
+export default async function CvPage() {
+  const t = await getTranslations("CvPage");
 
-const stack = [
-  { name: "Frontend", items: ["React / Next.js", "JavaScript", "TypeScript", "Tailwind CSS", "Alpine.js"] },
-  { name: "Backend", items: ["Laravel / PHP", "Livewire", "MySQL"] },
-  { name: "Diseño / UX", items: ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
-  { name: "Herramientas", items: ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] },
-];
+  const contact = t.raw("contact") as ContactItem[];
+  const profileParagraphs = t.raw("profileParagraphs") as string[];
+  const roles = t.raw("roles") as RoleItem[];
+  const projects = t.raw("projects") as ProjectItem[];
+  const stack = t.raw("stack") as StackCategory[];
+  const education = t.raw("education") as EducationItem[];
+  const certifications = t.raw("certifications") as CertificationItem[];
+  const languages = t.raw("languages") as LanguageItem[];
 
-const education = [
-  {
-    institution: "Universidad Nacional de Quilmes",
-    degree: "Licenciatura en Comercio Internacional",
-    period: "Mar. 2007 – Dic. 2014",
-  },
-];
-
-const certifications = [
-  { title: "Diseño UX/UI", issuer: "Coderhouse" },
-  { title: "JavaScript Total", issuer: "Udemy" },
-  { title: "PHP (Esencial y Avanzado)", issuer: "LinkedIn Learning" },
-  { title: "Livewire 3 from Scratch", issuer: "Laracasts" },
-];
-
-const languages = [
-  { name: "Español", level: "Nativo" },
-  { name: "Portugués", level: "Avanzado" },
-  { name: "Inglés", level: "B1" },
-];
-
-const projects = [
-  {
-    title: "Plataforma para Gestión de Estudios Médicos",
-    role: "Frontend Developer — Laravel · Livewire · Tailwind CSS",
-    result: "Optimización del flujo de asignación, carga e informe de estudios entre clínica y médicos.",
-  },
-  {
-    title: "Plataforma de Gestión de Turnos Médicos",
-    role: "UX/UI & Frontend — Next.js · Figma",
-    result: "Sistema de turnos con lógica multi-rol para clínica, médicos, pacientes y empresas.",
-  },
-  {
-    title: "Landings de conversión",
-    role: "Next.js · Figma · Tailwind CSS",
-    result: "Portfolios y sitios de reserva para profesionales independientes, con foco en identidad y conversión.",
-    clients: [
-      { name: "Sofía Capuano", href: "https://sofiacapuanoph.vercel.app/" },
-      { name: "Juliana Re", href: "https://julianare.vercel.app/" },
-      { name: "Jori Armonía Yoga", href: "https://joriarmoniayoga.com/" },
-    ],
-  },
-];
-
-export default function CvPage() {
   return (
     <main className="cv-page bg-background text-primary max-w-[800px] mx-auto px-margin-mobile py-16 print:py-0">
       <a
         href="/"
         className="cv-no-print inline-block mb-8 font-label-mono text-[11px] uppercase tracking-widest text-secondary hover:text-accent"
       >
-        ← Volver al sitio
+        {t("backLink")}
       </a>
 
       {/* Header */}
       <header className="mb-10 pb-8 border-b border-subtle cv-avoid-break">
-        <h1 className="font-headline text-headline-lg mb-2">Laura Pommarés</h1>
+        <h1 className="font-headline text-headline-lg mb-2">{t("name")}</h1>
         <p className="font-headline text-headline-md text-secondary mb-6">
-          Frontend Developer <span className="text-accent italic">& UX/UI Designer</span>
+          {t("titleMain")} <span className="text-accent italic">{t("titleAccent")}</span>
         </p>
         <div className="flex flex-wrap gap-x-8 gap-y-2">
           {contact.map((c) => (
@@ -117,28 +69,21 @@ export default function CvPage() {
       {/* Perfil */}
       <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
         <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          Perfil
+          {t("sections.profile")}
         </h2>
         <div className="col-span-9 space-y-3">
-          <p className="text-secondary text-sm leading-relaxed">
-            Desarrollo interfaces web modernas, accesibles y mantenibles, transformando diseños en
-            experiencias claras, rápidas y fáciles de usar.
-          </p>
-          <p className="text-secondary text-sm leading-relaxed">
-            Mi enfoque combina desarrollo frontend y UX/UI para crear productos donde el diseño, la
-            accesibilidad y el código trabajan en conjunto.
-          </p>
-          <p className="text-secondary text-sm leading-relaxed">
-            Trabajo principalmente con React, Next.js y Laravel, siempre buscando construir soluciones
-            escalables y centradas en las necesidades de las personas que las utilizan.
-          </p>
+          {profileParagraphs.map((paragraph) => (
+            <p key={paragraph} className="text-secondary text-sm leading-relaxed">
+              {paragraph}
+            </p>
+          ))}
         </div>
       </section>
 
       {/* Experiencia */}
       <section className="mb-10 grid grid-cols-12 gap-6">
         <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          Experiencia
+          {t("sections.experience")}
         </h2>
         <div className="col-span-9 space-y-8">
           {roles.map((role) => (
@@ -167,7 +112,7 @@ export default function CvPage() {
       {/* Proyectos destacados */}
       <section className="mb-10 grid grid-cols-12 gap-6">
         <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          Proyectos
+          {t("sections.projects")}
         </h2>
         <div className="col-span-9 space-y-5">
           {projects.map((p) => (
@@ -197,7 +142,7 @@ export default function CvPage() {
       {/* Stack */}
       <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
         <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          Stack
+          {t("sections.stack")}
         </h2>
         <div className="col-span-9 grid grid-cols-2 gap-x-8 gap-y-5">
           {stack.map((cat) => (
@@ -215,7 +160,7 @@ export default function CvPage() {
       {/* Educación */}
       <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
         <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          Educación
+          {t("sections.education")}
         </h2>
         <div className="col-span-9 space-y-3">
           {education.map((edu) => (
@@ -233,7 +178,7 @@ export default function CvPage() {
       {/* Cursos y Certificaciones */}
       <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
         <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          Certificaciones
+          {t("sections.certifications")}
         </h2>
         <div className="col-span-9 grid grid-cols-2 gap-x-8 gap-y-3">
           {certifications.map((cert) => (
@@ -248,7 +193,7 @@ export default function CvPage() {
       {/* Idiomas */}
       <section className="grid grid-cols-12 gap-6 cv-avoid-break">
         <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          Idiomas
+          {t("sections.languages")}
         </h2>
         <div className="col-span-9 flex flex-wrap gap-x-10 gap-y-3">
           {languages.map((lang) => (
@@ -260,7 +205,7 @@ export default function CvPage() {
         </div>
       </section>
 
-      <PrintButton />
+      <PrintButton label={t("printButton")} />
     </main>
   );
 }

@@ -1,23 +1,17 @@
-const roles = [
-  {
-    title: "Frontend Developer",
-    company: "SOCIALNET",
-    period: "Mayo 2024 — Junio 2026",
-    description:
-      "Desarrollo y mantenimiento de interfaces web para sistemas internos utilizando Laravel. Participación en la implementación de componentes reutilizables, mejoras de UX/UI y optimización de la accesibilidad siguiendo buenas prácticas de desarrollo frontend. Colaboración en la evolución de la experiencia de usuario, el SEO técnico y el diseño de interfaces.",
-    skills: ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Saas", "Livewire", "Diseño UI/UI", "Accesibilidad", "Figma", "Claude Code"],
-  },
-  {
-    title: "Frontend Developer & UX/UI Designer (Freelance)",
-    company: "Independiente",
-    period: "Enero 2025 — Presente",
-    description:
-      "Diseño y desarrollo de interfaces web para proyectos freelance, incluyendo un portal de gestión de estudios médicos para clínicas y landings enfocadas en conversión. Trabajo completo de frontend, UX/UI e integración con APIs backend.",
-    skills: ["Next.js", "React", "Laravel", "Tailwind", "JavaScript", "TypeScript", "Figma", "Claude Code"],
-  },
-];
+import { getTranslations } from "next-intl/server";
 
-export default function ExperienceSection() {
+type RoleItem = {
+  title: string;
+  company: string;
+  period: string;
+  description: string;
+  skills: string[];
+};
+
+export default async function ExperienceSection() {
+  const t = await getTranslations("Experience");
+  const roles = t.raw("roles") as RoleItem[];
+
   return (
     <section
       className="px-margin-mobile max-w-container-max mx-auto mb-section-gap reveal"
@@ -26,7 +20,7 @@ export default function ExperienceSection() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
         <div className="md:col-span-4">
           <h2 className="font-label-mono text-accent uppercase tracking-widest">
-            Experiencia Profesional
+            {t("heading")}
           </h2>
         </div>
         <div className="md:col-span-8 space-y-16">
