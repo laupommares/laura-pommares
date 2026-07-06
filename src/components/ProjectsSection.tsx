@@ -198,10 +198,10 @@ export default async function ProjectsSection() {
 
   return (
     <section
-      className="px-margin-mobile max-w-container-max mx-auto mb-section-gap"
+      className="px-margin-mobile max-w-container-max mx-auto mb-16 md:mb-section-gap"
       id="proyectos"
     >
-      <div className="mb-20 reveal">
+      <div className="mb-12 md:mb-20 reveal">
         <h2 className="font-label-mono text-accent uppercase tracking-widest mb-4">
           {t("heading")}
         </h2>
@@ -209,7 +209,7 @@ export default async function ProjectsSection() {
           {t("subheading")}
         </h3>
       </div>
-      <div className="space-y-30">
+      <div className="space-y-16 md:space-y-30">
         {projects.map((project) => (
           <article
             key={project.num}
@@ -247,7 +247,7 @@ export default async function ProjectsSection() {
       </div>
 
       {/* Landings grid */}
-      <div className="mt-40 reveal">
+      <div className="mt-20 md:mt-40 reveal">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>
             <span className="font-label-mono text-[11px] uppercase tracking-widest text-secondary block mb-2">

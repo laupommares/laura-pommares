@@ -6,7 +6,7 @@ export default async function HeroSection() {
   const stats = t.raw("stats") as { label: string; value: string }[];
 
   return (
-    <section className="px-margin-mobile max-w-container-max mx-auto mb-section-gap reveal">
+    <section className="px-margin-mobile max-w-container-max mx-auto mb-16 md:mb-section-gap reveal">
       <div className="max-w-5xl">
         <h1 className="font-headline text-display mb-8">
           {t("titleLine1")} <br />
