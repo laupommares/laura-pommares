@@ -4,7 +4,7 @@ import PrintButton from "./PrintButton";
 const contact = [
   { label: "Email", value: "laurapommares@gmail.com", href: "mailto:laurapommares@gmail.com" },
   { label: "WhatsApp", value: "+54 9 2346 507655", href: "https://wa.me/5492346507655" },
-  { label: "Ubicación", value: "Buenos Aires, ARG" },
+  { label: "Ubicación", value: "Chivilcoy, Buenos Aires, ARG" },
   { label: "Portfolio", value: "laura-pommares.vercel.app", href: "https://laura-pommares.vercel.app/" },
   { label: "LinkedIn", value: "linkedin.com/in/laura-pommarés", href: "https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/" },
   { label: "GitHub", value: "github.com/laupommares", href: "https://github.com/laupommares" },
@@ -36,6 +36,21 @@ const stack = [
   { name: "Herramientas", items: ["Git / GitHub", "Jira", "Vercel", "Docker", "Claude Code"] },
 ];
 
+const education = [
+  {
+    institution: "Universidad Nacional de Quilmes",
+    degree: "Licenciatura en Comercio Internacional",
+    period: "Mar. 2007 – Dic. 2014",
+  },
+];
+
+const certifications = [
+  { title: "Diseño UX/UI", issuer: "Coderhouse" },
+  { title: "JavaScript Total", issuer: "Udemy" },
+  { title: "PHP (Esencial y Avanzado)", issuer: "LinkedIn Learning" },
+  { title: "Livewire 3 from Scratch", issuer: "Laracasts" },
+];
+
 const languages = [
   { name: "Español", level: "Nativo" },
   { name: "Portugués", level: "Avanzado" },
@@ -55,8 +70,13 @@ const projects = [
   },
   {
     title: "Landings de conversión",
-    role: "Sofía Capuano · Juliana Re · Jori Armonía Yoga",
+    role: "Next.js · Figma · Tailwind CSS",
     result: "Portfolios y sitios de reserva para profesionales independientes, con foco en identidad y conversión.",
+    clients: [
+      { name: "Sofía Capuano", href: "https://sofiacapuanoph.vercel.app/" },
+      { name: "Juliana Re", href: "https://julianare.vercel.app/" },
+      { name: "Jori Armonía Yoga", href: "https://joriarmoniayoga.com/" },
+    ],
   },
 ];
 
@@ -157,6 +177,18 @@ export default function CvPage() {
                 {p.role}
               </p>
               <p className="text-secondary text-sm leading-relaxed">{p.result}</p>
+              {p.clients && (
+                <p className="text-accent text-xs font-medium mt-2">
+                  {p.clients.map((client, i) => (
+                    <span key={client.name}>
+                      {i > 0 && " · "}
+                      <a href={client.href} className="hover:underline">
+                        {client.name}
+                      </a>
+                    </span>
+                  ))}
+                </p>
+              )}
             </div>
           ))}
         </div>
@@ -175,6 +207,39 @@ export default function CvPage() {
                 {cat.name}
               </h4>
               <p className="text-sm">{cat.items.join(" · ")}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Educación */}
+      <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
+        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
+          Educación
+        </h2>
+        <div className="col-span-9 space-y-3">
+          {education.map((edu) => (
+            <div key={edu.institution}>
+              <div className="flex flex-col md:flex-row md:justify-between mb-1">
+                <h3 className="text-sm font-bold">{edu.institution}</h3>
+                <span className="font-label-mono text-secondary text-[10px]">{edu.period}</span>
+              </div>
+              <p className="text-accent text-xs font-medium">{edu.degree}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Cursos y Certificaciones */}
+      <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
+        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
+          Certificaciones
+        </h2>
+        <div className="col-span-9 grid grid-cols-2 gap-x-8 gap-y-3">
+          {certifications.map((cert) => (
+            <div key={cert.title}>
+              <p className="text-sm font-bold">{cert.title}</p>
+              <p className="text-accent text-xs font-medium">{cert.issuer}</p>
             </div>
           ))}
         </div>
