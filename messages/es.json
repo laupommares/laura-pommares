@@ -57,7 +57,7 @@
     "categories": [
       { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
       { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL", "Integración de APIs REST"] },
-      { "name": "Diseño / UX", "items": ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
+      { "name": "Diseño / UX", "items": ["Diseño UX/UI", "Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
       { "name": "Herramientas", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ]
   },
@@ -251,7 +251,7 @@
     "stack": [
       { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
       { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL", "Integración de APIs REST"] },
-      { "name": "Diseño / UX", "items": ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
+      { "name": "Diseño / UX", "items": ["Diseño UX/UI", "Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
       { "name": "Herramientas", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ],
     "education": [
