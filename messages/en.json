@@ -19,7 +19,7 @@
     "stats": [
       { "label": "Location", "value": "Chivilcoy, Buenos Aires, ARG" },
       { "label": "Main Stack", "value": "React / Next.js / Laravel" },
-      { "label": "Focus", "value": "Frontend · UX/UI · Accessibility" },
+      { "label": "Focus", "value": "Frontend · UX/UI · API Integration" },
       { "label": "Availability", "value": "Immediately available" }
     ],
     "viewProjects": "View Projects",
@@ -56,7 +56,7 @@
   "TechStack": {
     "categories": [
       { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
-      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
+      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL", "REST API Integration"] },
       { "name": "Design / UX", "items": ["Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
       { "name": "Tools", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ]
@@ -109,9 +109,9 @@
         "col1Label": "Process",
         "col1Value": "Design Systems & Prototyping",
         "col2Label": "Technologies",
-        "col2Value": "Next.js & Figma",
+        "col2Value": "Next.js · Figma · REST API Integration",
         "resultLabel": "Solution",
-        "result": "Designed an appointment system with multi-role logic, where each user accesses flows specific to their role, optimizing the assignment and tracking of clinical studies.",
+        "result": "Designed an appointment system with multi-role logic, where each user accesses flows specific to their role, consuming real-time data via REST APIs to optimize the assignment and tracking of clinical studies.",
         "image": { "src": "/portal-de-turnos.jpeg", "alt": "Services Marketplace", "objectPositionClassName": "object-top" },
         "imageFirst": false
       }
@@ -232,8 +232,8 @@
       },
       {
         "title": "Medical Appointment Management Platform",
-        "role": "UX/UI & Frontend — Next.js · Figma",
-        "result": "Appointment system with multi-role logic for clinic, doctors, patients, and companies."
+        "role": "UX/UI & Frontend — Next.js · Figma · REST API Integration",
+        "result": "Appointment system with multi-role logic for clinic, doctors, patients, and companies, with REST API integration for real-time data."
       },
       {
         "title": "Conversion Landing Pages",
@@ -248,7 +248,7 @@
     ],
     "stack": [
       { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
-      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
+      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL", "REST API Integration"] },
       { "name": "Design / UX", "items": ["Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
       { "name": "Tools", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ],
