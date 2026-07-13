@@ -19,7 +19,7 @@
     "stats": [
       { "label": "Ubicación", "value": "Chivilcoy, Buenos Aires, ARG" },
       { "label": "Stack Principal", "value": "React / Next.js / Laravel" },
-      { "label": "Enfoque", "value": "Frontend · UX/UI · Accesibilidad" },
+      { "label": "Enfoque", "value": "Frontend · UX/UI · Consumo de APIs" },
       { "label": "Disponibilidad", "value": "Disponibilidad inmediata" }
     ],
     "viewProjects": "Ver Proyectos",
@@ -56,7 +56,7 @@
   "TechStack": {
     "categories": [
       { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
-      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
+      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL", "Integración de APIs REST"] },
       { "name": "Diseño / UX", "items": ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
       { "name": "Herramientas", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ]
@@ -109,9 +109,9 @@
         "col1Label": "Proceso",
         "col1Value": "Design Systems & Prototyping",
         "col2Label": "Tecnologías",
-        "col2Value": "Next.js & Figma",
+        "col2Value": "Next.js · Figma · Consumo de APIs REST",
         "resultLabel": "Solución",
-        "result": "Diseño de un sistema de turnos con lógica multi-rol, donde cada usuario accede a flujos específicos según su función, optimizando la asignación y seguimiento de estudios clínicos.",
+        "result": "Diseño de un sistema de turnos con lógica multi-rol, donde cada usuario accede a flujos específicos según su función, consumiendo datos en tiempo real vía APIs REST para optimizar la asignación y seguimiento de estudios clínicos.",
         "image": { "src": "/portal-de-turnos.jpeg", "alt": "Marketplace Servicios", "objectPositionClassName": "object-top" },
         "imageFirst": false
       }
@@ -234,8 +234,8 @@
       },
       {
         "title": "Plataforma de Gestión de Turnos Médicos",
-        "role": "UX/UI & Frontend — Next.js · Figma",
-        "result": "Sistema de turnos con lógica multi-rol para clínica, médicos, pacientes y empresas."
+        "role": "UX/UI & Frontend — Next.js · Figma · Consumo de APIs REST",
+        "result": "Sistema de turnos con lógica multi-rol para clínica, médicos, pacientes y empresas, con consumo de APIs REST para datos en tiempo real."
       },
       {
         "title": "Landings de conversión",
@@ -250,7 +250,7 @@
     ],
     "stack": [
       { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
-      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL"] },
+      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL", "Integración de APIs REST"] },
       { "name": "Diseño / UX", "items": ["Figma", "Design Systems", "WCAG / Accesibilidad", "Photoshop"] },
       { "name": "Herramientas", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ],
