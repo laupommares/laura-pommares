@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import "./print.css";
 import PrintButton from "./PrintButton";
@@ -21,6 +22,17 @@ type EducationItem = { institution: string; degree: string; period: string };
 type CertificationItem = { title: string; issuer: string };
 type LanguageItem = { name: string; level: string };
 
+function SectionHeading({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex items-baseline gap-4 mb-5">
+      <h2 className="shrink-0 font-label-mono text-accent-ink uppercase tracking-widest text-[11px]">
+        {children}
+      </h2>
+      <span className="h-px flex-1 bg-subtle" aria-hidden="true" />
+    </div>
+  );
+}
+
 export default async function CvPage() {
   const t = await getTranslations("CvPage");
 
@@ -34,7 +46,7 @@ export default async function CvPage() {
   const languages = t.raw("languages") as LanguageItem[];
 
   return (
-    <main className="cv-page bg-background text-primary max-w-[800px] mx-auto px-margin-mobile py-16 print:py-0">
+    <main className="cv-page bg-background text-primary max-w-180 mx-auto px-margin-mobile py-16 print:py-0">
       <a
         href="/"
         className="cv-no-print inline-block mb-8 font-label-mono text-[11px] uppercase tracking-widest text-secondary hover:text-accent"
@@ -43,19 +55,19 @@ export default async function CvPage() {
       </a>
 
       {/* Header */}
-      <header className="mb-10 pb-8 border-b border-subtle cv-avoid-break">
+      <header className="mb-12 pb-8 border-b border-subtle cv-avoid-break">
         <h1 className="font-headline text-headline-lg mb-2">{t("name")}</h1>
         <p className="font-headline text-headline-md text-secondary mb-6">
           {t("titleMain")} <span className="text-accent italic">{t("titleAccent")}</span>
         </p>
-        <div className="flex flex-wrap gap-x-8 gap-y-2">
+        <div className="flex flex-wrap gap-x-6 gap-y-3">
           {contact.map((c) => (
-            <div key={c.label}>
-              <span className="block font-label-mono text-[10px] text-secondary uppercase tracking-widest">
+            <div key={c.label} className="pr-6 border-r border-subtle last:border-r-0 last:pr-0">
+              <span className="block font-label-mono text-[10px] text-secondary uppercase tracking-widest mb-0.5">
                 {c.label}
               </span>
               {c.href ? (
-                <a href={c.href} className="text-sm font-medium">
+                <a href={c.href} className="text-sm font-medium hover:text-accent">
                   {c.value}
                 </a>
               ) : (
@@ -67,13 +79,11 @@ export default async function CvPage() {
       </header>
 
       {/* Perfil */}
-      <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
-        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          {t("sections.profile")}
-        </h2>
-        <div className="col-span-9 space-y-3">
+      <section className="mb-12 cv-avoid-break">
+        <SectionHeading>{t("sections.profile")}</SectionHeading>
+        <div className="space-y-3">
           {profileParagraphs.map((paragraph) => (
-            <p key={paragraph} className="text-secondary text-sm leading-relaxed">
+            <p key={paragraph} className="text-secondary text-sm leading-relaxed max-w-[62ch]">
               {paragraph}
             </p>
           ))}
@@ -81,26 +91,28 @@ export default async function CvPage() {
       </section>
 
       {/* Experiencia */}
-      <section className="mb-10 grid grid-cols-12 gap-6">
-        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          {t("sections.experience")}
-        </h2>
-        <div className="col-span-9 space-y-8">
+      <section className="mb-12">
+        <SectionHeading>{t("sections.experience")}</SectionHeading>
+        <div className="space-y-8">
           {roles.map((role) => (
-            <div key={role.title} className="cv-avoid-break">
-              <div className="flex flex-col md:flex-row md:justify-between mb-1">
+            <div key={role.title} className="cv-avoid-break pl-4 border-l-2 border-subtle">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1 gap-x-4">
                 <h3 className="text-sm font-bold">{role.title}</h3>
-                <span className="font-label-mono text-secondary text-[10px]">{role.period}</span>
+                <span className="font-label-mono text-secondary text-[10px] shrink-0">{role.period}</span>
               </div>
-              <p className="text-accent text-xs font-medium mb-2">{role.company}</p>
-              <p className="text-secondary text-sm leading-relaxed mb-3">{role.description}</p>
-              <div className="flex flex-wrap gap-1.5">
-                {role.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[9px] uppercase"
-                  >
-                    {skill}
+              <p className="text-accent-ink text-xs font-medium mb-2">{role.company}</p>
+              <p className="text-secondary text-sm leading-relaxed mb-3 max-w-[62ch]">{role.description}</p>
+              <div className="flex flex-wrap items-center gap-1.5">
+                {role.skills.map((skill, i) => (
+                  <span key={skill} className="contents">
+                    {i > 0 && (
+                      <span aria-hidden="true" className="text-secondary text-[9px]">
+                        ·
+                      </span>
+                    )}
+                    <span className="px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[9px] uppercase">
+                      {skill}
+                    </span>
                   </span>
                 ))}
               </div>
@@ -110,20 +122,18 @@ export default async function CvPage() {
       </section>
 
       {/* Proyectos destacados */}
-      <section className="mb-10 grid grid-cols-12 gap-6">
-        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          {t("sections.projects")}
-        </h2>
-        <div className="col-span-9 space-y-5">
+      <section className="mb-12">
+        <SectionHeading>{t("sections.projects")}</SectionHeading>
+        <div className="space-y-6">
           {projects.map((p) => (
-            <div key={p.title} className="cv-avoid-break">
+            <div key={p.title} className="cv-avoid-break pl-4 border-l-2 border-subtle">
               <h3 className="text-sm font-bold">{p.title}</h3>
               <p className="font-label-mono text-secondary text-[10px] uppercase tracking-wide mb-1">
                 {p.role}
               </p>
-              <p className="text-secondary text-sm leading-relaxed">{p.result}</p>
+              <p className="text-secondary text-sm leading-relaxed max-w-[62ch]">{p.result}</p>
               {p.clients && (
-                <p className="text-accent text-xs font-medium mt-2">
+                <p className="text-accent-ink text-xs font-medium mt-2">
                   {p.clients.map((client, i) => (
                     <span key={client.name}>
                       {i > 0 && " · "}
@@ -140,11 +150,9 @@ export default async function CvPage() {
       </section>
 
       {/* Stack */}
-      <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
-        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          {t("sections.stack")}
-        </h2>
-        <div className="col-span-9 grid grid-cols-2 gap-x-8 gap-y-5">
+      <section className="mb-12 cv-avoid-break">
+        <SectionHeading>{t("sections.stack")}</SectionHeading>
+        <div className="grid sm:grid-cols-2 print:grid-cols-1 gap-x-10 gap-y-5">
           {stack.map((cat) => (
             <div key={cat.name}>
               <h4 className="font-label-mono text-[10px] uppercase tracking-widest text-secondary mb-2 flex items-center gap-2">
@@ -158,18 +166,16 @@ export default async function CvPage() {
       </section>
 
       {/* Educación */}
-      <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
-        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          {t("sections.education")}
-        </h2>
-        <div className="col-span-9 space-y-3">
+      <section className="mb-12 cv-avoid-break">
+        <SectionHeading>{t("sections.education")}</SectionHeading>
+        <div className="space-y-3">
           {education.map((edu) => (
-            <div key={edu.institution}>
-              <div className="flex flex-col md:flex-row md:justify-between mb-1">
+            <div key={edu.institution} className="pl-4 border-l-2 border-subtle">
+              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1 gap-x-4">
                 <h3 className="text-sm font-bold">{edu.institution}</h3>
-                <span className="font-label-mono text-secondary text-[10px]">{edu.period}</span>
+                <span className="font-label-mono text-secondary text-[10px] shrink-0">{edu.period}</span>
               </div>
-              <p className="text-accent text-xs font-medium mb-1.5">{edu.degree}</p>
+              <p className="text-accent-ink text-xs font-medium mb-1.5">{edu.degree}</p>
               <span className="inline-block px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[9px] uppercase tracking-wide text-secondary">
                 {t("educationCompletedLabel")}
               </span>
@@ -179,26 +185,22 @@ export default async function CvPage() {
       </section>
 
       {/* Cursos y Certificaciones */}
-      <section className="mb-10 grid grid-cols-12 gap-6 cv-avoid-break">
-        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          {t("sections.certifications")}
-        </h2>
-        <div className="col-span-9 grid grid-cols-2 gap-x-8 gap-y-3">
+      <section className="mb-12 cv-avoid-break">
+        <SectionHeading>{t("sections.certifications")}</SectionHeading>
+        <div className="grid sm:grid-cols-2 print:grid-cols-1 gap-x-10 gap-y-3">
           {certifications.map((cert) => (
             <div key={cert.title}>
-              <p className="text-sm font-bold">{cert.title}</p>
-              <p className="text-accent text-xs font-medium">{cert.issuer}</p>
+              <h3 className="text-sm font-bold">{cert.title}</h3>
+              <p className="text-accent-ink text-xs font-medium">{cert.issuer}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Idiomas */}
-      <section className="grid grid-cols-12 gap-6 cv-avoid-break">
-        <h2 className="col-span-3 font-label-mono text-accent uppercase tracking-widest text-[11px]">
-          {t("sections.languages")}
-        </h2>
-        <div className="col-span-9 flex flex-wrap gap-x-10 gap-y-3">
+      <section className="cv-avoid-break">
+        <SectionHeading>{t("sections.languages")}</SectionHeading>
+        <div className="flex flex-wrap gap-x-10 gap-y-3">
           {languages.map((lang) => (
             <div key={lang.name}>
               <span className="text-sm font-medium">{lang.name}</span>
