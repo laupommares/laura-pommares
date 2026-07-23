@@ -40,7 +40,7 @@ function ProjectImage({
   objectPositionClassName?: string;
 }) {
   return (
-    <div className="aspect-16/10 bg-surface-alt overflow-hidden border border-subtle">
+    <div className="aspect-15/10 bg-surface-alt overflow-hidden border border-subtle">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={src}
@@ -58,7 +58,7 @@ function ProjectContent({ project }: { project: ProjectItem }) {
         {project.num} / {project.category}
       </span>
       <h4 className="font-headline text-headline-md mb-6">{project.title}</h4>
-      <div className="space-y-8">
+      <div className="space-y-6">
         <div>
           <h5 className="text-[11px] font-bold uppercase tracking-widest mb-2">
             {project.challengeLabel}
@@ -67,7 +67,7 @@ function ProjectContent({ project }: { project: ProjectItem }) {
             {project.challenge}
           </p>
         </div>
-        <div className="grid grid-cols-2 gap-4 border-y border-subtle py-6">
+        <div className="grid grid-cols-2 gap-4 border-y border-subtle py-5">
           <div>
             <h5 className="text-[11px] font-bold uppercase tracking-widest mb-1">
               {project.col1Label}
@@ -213,27 +213,27 @@ export default async function ProjectsSection() {
         {projects.map((project) => (
           <article
             key={project.num}
-            className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start reveal"
+            className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center reveal"
           >
             {project.imageFirst ? (
               <>
-                <div className="md:col-span-7">
+                <div className="md:col-span-6">
                   <ProjectImage
                     src={project.image.src}
                     alt={project.image.alt}
                     objectPositionClassName={project.image.objectPositionClassName}
                   />
                 </div>
-                <div className="md:col-span-5 pt-4">
+                <div className="md:col-span-6">
                   <ProjectContent project={project} />
                 </div>
               </>
             ) : (
               <>
-                <div className="md:col-span-5 pt-4 order-2 md:order-1">
+                <div className="md:col-span-6 order-2 md:order-1">
                   <ProjectContent project={project} />
                 </div>
-                <div className="md:col-span-7 order-1 md:order-2">
+                <div className="md:col-span-6 order-1 md:order-2">
                   <ProjectImage
                     src={project.image.src}
                     alt={project.image.alt}
