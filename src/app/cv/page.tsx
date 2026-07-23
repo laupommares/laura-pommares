@@ -34,15 +34,23 @@ function SectionHeading({ children }: { children: ReactNode }) {
 }
 
 export default async function CvPage() {
+  // CV-specific copy: title, contact, section labels, languages, condensed projects.
   const t = await getTranslations("CvPage");
+  // Shared content — the CV reads the same keys the site sections use, so there is a
+  // single source of truth and editing a site section updates the downloadable CV too.
+  const tProfile = await getTranslations("Profile");
+  const tExperience = await getTranslations("Experience");
+  const tStack = await getTranslations("TechStack");
+  const tEducation = await getTranslations("Education");
+  const tCertifications = await getTranslations("Certifications");
 
   const contact = t.raw("contact") as ContactItem[];
-  const profileParagraphs = t.raw("profileParagraphs") as string[];
-  const roles = t.raw("roles") as RoleItem[];
+  const profileParagraphs = tProfile.raw("paragraphs") as string[];
+  const roles = tExperience.raw("roles") as RoleItem[];
   const projects = t.raw("projects") as ProjectItem[];
-  const stack = t.raw("stack") as StackCategory[];
-  const education = t.raw("education") as EducationItem[];
-  const certifications = t.raw("certifications") as CertificationItem[];
+  const stack = tStack.raw("categories") as StackCategory[];
+  const education = tEducation.raw("studies") as EducationItem[];
+  const certifications = tCertifications.raw("items") as CertificationItem[];
   const languages = t.raw("languages") as LanguageItem[];
 
   return (
@@ -83,7 +91,7 @@ export default async function CvPage() {
         <SectionHeading>{t("sections.profile")}</SectionHeading>
         <div className="space-y-3">
           {profileParagraphs.map((paragraph) => (
-            <p key={paragraph} className="text-secondary text-sm leading-relaxed max-w-[62ch]">
+            <p key={paragraph} className="text-secondary text-sm leading-relaxed">
               {paragraph}
             </p>
           ))}
@@ -101,7 +109,7 @@ export default async function CvPage() {
                 <span className="font-label-mono text-secondary text-[10px] shrink-0">{role.period}</span>
               </div>
               <p className="text-accent-ink text-xs font-medium mb-2">{role.company}</p>
-              <p className="text-secondary text-sm leading-relaxed mb-3 max-w-[62ch]">{role.description}</p>
+              <p className="text-secondary text-sm leading-relaxed mb-3">{role.description}</p>
               <div className="flex flex-wrap items-center gap-1.5">
                 {role.skills.map((skill, i) => (
                   <span key={skill} className="contents">
@@ -131,7 +139,7 @@ export default async function CvPage() {
               <p className="font-label-mono text-secondary text-[10px] uppercase tracking-wide mb-1">
                 {p.role}
               </p>
-              <p className="text-secondary text-sm leading-relaxed max-w-[62ch]">{p.result}</p>
+              <p className="text-secondary text-sm leading-relaxed">{p.result}</p>
               {p.clients && (
                 <p className="text-accent-ink text-xs font-medium mt-2">
                   {p.clients.map((client, i) => (
@@ -177,7 +185,7 @@ export default async function CvPage() {
               </div>
               <p className="text-accent-ink text-xs font-medium mb-1.5">{edu.degree}</p>
               <span className="inline-block px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[9px] uppercase tracking-wide text-secondary">
-                {t("educationCompletedLabel")}
+                {tEducation("completedLabel")}
               </span>
             </div>
           ))}

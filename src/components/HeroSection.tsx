@@ -12,7 +12,7 @@ export default async function HeroSection() {
           {t("titleLine1")} <br />
           <span className="text-accent italic">{t("titleLine2")}</span>
         </h1>
-        <p className="font-body text-body-lg text-secondary max-w-2xl mb-12 leading-relaxed">
+        <p className="font-body text-body-lg text-secondary mb-12 leading-relaxed">
           {t("description")}
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-10 border-y border-subtle mb-12">
