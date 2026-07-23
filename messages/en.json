@@ -13,13 +13,13 @@
     "cta": "Get in Touch"
   },
   "Hero": {
-    "titleLine1": "Frontend Developer &",
-    "titleLine2": "React · Next.js · UX/UI",
+    "titleLine1": "Web Developer &",
+    "titleLine2": "UX/UI Designer",
     "description": "I build modern, accessible, and responsive interfaces with React, Next.js, and Laravel, combining frontend development with a solid foundation in UX/UI to create products that are easy to use and maintain.",
     "stats": [
       { "label": "Location", "value": "Chivilcoy, Buenos Aires, ARG" },
-      { "label": "Main Stack", "value": "React / Next.js / Laravel" },
-      { "label": "Focus", "value": "Frontend · UX/UI · API Integration" },
+      { "label": "Main Stack", "value": "Next.js · React · Laravel" },
+      { "label": "Focus", "value": "Frontend · Backend · UX/UI" },
       { "label": "Availability", "value": "Immediately available" }
     ],
     "viewProjects": "View Projects",
@@ -27,36 +27,35 @@
   },
   "Profile": {
     "heading": "Professional Profile",
-    "lead": "My work focuses on turning complex ideas into intuitive, solid interfaces.",
+    "lead": "My work focuses on turning ideas and needs into intuitive, accessible, and maintainable web solutions.",
     "paragraphs": [
-      "With 2+ years of experience, I build modern, accessible, and maintainable web interfaces, turning designs into clear, fast, and easy-to-use experiences.",
-      "My approach combines frontend development and UX/UI to create products where design, accessibility, and code work together.",
-      "I work mainly with React, Next.js, and Laravel, always aiming to build scalable solutions centered on the needs of the people who use them."
+      "With 2+ years of experience, I build modern web applications and interfaces, combining frontend development, API integration, and backend knowledge with a strong UX/UI perspective.",
+      "I work mainly with React, Next.js, and Laravel, contributing to web solutions where design, user experience, and code work together. I currently build full stack projects end to end with Next.js, Prisma, and MySQL, creating scalable solutions centered on users' needs."
     ]
   },
   "Experience": {
     "heading": "Professional Experience",
     "roles": [
       {
+        "title": "Web Developer & UX/UI Designer (Freelance)",
+        "company": "Self-employed",
+        "period": "March 2025 — Present",
+        "description": "Design and development of end-to-end web applications for freelance projects, including a multi-role appointment management system with its own REST API, data modeling, and session-based authentication, plus a medical studies management portal and conversion-focused landing pages. Full UX/UI, frontend, and backend work with Next.js and Prisma.",
+        "skills": ["Next.js", "React", "JavaScript", "TypeScript", "Next.js API Routes", "REST APIs", "Prisma", "MySQL", "Session Authentication", "Zod", "Tailwind CSS", "shadcn/ui", "Laravel", "Figma", "Claude Code"]
+      },
+      {
         "title": "Frontend Developer",
         "company": "VALIDA",
         "period": "May 2024 — June 2026",
         "description": "Development and maintenance of web interfaces for internal systems using Laravel. Involved in building reusable components, improving UX/UI, and optimizing accessibility following frontend development best practices. Collaboration on the evolution of the user experience, technical SEO, and interface design.",
-        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Saas", "Livewire", "UI/UX Design", "Accessibility", "Figma", "Claude Code"]
-      },
-      {
-        "title": "Frontend Developer & UX/UI Designer (Freelance)",
-        "company": "Self-employed",
-        "period": "January 2025 — Present",
-        "description": "Design and development of web interfaces for freelance projects, including a medical studies management portal for clinics and conversion-focused landing pages. End-to-end frontend, UX/UI, and backend API integration work.",
-        "skills": ["Next.js", "React", "Laravel", "Tailwind", "JavaScript", "TypeScript", "Figma", "Claude Code"]
+        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "UI/UX Design", "Accessibility", "Figma", "Claude Code"]
       }
     ]
   },
   "TechStack": {
     "categories": [
-      { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
-      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL", "REST API Integration"] },
+      { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "shadcn/ui", "React Hook Form", "Sass", "Bootstrap", "Alpine.js"] },
+      { "name": "Backend", "items": ["Next.js API Routes", "Prisma", "MySQL", "REST APIs", "Authentication (sessions / JWT)", "Zod", "Laravel", "PHP", "Livewire"] },
       { "name": "Design / UX", "items": ["UX/UI Design", "Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
       { "name": "Tools", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ]
@@ -75,6 +74,8 @@
   "Certifications": {
     "heading": "Courses & Certifications",
     "items": [
+      { "title": "React: From Zero to Expert", "issuer": "Udemy" },
+      { "title": "Next.js: App Router", "issuer": "Official course (Vercel)" },
       { "title": "UX/UI Design", "issuer": "Coderhouse" },
       { "title": "JavaScript Total", "issuer": "Udemy" },
       { "title": "PHP (Essential and Advanced)", "issuer": "LinkedIn Learning" },
@@ -109,9 +110,9 @@
         "col1Label": "Process",
         "col1Value": "Design Systems & Prototyping",
         "col2Label": "Technologies",
-        "col2Value": "Next.js · Figma · REST API Integration",
+        "col2Value": "Next.js · TypeScript · REST API Consumption · JWT Auth · Figma",
         "resultLabel": "Solution",
-        "result": "Designed an appointment system with multi-role logic, where each user accesses flows specific to their role, consuming real-time data via REST APIs to optimize the assignment and tracking of clinical studies.",
+        "result": "Designed an appointment system with multi-role logic, where each user accesses flows specific to their role, consuming real-time data via REST APIs to optimize the assignment and tracking of clinical studies. API integration was handled through custom Next.js route handlers, with session state in httpOnly cookies and automatic token refresh.",
         "image": { "src": "/portal-de-turnos.jpeg", "alt": "Services Marketplace", "objectPositionClassName": "object-top" },
         "imageFirst": false
       }
@@ -172,7 +173,7 @@
   },
   "Footer": {
     "brand": "LAURA POMMARÉS",
-    "copyright": "© 2026 — Frontend Developer & UX/UI Designer",
+    "copyright": "© 2026 — Web Developer & UX/UI Designer",
     "links": {
       "downloadCv": "Download CV"
     }
@@ -183,7 +184,7 @@
   "CvPage": {
     "backLink": "← Back to site",
     "name": "Laura Pommarés",
-    "titleMain": "Frontend Developer",
+    "titleMain": "Web Developer",
     "titleAccent": "& UX/UI Designer",
     "contact": [
       { "label": "Email", "value": "laurapommares@gmail.com", "href": "mailto:laurapommares@gmail.com" },
@@ -202,28 +203,6 @@
       "certifications": "Certifications",
       "languages": "Languages"
     },
-    "educationCompletedLabel": "Degree awarded",
-    "profileParagraphs": [
-      "With 2+ years of experience, I build modern, accessible, and maintainable web interfaces, turning designs into clear, fast, and easy-to-use experiences.",
-      "My approach combines frontend development and UX/UI to create products where design, accessibility, and code work together.",
-      "I work mainly with React, Next.js, and Laravel, always aiming to build scalable solutions centered on the needs of the people who use them."
-    ],
-    "roles": [
-      {
-        "title": "Frontend Developer",
-        "company": "VALIDA",
-        "period": "May 2024 — June 2026",
-        "description": "Development and maintenance of web interfaces for internal systems using Laravel. Involved in building reusable components, improving UX/UI, and optimizing accessibility following frontend development best practices. Collaboration on the evolution of the user experience, technical SEO, and interface design.",
-        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "UI/UX Design", "Accessibility", "Figma", "Claude Code"]
-      },
-      {
-        "title": "Frontend Developer & UX/UI Designer (Freelance)",
-        "company": "Self-employed",
-        "period": "January 2025 — Present",
-        "description": "Design and development of web interfaces for freelance projects, including a medical studies management portal for clinics and conversion-focused landing pages. End-to-end frontend, UX/UI, and backend API integration work.",
-        "skills": ["Next.js", "React", "Laravel", "Tailwind CSS", "JavaScript", "TypeScript", "Figma", "Claude Code"]
-      }
-    ],
     "projects": [
       {
         "title": "Medical Studies Management Platform",
@@ -232,7 +211,7 @@
       },
       {
         "title": "Medical Appointment Management Platform",
-        "role": "UX/UI & Frontend — Next.js · Figma · REST API Integration",
+        "role": "UX/UI & Frontend — Next.js · Figma · REST API Consumption · JWT Auth",
         "result": "Appointment system with multi-role logic for clinic, doctors, patients, and companies, with REST API integration for real-time data."
       },
       {
@@ -245,25 +224,6 @@
           { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" }
         ]
       }
-    ],
-    "stack": [
-      { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "Sass", "Bootstrap", "Alpine.js"] },
-      { "name": "Backend", "items": ["Laravel", "PHP", "Livewire", "MySQL", "REST API Integration"] },
-      { "name": "Design / UX", "items": ["UX/UI Design", "Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
-      { "name": "Tools", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
-    ],
-    "education": [
-      {
-        "institution": "National University of Quilmes",
-        "degree": "Bachelor's Degree in International Trade",
-        "period": "Mar. 2007 – Dec. 2014"
-      }
-    ],
-    "certifications": [
-      { "title": "UX/UI Design", "issuer": "Coderhouse" },
-      { "title": "JavaScript Total", "issuer": "Udemy" },
-      { "title": "PHP (Essential and Advanced)", "issuer": "LinkedIn Learning" },
-      { "title": "Livewire 3 from Scratch", "issuer": "Laracasts" }
     ],
     "languages": [
       { "name": "Spanish", "level": "Native" },
