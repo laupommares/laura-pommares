@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Laura Pommarés — Portfolio & CV
 
-## Getting Started
+Sitio personal hecho con Next.js 16 (App Router), React 19, Tailwind CSS 4 y next-intl.
+Incluye el portfolio en `/` y una versión imprimible del CV en `/cv`, ambos en español e inglés.
 
-First, run the development server:
+## Requisitos
+
+- Node.js 20+
+- Google Chrome (solo para generar los PDFs del CV)
+
+## Levantar el proyecto
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Comandos
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| `npm run dev` | Servidor de desarrollo |
+| `npm run build` | Build de producción |
+| `npm start` | Sirve el build de producción |
+| `npm run lint` | ESLint |
+| `npm run cv` | Regenera los PDFs del CV |
 
-## Learn More
+## Editar el contenido
 
-To learn more about Next.js, take a look at the following resources:
+Todos los textos viven en `messages/es.json` y `messages/en.json`. **Los componentes no tienen
+texto hardcodeado**: para cambiar experiencia, proyectos, educación o certificaciones se editan
+esos dos archivos y las dos páginas (portfolio y CV) se actualizan solas.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Las dos claves tienen que tener la misma estructura. Si agregás un ítem en uno, agregalo en el otro.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+El idioma se guarda en una cookie (`locale`), no en la URL. Ver `src/i18n/`.
 
-## Deploy on Vercel
+## Regenerar los PDFs del CV
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Los PDFs que descarga el botón "Descargar CV" son archivos estáticos en `public/`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `public/cv-laura-pommares.pdf` (español)
+- `public/cv-laura-pommares-en.pdf` (inglés)
+
+**No se actualizan solos.** Cada vez que cambies contenido en `messages/` o el diseño de `/cv`,
+hay que regenerarlos:
+
+```bash
+npm run cv
+```
+
+El script (`scripts/generate-cv-pdf.mjs`) hace un build, levanta un server en el puerto 4321,
+abre `/cv` en Chrome headless para cada idioma e imprime a PDF. Después de correrlo, commiteá
+los PDFs actualizados.
+
+Si ya tenés un server corriendo, podés reusarlo:
+
+```bash
+CV_BASE_URL=http://localhost:3000 npm run cv
+```
+
+Variables opcionales: `CV_PORT` (puerto del server temporal, por defecto 4321) y `CHROME_PATH`
+(ruta al binario de Chrome si no es `google-chrome`).
+
+## Estructura
+
+```
+messages/          Textos en es/en — acá se edita el contenido
+public/            Imágenes de proyectos y los PDFs del CV
+scripts/           generate-cv-pdf.mjs (npm run cv)
+src/app/           layout, home (/) y la página del CV (/cv + print.css)
+src/components/    Secciones del portfolio
+src/i18n/          Configuración de next-intl y cambio de idioma
+```
+
+## Deploy
+
+Desplegado en Vercel. Cada push a `main` publica automáticamente.
+
+## AGENTS.md / CLAUDE.md
+
+Archivos de instrucciones para asistentes de IA (Claude Code, Cursor, etc.), no afectan al build.
+`AGENTS.md` es el formato estándar que leen varias herramientas; `CLAUDE.md` solo lo importa
+con `@AGENTS.md` para que Claude Code lea el mismo archivo y no haya dos copias que se
+desincronicen.
