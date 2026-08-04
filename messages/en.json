@@ -63,11 +63,19 @@
   "Education": {
     "heading": "Education",
     "completedLabel": "Degree awarded",
+    "inProgressLabel": "In progress",
     "studies": [
+      {
+        "institution": "UTN BA",
+        "degree": "University Technical Degree in Programming",
+        "period": "Aug. 2026 – Aug. 2028",
+        "status": "inProgress"
+      },
       {
         "institution": "National University of Quilmes",
         "degree": "Bachelor's Degree in International Trade",
-        "period": "Mar. 2007 – Dec. 2014"
+        "period": "Mar. 2007 – Dec. 2014",
+        "status": "completed"
       }
     ]
   },
