@@ -63,11 +63,19 @@
   "Education": {
     "heading": "Educación",
     "completedLabel": "Título obtenido",
+    "inProgressLabel": "En curso",
     "studies": [
+      {
+        "institution": "UTN BA",
+        "degree": "Tecnicatura Universitaria en Programación",
+        "period": "Ago. 2026 – Ago. 2028",
+        "status": "inProgress"
+      },
       {
         "institution": "Universidad Nacional de Quilmes",
         "degree": "Licenciatura en Comercio Internacional",
-        "period": "Mar. 2007 – Dic. 2014"
+        "period": "Mar. 2007 – Dic. 2014",
+        "status": "completed"
       }
     ]
   },

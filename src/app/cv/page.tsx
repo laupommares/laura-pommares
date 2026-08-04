@@ -18,7 +18,12 @@ type ProjectItem = {
   clients?: { name: string; href: string }[];
 };
 type StackCategory = { name: string; items: string[] };
-type EducationItem = { institution: string; degree: string; period: string };
+type EducationItem = {
+  institution: string;
+  degree: string;
+  period: string;
+  status: "completed" | "inProgress";
+};
 type CertificationItem = { title: string; issuer: string };
 type LanguageItem = { name: string; level: string };
 
@@ -185,7 +190,9 @@ export default async function CvPage() {
               </div>
               <p className="text-accent-ink text-xs font-medium mb-1.5">{edu.degree}</p>
               <span className="inline-block px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[9px] uppercase tracking-wide text-secondary">
-                {tEducation("completedLabel")}
+                {edu.status === "inProgress"
+                  ? tEducation("inProgressLabel")
+                  : tEducation("completedLabel")}
               </span>
             </div>
           ))}

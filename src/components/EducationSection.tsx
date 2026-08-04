@@ -1,6 +1,11 @@
 import { getTranslations } from "next-intl/server";
 
-type StudyItem = { institution: string; degree: string; period: string };
+type StudyItem = {
+  institution: string;
+  degree: string;
+  period: string;
+  status: "completed" | "inProgress";
+};
 
 export default async function EducationSection() {
   const t = await getTranslations("Education");
@@ -32,7 +37,9 @@ export default async function EducationSection() {
                 </span>
               </div>
               <span className="inline-block px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[10px] uppercase tracking-widest text-secondary">
-                {t("completedLabel")}
+                {study.status === "inProgress"
+                  ? t("inProgressLabel")
+                  : t("completedLabel")}
               </span>
             </div>
           ))}
