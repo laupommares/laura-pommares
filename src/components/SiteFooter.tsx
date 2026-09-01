@@ -18,7 +18,7 @@ export default async function SiteFooter() {
     <footer className="border-t border-subtle pt-16 pb-10 bg-white">
       <div className="px-margin-mobile max-w-container-max mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8 pb-8">
-          <span className="text-primary font-bold text-lg tracking-tighter">
+          <span className="text-primary font-bold text-lg tracking-tighter max-md:text-center">
             {t("brand")}
           </span>
           <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-label-mono text-[10px] uppercase tracking-widest text-secondary">

@@ -27,10 +27,15 @@
 
 /* Custom typography utilities */
 @utility text-display {
-  font-size: clamp(48px, 8vw, 78px);
-  line-height: 1;
-  letter-spacing: -0.05em;
+  font-size: clamp(36px, 9vw, 78px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
   font-weight: 600;
+
+  @media (width >= 48rem) {
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
 }
 
 @utility text-headline-lg {
@@ -48,9 +53,14 @@
 }
 
 @utility text-body-lg {
-  font-size: 1.25rem;
-  line-height: 1.6;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   letter-spacing: -0.01em;
+
+  @media (width >= 48rem) {
+    font-size: 1.25rem;
+    line-height: 1.6;
+  }
 }
 
 /* Layout utilities */
