@@ -96,7 +96,7 @@ function LandingCard({ landing, viewSite }: { landing: LandingItem; viewSite: st
   return (
     <article className="group flex flex-col border border-subtle bg-surface-alt overflow-hidden hover:border-accent/40 transition-colors duration-300">
       {/* Browser mockup */}
-      <div className={`relative bg-linear-to-br ${landing.gradient} aspect-4/3 overflow-hidden`}>
+      <div className={`relative bg-linear-to-br ${landing.gradient} aspect-16/10 overflow-hidden`}>
         {/* Browser chrome */}
         <div className="absolute inset-x-0 top-0 h-7 bg-black/40 backdrop-blur-sm flex items-center px-3 gap-1.5 z-10">
           <span className="w-2 h-2 rounded-full bg-white/20" />
@@ -261,7 +261,7 @@ export default async function ProjectsSection() {
             {t("landingsDescription")}
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {landings.map((landing) => (
             <LandingCard key={landing.id} landing={landing} viewSite={viewSite} />
           ))}
