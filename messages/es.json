@@ -39,7 +39,7 @@
       {
         "title": "Web Developer & UX/UI Designer (Freelance)",
         "company": "Independiente",
-        "period": "Marzo 2025 — Presente",
+        "period": "Septiembre 2025 — Presente",
         "description": "Diseño y desarrollo de aplicaciones web end-to-end para proyectos freelance, incluyendo un sistema de gestión de turnos multi-rol con API REST propia, modelado de datos y autenticación por sesiones, además de un portal de gestión de estudios médicos y landings enfocadas en conversión. Trabajo completo de UX/UI, frontend y backend con Next.js y Prisma.",
         "skills": ["Next.js", "React", "JavaScript", "TypeScript", "Next.js API Routes", "API REST", "Prisma", "MySQL", "Autenticación por sesiones", "Zod", "Tailwind CSS", "shadcn/ui", "Laravel", "Figma", "Claude Code"]
       },
@@ -168,6 +168,19 @@
         "lines": ["filosofía", "clases", "propuestas", "reservar"],
         "href": "https://joriarmoniayoga.com/",
         "image": "/landing-yoga.png"
+      },
+      {
+        "id": "L4",
+        "category": "Espectáculos & Eventos",
+        "title": "Las Coquettes",
+        "subtitle": "Jazz Girls Club — Barcelona",
+        "description": "Sitio para una compañía de shows de jazz, teatro y glamour en Barcelona. Repertorio, servicios a medida y reservas para hoteles, galas y eventos privados.",
+        "stack": ["Next.js", "Tailwind CSS", "Figma"],
+        "gradient": "from-stone-900 via-red-950 to-neutral-900",
+        "accentColor": "#770303",
+        "lines": ["repertorio", "servicios", "galería", "reservas"],
+        "href": "https://www.lascoquettes.com/",
+        "image": "/landing-coquettes.png"
       }
     ]
   },

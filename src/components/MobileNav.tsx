@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type NavLink = { href: string; label: string };
 
@@ -8,12 +8,23 @@ export default function MobileNav({
   links,
   downloadCvHref,
   downloadCvLabel,
+  ctaLabel,
 }: {
   links: NavLink[];
   downloadCvHref: string;
   downloadCvLabel: string;
+  ctaLabel: string;
 }) {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = previous;
+    };
+  }, [open]);
 
   return (
     <div className="md:hidden">
@@ -36,7 +47,7 @@ export default function MobileNav({
       </button>
 
       {open && (
-        <div className="absolute inset-x-0 top-16 h-[calc(100vh-4rem)] z-40 bg-white overflow-y-auto px-margin-mobile py-10">
+        <div className="absolute inset-x-0 top-16 h-[calc(100vh-4rem)] z-40 bg-white overflow-y-auto px-margin-mobile py-10 flex flex-col">
           <nav className="flex flex-col gap-6">
             {links.map((link) => (
               <a
@@ -49,13 +60,22 @@ export default function MobileNav({
               </a>
             ))}
           </nav>
-          <a
-            href={downloadCvHref}
-            onClick={() => setOpen(false)}
-            className="inline-block mt-8 pt-8 border-t border-subtle w-full text-sm font-medium border-b-0"
-          >
-            <span className="border-b border-primary pb-1">{downloadCvLabel}</span>
-          </a>
+          <div className="mt-10 pt-8 border-t border-subtle flex flex-col gap-5">
+            <a
+              href="#contacto"
+              onClick={() => setOpen(false)}
+              className="inline-flex items-center justify-center w-full bg-primary text-white px-8 py-4 text-sm font-medium hover:bg-accent transition-colors"
+            >
+              {ctaLabel}
+            </a>
+            <a
+              href={downloadCvHref}
+              onClick={() => setOpen(false)}
+              className="self-start text-sm font-medium"
+            >
+              <span className="border-b border-primary pb-1">{downloadCvLabel}</span>
+            </a>
+          </div>
         </div>
       )}
     </div>

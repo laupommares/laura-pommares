@@ -64,7 +64,7 @@ export default async function NavHeader() {
             {t("links.certifications")}
           </a>
         </nav>
-        <div className="flex items-center gap-4 md:gap-6">
+        <div className="flex items-center gap-5 md:gap-6">
           <LocaleSwitch currentLocale={locale} />
           <a
             className="hidden md:block text-sm font-medium border-b border-primary hover:border-accent hover:text-accent transition-all"
@@ -73,7 +73,7 @@ export default async function NavHeader() {
             {t("downloadCv")}
           </a>
           <a
-            className="px-5 py-2.5 bg-primary text-white text-sm font-medium hover:bg-accent transition-colors min-w-30 text-center"
+            className="hidden md:block px-5 py-2.5 bg-primary text-white text-sm font-medium hover:bg-accent transition-colors min-w-30 text-center"
             href="#contacto"
           >
             {t("cta")}
@@ -82,6 +82,7 @@ export default async function NavHeader() {
             links={mobileLinks}
             downloadCvHref={tCv("downloadHref")}
             downloadCvLabel={t("downloadCv")}
+            ctaLabel={t("cta")}
           />
         </div>
       </div>
