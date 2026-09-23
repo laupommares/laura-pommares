@@ -132,32 +132,6 @@
     "landings": [
       {
         "id": "L1",
-        "category": "Fine Art Photography",
-        "title": "Sofía Capuano",
-        "subtitle": "Fine Art Photographer",
-        "description": "Bilingual portfolio for a photographer specializing in weddings, beach sessions, and intimate portraits. Minimalist design focused on natural light and emotion.",
-        "stack": ["Next.js", "Tailwind CSS", "Figma"],
-        "gradient": "from-stone-900 via-amber-950 to-stone-800",
-        "accentColor": "#d4a96a",
-        "lines": ["portfolio", "about me", "process", "contact"],
-        "href": "https://sofiacapuanoph.vercel.app/",
-        "image": "/landing-photographer.png"
-      },
-      {
-        "id": "L2",
-        "category": "Nutrition & Coaching",
-        "title": "Juliana Re",
-        "subtitle": "Nutritionist & Ontological Coach",
-        "description": "Landing page for a nutritionist focused on mindful, intuitive eating. 1:1 programs, group retreats, and family support.",
-        "stack": ["Next.js", "Figma"],
-        "gradient": "from-emerald-950 via-teal-900 to-teal-800",
-        "accentColor": "#6ee7b7",
-        "lines": ["focus", "programs", "who guides you", "consultation"],
-        "href": "https://julianare.vercel.app/",
-        "image": "/landing-nutritionist.png"
-      },
-      {
-        "id": "L3",
         "category": "Yoga & Wellness",
         "title": "Jori Armonía Yoga",
         "subtitle": "Jorgelina Cantone — Yoga Instructor",
@@ -170,7 +144,7 @@
         "image": "/landing-yoga.png"
       },
       {
-        "id": "L4",
+        "id": "L2",
         "category": "Shows & Events",
         "title": "Las Coquettes",
         "subtitle": "Jazz Girls Club — Barcelona",
@@ -181,6 +155,32 @@
         "lines": ["repertoire", "services", "gallery", "bookings"],
         "href": "https://www.lascoquettes.com/",
         "image": "/landing-coquettes.png"
+      },
+      {
+        "id": "L3",
+        "category": "Fine Art Photography",
+        "title": "Sofía Capuano",
+        "subtitle": "Fine Art Photographer",
+        "description": "Bilingual portfolio for a photographer specializing in weddings, beach sessions, and intimate portraits. Minimalist design focused on natural light and emotion.",
+        "stack": ["Next.js", "Tailwind CSS", "Figma"],
+        "gradient": "from-stone-900 via-amber-950 to-stone-800",
+        "accentColor": "#d4a96a",
+        "lines": ["portfolio", "about me", "process", "contact"],
+        "href": "https://sofiacapuanoph.vercel.app/",
+        "image": "/landing-photographer.png"
+      },
+      {
+        "id": "L4",
+        "category": "Nutrition & Coaching",
+        "title": "Juliana Re",
+        "subtitle": "Nutritionist & Ontological Coach",
+        "description": "Landing page for a nutritionist focused on mindful, intuitive eating. 1:1 programs, group retreats, and family support.",
+        "stack": ["Next.js", "Figma"],
+        "gradient": "from-emerald-950 via-teal-900 to-teal-800",
+        "accentColor": "#6ee7b7",
+        "lines": ["focus", "programs", "who guides you", "consultation"],
+        "href": "https://julianare.vercel.app/",
+        "image": "/landing-nutritionist.png"
       }
     ]
   },
