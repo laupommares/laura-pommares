@@ -132,19 +132,32 @@
     "landings": [
       {
         "id": "L1",
-        "category": "Fine Art Photography",
-        "title": "Sofía Capuano",
-        "subtitle": "Fine Art Photographer",
-        "description": "Portfolio bilingüe para fotógrafa especializada en bodas, sesiones de playa y retratos íntimos. Diseño minimalista con foco en la luz natural y la emoción.",
-        "stack": ["Next.js", "Tailwind CSS", "Figma"],
-        "gradient": "from-stone-900 via-amber-950 to-stone-800",
+        "category": "Yoga & Bienestar",
+        "title": "Jori Armonía Yoga",
+        "subtitle": "Jorgelina Cantone — Instructora de Yoga",
+        "description": "Sitio de reserva de clases para instructora de Yoga Terapéutico, Ashtanga Vinyasa y Prenatal. Diseño orgánico centrado en calma y bienestar.",
+        "stack": ["Next.js", "Figma"],
+        "gradient": "from-stone-800 via-amber-900 to-yellow-950",
         "accentColor": "#d4a96a",
-        "lines": ["portfolio", "sobre mí", "proceso", "contacto"],
-        "href": "https://sofiacapuanoph.vercel.app/",
-        "image": "/landing-photographer.png"
+        "lines": ["filosofía", "clases", "propuestas", "reservar"],
+        "href": "https://joriarmoniayoga.com/",
+        "image": "/landing-yoga.png"        
       },
       {
         "id": "L2",
+        "category": "Espectáculos & Eventos",
+        "title": "Las Coquettes",
+        "subtitle": "Jazz Girls Club — Barcelona",
+        "description": "Sitio para una compañía de shows de jazz, teatro y glamour en Barcelona. Repertorio, servicios a medida y reservas para hoteles, galas y eventos privados.",
+        "stack": ["Next.js", "Tailwind CSS", "Figma"],
+        "gradient": "from-stone-900 via-red-950 to-neutral-900",
+        "accentColor": "#770303",
+        "lines": ["repertorio", "servicios", "galería", "reservas"],
+        "href": "https://www.lascoquettes.com/",
+        "image": "/landing-coquettes.png"
+      },
+      {
+        "id": "L3",
         "category": "Nutrición & Coaching",
         "title": "Juliana Re",
         "subtitle": "Nutricionista & Coach Ontológica",
@@ -157,30 +170,17 @@
         "image": "/landing-nutritionist.png"
       },
       {
-        "id": "L3",
-        "category": "Yoga & Bienestar",
-        "title": "Jori Armonía Yoga",
-        "subtitle": "Jorgelina Cantone — Instructora de Yoga",
-        "description": "Sitio de reserva de clases para instructora de Yoga Terapéutico, Ashtanga Vinyasa y Prenatal. Diseño orgánico centrado en calma y bienestar.",
-        "stack": ["Next.js", "Figma"],
-        "gradient": "from-stone-800 via-amber-900 to-yellow-950",
-        "accentColor": "#d4a96a",
-        "lines": ["filosofía", "clases", "propuestas", "reservar"],
-        "href": "https://joriarmoniayoga.com/",
-        "image": "/landing-yoga.png"
-      },
-      {
         "id": "L4",
-        "category": "Espectáculos & Eventos",
-        "title": "Las Coquettes",
-        "subtitle": "Jazz Girls Club — Barcelona",
-        "description": "Sitio para una compañía de shows de jazz, teatro y glamour en Barcelona. Repertorio, servicios a medida y reservas para hoteles, galas y eventos privados.",
+        "category": "Fine Art Photography",
+        "title": "Sofía Capuano",
+        "subtitle": "Fine Art Photographer",
+        "description": "Portfolio bilingüe para fotógrafa especializada en bodas, sesiones de playa y retratos íntimos. Diseño minimalista con foco en la luz natural y la emoción.",
         "stack": ["Next.js", "Tailwind CSS", "Figma"],
-        "gradient": "from-stone-900 via-red-950 to-neutral-900",
-        "accentColor": "#770303",
-        "lines": ["repertorio", "servicios", "galería", "reservas"],
-        "href": "https://www.lascoquettes.com/",
-        "image": "/landing-coquettes.png"
+        "gradient": "from-stone-900 via-amber-950 to-stone-800",
+        "accentColor": "#d4a96a",
+        "lines": ["portfolio", "sobre mí", "proceso", "contacto"],
+        "href": "https://sofiacapuanoph.vercel.app/",
+        "image": "/landing-photographer.png"
       }
     ]
   },
