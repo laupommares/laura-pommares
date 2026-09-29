@@ -141,7 +141,8 @@
         "accentColor": "#d4a96a",
         "lines": ["filosofía", "clases", "propuestas", "reservar"],
         "href": "https://joriarmoniayoga.com/",
-        "image": "/landing-yoga.png"        
+        "image": "/landing-yoga.jpg",
+        "video": "/landing-yoga.mp4"
       },
       {
         "id": "L2",
@@ -154,7 +155,8 @@
         "accentColor": "#770303",
         "lines": ["repertorio", "servicios", "galería", "reservas"],
         "href": "https://www.lascoquettes.com/",
-        "image": "/landing-coquettes.png"
+        "image": "/landing-coquettes.jpg",
+        "video": "/landing-coquettes.mp4"
       },
       {
         "id": "L3",
@@ -166,7 +168,7 @@
         "gradient": "from-emerald-950 via-teal-900 to-teal-800",
         "accentColor": "#6ee7b7",
         "lines": ["enfoque", "programas", "quién acompaña", "consulta"],
-        "href": "https://julianare.vercel.app/",
+        "href": "https://julianareconecta.com/",
         "image": "/landing-nutritionist.png"
       },
       {
@@ -179,8 +181,9 @@
         "gradient": "from-stone-900 via-amber-950 to-stone-800",
         "accentColor": "#d4a96a",
         "lines": ["portfolio", "sobre mí", "proceso", "contacto"],
-        "href": "https://sofiacapuanoph.vercel.app/",
-        "image": "/landing-photographer.png"
+        "href": "https://sofiacapuano.com/",
+        "image": "/landing-photographer.jpg",
+        "video": "/landing-photographer.mp4"
       }
     ]
   },
@@ -242,8 +245,8 @@
         "role": "Next.js · Figma · Tailwind CSS",
         "result": "Portfolios y sitios de reserva para profesionales independientes, con foco en identidad y conversión.",
         "clients": [
-          { "name": "Sofía Capuano", "href": "https://sofiacapuanoph.vercel.app/" },
-          { "name": "Juliana Re", "href": "https://julianare.vercel.app/" },
+          { "name": "Sofía Capuano", "href": "https://sofiacapuano.com/" },
+          { "name": "Juliana Re", "href": "https://julianareconecta.com/" },
           { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" }
         ]
       }
