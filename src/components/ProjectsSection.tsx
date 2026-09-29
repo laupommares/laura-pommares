@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import LandingVideo from "./LandingVideo";
 
 type ProjectItem = {
   num: string;
@@ -28,6 +29,7 @@ type LandingItem = {
   lines: string[];
   href: string;
   image: string;
+  video?: string;
 };
 
 function ProjectImage({
@@ -96,9 +98,9 @@ function LandingCard({ landing, viewSite }: { landing: LandingItem; viewSite: st
   return (
     <article className="group flex flex-col border border-subtle bg-surface-alt overflow-hidden hover:border-accent/40 transition-colors duration-300">
       {/* Browser mockup */}
-      <div className={`relative bg-linear-to-br ${landing.gradient} aspect-16/10 overflow-hidden`}>
+      <div className={`relative bg-linear-to-br ${landing.gradient} overflow-hidden`}>
         {/* Browser chrome */}
-        <div className="absolute inset-x-0 top-0 h-7 bg-black/40 backdrop-blur-sm flex items-center px-3 gap-1.5 z-10">
+        <div className="h-7 bg-black/40 flex items-center px-3 gap-1.5">
           <span className="w-2 h-2 rounded-full bg-white/20" />
           <span className="w-2 h-2 rounded-full bg-white/20" />
           <span className="w-2 h-2 rounded-full bg-white/20" />
@@ -106,42 +108,50 @@ function LandingCard({ landing, viewSite }: { landing: LandingItem; viewSite: st
             className="ml-2 flex-1 h-3 rounded-sm bg-white/10 max-w-30"
           />
         </div>
-        {/* Content: real screenshot or simulated UI */}
-        {landing.image ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={landing.image}
-            alt={`${landing.title} landing`}
-            className="absolute inset-0 w-full h-full object-cover object-top pt-7"
-          />
-        ) : (
-          <div className="absolute inset-0 pt-10 px-5 pb-5 flex flex-col gap-3">
-            <div className="mt-2 space-y-1.5">
-              <div className="h-2 rounded-sm bg-white/70 w-3/4" />
-              <div className="h-2 rounded-sm bg-white/40 w-1/2" />
-            </div>
-            <div className="flex gap-2 mt-1">
-              {landing.lines.map((label) => (
-                <span
-                  key={label}
-                  className="h-1.5 rounded-sm bg-white/25"
-                  style={{ width: `${label.length * 7}px` }}
-                />
-              ))}
-            </div>
-            <div
-              className="mt-2 h-6 w-24 rounded-sm"
-              style={{ backgroundColor: `${landing.accentColor}55` }}
+        {/* Viewport: same aspect as the landing videos (1280×620), so they show uncropped */}
+        <div className="relative aspect-[1280/620]">
+          {landing.video ? (
+            <LandingVideo
+              src={landing.video}
+              poster={landing.image}
+              label={`${landing.title} landing`}
             />
-            <div className="flex-1 mt-2 grid grid-cols-3 gap-2">
-              <div className="rounded-sm bg-white/10 col-span-2" />
-              <div className="flex flex-col gap-2">
-                <div className="rounded-sm bg-white/10 flex-1" />
-                <div className="rounded-sm bg-white/10 flex-1" />
+          ) : landing.image ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              src={landing.image}
+              alt={`${landing.title} landing`}
+              className="absolute inset-0 w-full h-full object-cover object-top"
+            />
+          ) : (
+            <div className="absolute inset-0 pt-3 px-5 pb-5 flex flex-col gap-3">
+              <div className="mt-2 space-y-1.5">
+                <div className="h-2 rounded-sm bg-white/70 w-3/4" />
+                <div className="h-2 rounded-sm bg-white/40 w-1/2" />
+              </div>
+              <div className="flex gap-2 mt-1">
+                {landing.lines.map((label) => (
+                  <span
+                    key={label}
+                    className="h-1.5 rounded-sm bg-white/25"
+                    style={{ width: `${label.length * 7}px` }}
+                  />
+                ))}
+              </div>
+              <div
+                className="mt-2 h-6 w-24 rounded-sm"
+                style={{ backgroundColor: `${landing.accentColor}55` }}
+              />
+              <div className="flex-1 mt-2 grid grid-cols-3 gap-2">
+                <div className="rounded-sm bg-white/10 col-span-2" />
+                <div className="flex flex-col gap-2">
+                  <div className="rounded-sm bg-white/10 flex-1" />
+                  <div className="rounded-sm bg-white/10 flex-1" />
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
         {/* Accent line at bottom */}
         <div
           className="absolute bottom-0 inset-x-0 h-0.5 opacity-60 group-hover:opacity-100 transition-opacity"
