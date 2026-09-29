@@ -137,8 +137,8 @@
         "subtitle": "Jorgelina Cantone — Yoga Instructor",
         "description": "Class booking site for a Therapeutic Yoga, Ashtanga Vinyasa, and Prenatal Yoga instructor. Organic design centered on calm and wellbeing.",
         "stack": ["Next.js", "Figma"],
-        "gradient": "from-stone-800 via-amber-900 to-yellow-950",
-        "accentColor": "#d4a96a",
+        "gradient": "from-[#31332c] via-[#4a4b27] to-[#696b33]",
+        "accentColor": "#696b33",
         "lines": ["philosophy", "classes", "offerings", "book now"],
         "href": "https://joriarmoniayoga.com/",
         "image": "/landing-yoga.jpg",
@@ -179,11 +179,12 @@
         "subtitle": "Nutritionist & Ontological Coach",
         "description": "Landing page for a nutritionist focused on mindful, intuitive eating. 1:1 programs, group retreats, and family support.",
         "stack": ["Next.js", "Figma"],
-        "gradient": "from-emerald-950 via-teal-900 to-teal-800",
-        "accentColor": "#6ee7b7",
+        "gradient": "from-[#2b2819] via-[#4a3b12] to-[#7a5a0e]",
+        "accentColor": "#dfa924",
         "lines": ["focus", "programs", "who guides you", "consultation"],
         "href": "https://julianareconecta.com/",
-        "image": "/landing-nutritionist.png"
+        "image": "/landing-nutritionist.jpg",
+        "video": "/landing-nutritionist-en.mp4"
       }
     ]
   },
@@ -245,7 +246,8 @@
         "clients": [
           { "name": "Sofía Capuano", "href": "https://sofiacapuano.com/" },
           { "name": "Juliana Re", "href": "https://julianareconecta.com/" },
-          { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" }
+          { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" },
+          { "name": "Las Coquettes", "href": "https://www.lascoquettes.com/" }
         ]
       }
     ],
