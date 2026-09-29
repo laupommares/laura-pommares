@@ -126,7 +126,7 @@
       }
     ],
     "landingsLabel": "También",
-    "landingsHeading": "Landings & One-Pagers",
+    "landingsHeading": "Landing pages y sitios web",
     "landingsDescription": "Sitios rápidos, con identidad clara y enfoque en conversión para profesionales independientes.",
     "viewSite": "Ver sitio →",
     "landings": [
@@ -137,8 +137,8 @@
         "subtitle": "Jorgelina Cantone — Instructora de Yoga",
         "description": "Sitio de reserva de clases para instructora de Yoga Terapéutico, Ashtanga Vinyasa y Prenatal. Diseño orgánico centrado en calma y bienestar.",
         "stack": ["Next.js", "Figma"],
-        "gradient": "from-stone-800 via-amber-900 to-yellow-950",
-        "accentColor": "#d4a96a",
+        "gradient": "from-[#31332c] via-[#4a4b27] to-[#696b33]",
+        "accentColor": "#696b33",
         "lines": ["filosofía", "clases", "propuestas", "reservar"],
         "href": "https://joriarmoniayoga.com/",
         "image": "/landing-yoga.jpg",
@@ -165,11 +165,12 @@
         "subtitle": "Nutricionista & Coach Ontológica",
         "description": "Landing para nutricionista con enfoque en alimentación consciente e intuitiva. Programas 1:1, retiros grupales y acompañamiento familiar.",
         "stack": ["Next.js", "Figma"],
-        "gradient": "from-emerald-950 via-teal-900 to-teal-800",
-        "accentColor": "#6ee7b7",
+        "gradient": "from-[#2b2819] via-[#4a3b12] to-[#7a5a0e]",
+        "accentColor": "#dfa924",
         "lines": ["enfoque", "programas", "quién acompaña", "consulta"],
         "href": "https://julianareconecta.com/",
-        "image": "/landing-nutritionist.png"
+        "image": "/landing-nutritionist.jpg",
+        "video": "/landing-nutritionist.mp4"
       },
       {
         "id": "L4",
@@ -247,7 +248,8 @@
         "clients": [
           { "name": "Sofía Capuano", "href": "https://sofiacapuano.com/" },
           { "name": "Juliana Re", "href": "https://julianareconecta.com/" },
-          { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" }
+          { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" },
+          { "name": "Las Coquettes", "href": "https://www.lascoquettes.com/" }
         ]
       }
     ],
