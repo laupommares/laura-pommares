@@ -16,6 +16,16 @@ export type ProjectImage = {
   alt: Translatable;
   caption?: Translatable; // shown only in the gallery, never on the cover
   objectPosition?: "top" | "center" | "bottom";
+  // Intrinsic size. When set, gallery images keep their own aspect ratio
+  // instead of being cropped to the default 15:10 frame.
+  width?: number;
+  height?: number;
+};
+
+// Main visual for featured cases: a laptop screen with an optional phone on top.
+export type Showcase = {
+  laptop: ProjectImage;
+  phone?: ProjectImage;
 };
 
 export type ProjectVideo = {
@@ -54,6 +64,8 @@ export type CaseProject = BaseProject & {
   whatIDid: Translatable<Bullets>;
   role: Translatable;
   confidential?: Confidential;
+  // With a showcase, every entry in `images` goes to the gallery.
+  showcase?: Showcase;
 };
 
 export type LandingProject = BaseProject & {
@@ -123,6 +135,97 @@ export const projects: Project[] = [
     ],
   },
   {
+    slug: "unda",
+    type: "case",
+    category: "Product Design & Full Stack Development",
+    title: {
+      es: "unda — Agenda para profesionales",
+      en: "unda — Scheduling for professionals",
+    },
+    tags: {
+      es: ["SaaS · Producto propio", "En producción · Beta"],
+      en: ["SaaS · Own product", "Live · Beta"],
+    },
+    need: {
+      es: "La agenda vivía repartida entre WhatsApp, un cuaderno y una planilla: cada turno dependía de que alguien contestara a tiempo y nadie tenía a la vista el día completo.",
+      en: "Bookings were scattered across WhatsApp, a notebook and a spreadsheet: every appointment depended on someone replying in time, and no one could see the full day at a glance.",
+    },
+    whatIDid: {
+      es: [
+        "Diseñé el producto entero en Figma: flujos, pantallas y sistema visual.",
+        "Lo desarrollé full stack con Next.js, Prisma y MySQL: panel, agenda, clientes, servicios y reservas sobre una misma base.",
+        "Implementé el registro con prueba gratis de 30 días, la autenticación por sesiones y la validación con Zod.",
+      ],
+      en: [
+        "Designed the entire product in Figma: flows, screens and visual system.",
+        "Built it full stack with Next.js, Prisma and MySQL: dashboard, calendar, clients, services and bookings on a single shared base.",
+        "Implemented sign-up with a 30-day free trial, session-based authentication and Zod validation.",
+      ],
+    },
+    role: "Product Designer & Full Stack Developer",
+    stack: {
+      es: ["Next.js", "TypeScript", "Prisma", "MySQL", "Auth por sesiones", "Zod", "Tailwind CSS", "shadcn/ui", "Figma"],
+      en: ["Next.js", "TypeScript", "Prisma", "MySQL", "Session auth", "Zod", "Tailwind CSS", "shadcn/ui", "Figma"],
+    },
+    result: {
+      es: "En producción en agendaunda.com y en beta con sus primeros profesionales, con registro abierto y prueba gratis de 30 días.",
+      en: "Live at agendaunda.com and in beta with its first professionals, with open sign-up and a 30-day free trial.",
+    },
+    url: "https://agendaunda.com",
+    showcase: {
+      laptop: {
+        src: "/projects/unda/vista-semanal.webp",
+        alt: {
+          es: "Vista semanal de la agenda de unda: turnos de lunes a domingo por franja horaria, con el total de turnos, horas agendadas, ocupación y cancelaciones arriba.",
+          en: "unda weekly calendar view: appointments from Monday to Sunday by time slot, with total bookings, scheduled hours, occupancy and cancellations above.",
+        },
+        width: 1600,
+        height: 769,
+      },
+      phone: {
+        src: "/projects/unda/movil.webp",
+        alt: {
+          es: "Pantalla de acceso de unda en el celular, con el formulario de email y contraseña.",
+          en: "unda sign-in screen on a phone, with the email and password form.",
+        },
+        width: 385,
+        height: 704,
+      },
+    },
+    images: [
+      {
+        src: "/projects/unda/panel.webp",
+        alt: {
+          es: "Panel de unda: resumen del día con turnos, pacientes nuevos, cancelaciones y facturación del mes, junto a la agenda del día y un calendario mensual.",
+          en: "unda dashboard: daily summary with appointments, new patients, cancellations and monthly revenue, next to the day's schedule and a monthly calendar.",
+        },
+        caption: { es: "Panel", en: "Dashboard" },
+        width: 1600,
+        height: 769,
+      },
+      {
+        src: "/projects/unda/vista-mensual.webp",
+        alt: {
+          es: "Vista mensual de la agenda de unda, con los turnos de cada día y métricas de ocupación arriba.",
+          en: "unda monthly calendar view, showing each day's appointments with occupancy metrics above.",
+        },
+        caption: { es: "Vista mensual", en: "Monthly view" },
+        width: 1600,
+        height: 765,
+      },
+      {
+        src: "/projects/unda/acceso.webp",
+        alt: {
+          es: "Pantalla de acceso de unda: formulario de email y contraseña junto a una vista previa de los turnos del día.",
+          en: "unda sign-in screen: email and password form next to a preview of the day's appointments.",
+        },
+        caption: { es: "Acceso", en: "Sign-in" },
+        width: 1600,
+        height: 763,
+      },
+    ],
+  },
+  {
     slug: "gestion-turnos-medicos",
     type: "case",
     category: "UX/UI & Frontend Development",
@@ -142,18 +245,18 @@ export const projects: Project[] = [
       es: [
         "Diseñé en Figma los flujos por rol, con design system y prototipos navegables.",
         "Desarrollé el frontend en Next.js y TypeScript, consumiendo APIs REST.",
-        "Resolví la integración con route handlers propios, sesión en cookies httpOnly y renovación automática de tokens.",
+        "Resolví la integración con route handlers propios y auth con JWT en cookies httpOnly, con renovación automática.",
       ],
       en: [
         "Designed role-based flows in Figma, with a design system and interactive prototypes.",
         "Built the frontend with Next.js and TypeScript, consuming REST APIs.",
-        "Handled the API integration through custom route handlers, httpOnly cookie sessions and automatic token refresh.",
+        "Handled the API integration through custom route handlers and JWT auth in httpOnly cookies, with automatic refresh.",
       ],
     },
     role: "UX/UI Designer & Frontend Developer",
     stack: {
-      es: ["Next.js", "TypeScript", "Consumo de APIs REST", "Auth con JWT", "Figma"],
-      en: ["Next.js", "TypeScript", "REST API Consumption", "JWT Auth", "Figma"],
+      es: ["Next.js", "TypeScript", "Consumo de APIs REST", "Auth con JWT en cookies httpOnly", "Figma"],
+      en: ["Next.js", "TypeScript", "REST API Consumption", "JWT auth in httpOnly cookies", "Figma"],
     },
     result: {
       es: "Arquitectura de roles y autenticación resuelta; cada perfil entra directo a su flujo. Próxima etapa en desarrollo.",
@@ -300,6 +403,8 @@ export type ResolvedImage = {
   alt: string;
   caption?: string;
   objectPosition: "top" | "center" | "bottom";
+  width?: number;
+  height?: number;
 };
 
 type ResolvedBase = {
@@ -321,6 +426,7 @@ export type ResolvedCase = ResolvedBase & {
   whatIDid: string[];
   role?: string;
   confidential?: { notice: string; contactMessage: string };
+  showcase?: { laptop: ResolvedImage; phone?: ResolvedImage };
 };
 
 export type ResolvedLanding = ResolvedBase & {
@@ -328,6 +434,17 @@ export type ResolvedLanding = ResolvedBase & {
   description?: string;
   theme: LandingProject["theme"];
 };
+
+function resolveImage(img: ProjectImage, locale: Locale): ResolvedImage {
+  return {
+    src: img.src,
+    alt: pick(img.alt, locale),
+    caption: text(img.caption, locale),
+    objectPosition: img.objectPosition ?? "center",
+    width: img.width,
+    height: img.height,
+  };
+}
 
 function resolveBase(p: Project, locale: Locale): ResolvedBase {
   return {
@@ -338,12 +455,7 @@ function resolveBase(p: Project, locale: Locale): ResolvedBase {
     stack: pick(p.stack, locale),
     result: text(p.result, locale),
     url: p.url,
-    images: p.images.map((img) => ({
-      src: img.src,
-      alt: pick(img.alt, locale),
-      caption: text(img.caption, locale),
-      objectPosition: img.objectPosition ?? "center",
-    })),
+    images: p.images.map((img) => resolveImage(img, locale)),
     video: p.video && { src: pick(p.video.src, locale), poster: p.video.poster },
   };
 }
@@ -364,6 +476,10 @@ export function getProjects(locale: Locale) {
         confidential: p.confidential && {
           notice: pick(p.confidential.notice, locale),
           contactMessage: pick(p.confidential.contactMessage, locale),
+        },
+        showcase: p.showcase && {
+          laptop: resolveImage(p.showcase.laptop, locale),
+          phone: p.showcase.phone && resolveImage(p.showcase.phone, locale),
         },
       });
     } else {

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import LandingVideo from "./LandingVideo";
 import {
@@ -15,6 +16,7 @@ type CaseLabels = {
   role: string;
   stack: string;
   result: string;
+  viewProduct: string;
 };
 
 type ConfidentialLabels = {
@@ -33,11 +35,12 @@ const objectPositionClass = {
 function ProjectImage({ image, badge }: { image: ResolvedImage; badge?: string }) {
   return (
     <div className="relative aspect-15/10 bg-surface-alt overflow-hidden border border-subtle">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={image.src}
         alt={image.alt}
-        className={`w-full h-full object-cover ${objectPositionClass[image.objectPosition]}`}
+        fill
+        sizes="(min-width: 768px) 50vw, 100vw"
+        className={`object-cover ${objectPositionClass[image.objectPosition]}`}
       />
       {badge && (
         <span className="absolute left-3 bottom-3 inline-flex items-center gap-1.5 max-[390px]:max-w-[calc(100%-1.5rem)] min-[390px]:whitespace-nowrap bg-background/90 backdrop-blur-sm border border-subtle px-2 sm:px-2.5 py-1 font-label-mono text-[10px] uppercase tracking-wide sm:tracking-widest text-secondary">
@@ -51,12 +54,86 @@ function ProjectImage({ image, badge }: { image: ResolvedImage; badge?: string }
   );
 }
 
-function ProjectGallery({ images }: { images: ResolvedImage[] }) {
+// Light browser chrome around a screenshot, with the product's URL in the bar.
+function BrowserFrame({ host, image, sizes }: { host: string; image: ResolvedImage; sizes: string }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 reveal">
+    <div className="border border-subtle bg-background overflow-hidden">
+      <div className="h-6 bg-surface-alt border-b border-subtle flex items-center px-2.5 gap-1">
+        <span className="w-1.5 h-1.5 rounded-full bg-primary/15" />
+        <span className="w-1.5 h-1.5 rounded-full bg-primary/15" />
+        <span className="w-1.5 h-1.5 rounded-full bg-primary/15" />
+        <span className="ml-2 flex-1 max-w-40 truncate rounded-sm bg-background border border-subtle px-2 font-label-mono text-[9px] leading-3.5 text-secondary">
+          {host}
+        </span>
+      </div>
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={image.width}
+        height={image.height}
+        sizes={sizes}
+        className="w-full h-auto"
+      />
+    </div>
+  );
+}
+
+// Laptop with the main screen and, from sm up, a phone overlapping its corner.
+function DeviceShowcase({ showcase }: { showcase: NonNullable<ResolvedCase["showcase"]> }) {
+  const { laptop, phone } = showcase;
+
+  return (
+    <div className="relative pb-[6%]">
+      <div className="mx-[5%] rounded-t-xl bg-neutral-900 p-[1.4%] pb-[1.8%] shadow-xl">
+        <div className="relative aspect-16/9 overflow-hidden rounded-[3px] bg-surface-alt">
+          <Image
+            src={laptop.src}
+            alt={laptop.alt}
+            fill
+            sizes="(min-width: 768px) 55vw, 90vw"
+            className="object-cover object-left-top"
+          />
+        </div>
+      </div>
+      <div className="relative h-2.5 sm:h-3.5 rounded-b-xl bg-linear-to-b from-neutral-300 to-neutral-400 shadow-md">
+        <div className="absolute left-1/2 top-0 h-1/2 w-[14%] -translate-x-1/2 rounded-b-md bg-neutral-400" />
+      </div>
+      {phone && (
+        <div className="hidden sm:block absolute right-0 bottom-0 w-[20%]">
+          <div className="rounded-[1.4rem] lg:rounded-[1.75rem] bg-neutral-900 p-[5%] shadow-2xl ring-1 ring-black/10">
+            <div
+              className="relative overflow-hidden rounded-[1rem] lg:rounded-[1.3rem] bg-surface-alt"
+              style={{ aspectRatio: `${phone.width} / ${phone.height}` }}
+            >
+              <Image
+                src={phone.src}
+                alt={phone.alt}
+                fill
+                sizes="(min-width: 768px) 12vw, 20vw"
+                className="object-cover object-top"
+              />
+              <span className="absolute left-1/2 top-[2.5%] h-[3.5%] w-[30%] -translate-x-1/2 rounded-full bg-neutral-900" />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ProjectGallery({ images, host }: { images: ResolvedImage[]; host?: string }) {
+  const columns = images.length % 3 === 0 ? "sm:grid-cols-3" : "sm:grid-cols-2";
+  const sizes = images.length % 3 === 0 ? "(min-width: 640px) 33vw, 100vw" : "(min-width: 640px) 50vw, 100vw";
+
+  return (
+    <div className={`grid grid-cols-1 ${columns} gap-6 reveal`}>
       {images.map((image) => (
         <figure key={image.src}>
-          <ProjectImage image={image} />
+          {host && image.width && image.height ? (
+            <BrowserFrame host={host} image={image} sizes={sizes} />
+          ) : (
+            <ProjectImage image={image} />
+          )}
           {image.caption && (
             <figcaption className="text-secondary text-xs leading-relaxed mt-3">
               {image.caption}
@@ -139,6 +216,16 @@ function ProjectContent({
             </h5>
             <p className="text-primary font-medium text-sm">{project.result}</p>
           </div>
+        )}
+        {project.url && (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-primary text-white px-6 py-3 text-sm font-medium hover:bg-accent transition-colors"
+          >
+            {labels.viewProduct}
+          </a>
         )}
       </div>
     </>
@@ -282,6 +369,7 @@ export default async function ProjectsSection() {
     role: t("labels.role"),
     stack: t("labels.stack"),
     result: t("labels.result"),
+    viewProduct: t("viewProduct"),
   };
   const confidentialLabels: ConfidentialLabels = {
     badge: t("confidential.badge"),
@@ -307,7 +395,29 @@ export default async function ProjectsSection() {
       <div className="space-y-16 md:space-y-30">
         {cases.map((project, i) => {
           const num = String(i + 1).padStart(2, "0");
-          const [cover, ...gallery] = project.images;
+          const [cover, ...rest] = project.images;
+          // With a device showcase as the main visual, every image goes to the gallery.
+          const gallery = project.showcase ? project.images : rest;
+          const visual = project.showcase ? (
+            <DeviceShowcase showcase={project.showcase} />
+          ) : (
+            <ProjectImage image={cover} badge={project.confidential && confidentialLabels.badge} />
+          );
+          // Featured cases (with a showcase) give the visual more room and stay
+          // stacked, visual on top, until lg; regular cases split at md.
+          const layout = project.showcase
+            ? {
+                visual: "md:col-span-12 lg:col-span-7",
+                content: "md:col-span-12 lg:col-span-5",
+                visualSecond: "order-1 lg:order-2",
+                contentFirst: "order-2 lg:order-1",
+              }
+            : {
+                visual: "md:col-span-6",
+                content: "md:col-span-6",
+                visualSecond: "order-1 md:order-2",
+                contentFirst: "order-2 md:order-1",
+              };
           // Cases alternate sides: image left on odd rows, right on even rows.
           const imageFirst = i % 2 === 0;
 
@@ -316,31 +426,26 @@ export default async function ProjectsSection() {
               <article className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center reveal">
                 {imageFirst ? (
                   <>
-                    <div className="md:col-span-6">
-                      <ProjectImage
-                        image={cover}
-                        badge={project.confidential && confidentialLabels.badge}
-                      />
-                    </div>
-                    <div className="md:col-span-6">
+                    <div className={layout.visual}>{visual}</div>
+                    <div className={layout.content}>
                       <ProjectContent project={project} num={num} labels={labels} />
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className="md:col-span-6 order-2 md:order-1">
+                    <div className={`${layout.content} ${layout.contentFirst}`}>
                       <ProjectContent project={project} num={num} labels={labels} />
                     </div>
-                    <div className="md:col-span-6 order-1 md:order-2">
-                      <ProjectImage
-                        image={cover}
-                        badge={project.confidential && confidentialLabels.badge}
-                      />
-                    </div>
+                    <div className={`${layout.visual} ${layout.visualSecond}`}>{visual}</div>
                   </>
                 )}
               </article>
-              {gallery.length > 0 && <ProjectGallery images={gallery} />}
+              {gallery.length > 0 && (
+                <ProjectGallery
+                  images={gallery}
+                  host={project.url && new URL(project.url).host}
+                />
+              )}
               {project.confidential && (
                 <ConfidentialNotice
                   title={project.title}
