@@ -1,7 +1,13 @@
 import type { ReactNode } from "react";
-import { getTranslations } from "next-intl/server";
+import Link from "next/link";
+import { getLocale, getTranslations } from "next-intl/server";
+import { getProjects } from "@/data/projects";
+import type { Locale } from "@/i18n/config";
 import "./print.css";
 import PrintButton from "./PrintButton";
+
+// ATS-friendly CV: one column, plain text (no key info inside icons or chips),
+// standard section titles, clickable links. Print styles keep it to 2 A4 pages.
 
 type ContactItem = { label: string; value: string; href?: string };
 type RoleItem = {
@@ -11,12 +17,6 @@ type RoleItem = {
   period: string;
   bullets: string[];
   skills: string[];
-};
-type ProjectItem = {
-  title: string;
-  role: string;
-  result: string;
-  clients?: { name: string; href: string }[];
 };
 type StackCategory = { name: string; items: string[] };
 type EducationItem = {
@@ -30,7 +30,7 @@ type LanguageItem = { name: string; level: string };
 
 function SectionHeading({ children }: { children: ReactNode }) {
   return (
-    <div className="flex items-baseline gap-4 mb-5">
+    <div className="flex items-baseline gap-4 mb-4 print:mb-2">
       <h2 className="shrink-0 font-label-mono text-accent-ink uppercase tracking-widest text-[11px]">
         {children}
       </h2>
@@ -39,21 +39,61 @@ function SectionHeading({ children }: { children: ReactNode }) {
   );
 }
 
+// Short sections stay on one page; long ones (experience) may break.
+function Section({
+  title,
+  children,
+  breakable = false,
+}: {
+  title: string;
+  children: ReactNode;
+  breakable?: boolean;
+}) {
+  return (
+    <section className={`mb-10 print:mb-5 ${breakable ? "" : "cv-avoid-break"}`}>
+      <SectionHeading>{title}</SectionHeading>
+      {children}
+    </section>
+  );
+}
+
+function ContactLine({ items }: { items: ContactItem[] }) {
+  return (
+    <p className="text-sm print:text-[13px]">
+      {items.map((c, i) => (
+        <span key={c.label}>
+          {i > 0 && <span className="text-secondary"> · </span>}
+          {c.href ? (
+            <a href={c.href} className="hover:text-accent">
+              {c.value}
+            </a>
+          ) : (
+            c.value
+          )}
+        </span>
+      ))}
+    </p>
+  );
+}
+
+const body = "text-secondary text-sm print:text-[13px] leading-relaxed print:leading-snug";
+
 export default async function CvPage() {
-  // CV-specific copy: title, contact, section labels, languages, condensed projects.
+  // CV-specific copy: title, contact, section labels, languages.
   const t = await getTranslations("CvPage");
-  // Shared content — the CV reads the same keys the site sections use, so there is a
-  // single source of truth and editing a site section updates the downloadable CV too.
+  // Shared content — the CV reads the same sources the site uses, so there is a
+  // single source of truth and editing the site updates the downloadable CV too.
   const tProfile = await getTranslations("Profile");
   const tExperience = await getTranslations("Experience");
   const tStack = await getTranslations("TechStack");
   const tEducation = await getTranslations("Education");
   const tCertifications = await getTranslations("Certifications");
+  const locale = (await getLocale()) as Locale;
+  const { cases, landings } = getProjects(locale);
 
   const contact = t.raw("contact") as ContactItem[];
   const profileParagraphs = tProfile.raw("paragraphs") as string[];
   const roles = tExperience.raw("roles") as RoleItem[];
-  const projects = t.raw("projects") as ProjectItem[];
   const stack = tStack.raw("categories") as StackCategory[];
   const education = tEducation.raw("studies") as EducationItem[];
   const certifications = tCertifications.raw("items") as CertificationItem[];
@@ -61,177 +101,155 @@ export default async function CvPage() {
 
   return (
     <main className="cv-page bg-background text-primary max-w-180 mx-auto px-margin-mobile py-16 print:py-0">
-      <a
+      <Link
         href="/"
         className="cv-no-print inline-block mb-8 font-label-mono text-[11px] uppercase tracking-widest text-secondary hover:text-accent"
       >
         {t("backLink")}
-      </a>
+      </Link>
 
       {/* Header */}
-      <header className="mb-12 pb-8 border-b border-subtle cv-avoid-break">
-        <h1 className="font-headline text-headline-lg mb-2">{t("name")}</h1>
-        <p className="font-headline text-headline-md text-secondary mb-6">
-          {t("titleMain")} <span className="text-accent italic">{t("titleAccent")}</span>
+      <header className="mb-10 print:mb-4 pb-6 print:pb-3 border-b border-subtle">
+        <h1 className="font-headline text-headline-lg print:text-[28px] print:leading-tight mb-1">
+          {t("name")}
+        </h1>
+        <p className="font-headline text-headline-md print:text-[18px] text-secondary mb-4 print:mb-2">
+          {t("titleMain")} <span className="text-accent">{t("titleAccent")}</span>
         </p>
-        <div className="flex flex-wrap gap-x-6 gap-y-3">
-          {contact.map((c) => (
-            <div key={c.label} className="pr-6 border-r border-subtle last:border-r-0 last:pr-0">
-              <span className="block font-label-mono text-[10px] text-secondary uppercase tracking-widest mb-0.5">
-                {c.label}
-              </span>
-              {c.href ? (
-                <a href={c.href} className="text-sm font-medium hover:text-accent">
-                  {c.value}
-                </a>
-              ) : (
-                <span className="text-sm font-medium">{c.value}</span>
-              )}
-            </div>
-          ))}
-        </div>
+        <ContactLine items={contact.slice(0, 3)} />
+        <ContactLine items={contact.slice(3)} />
       </header>
 
-      {/* Perfil */}
-      <section className="mb-12 cv-avoid-break">
-        <SectionHeading>{t("sections.profile")}</SectionHeading>
-        <div className="space-y-3">
-          {profileParagraphs.map((paragraph) => (
-            <p key={paragraph} className="text-secondary text-sm leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
-        </div>
-      </section>
+      <Section title={t("sections.profile")}>
+        {profileParagraphs.map((paragraph) => (
+          <p key={paragraph} className={body}>
+            {paragraph}
+          </p>
+        ))}
+      </Section>
 
-      {/* Experiencia */}
-      <section className="mb-12">
-        <SectionHeading>{t("sections.experience")}</SectionHeading>
-        <div className="space-y-8">
+      <Section title={t("sections.experience")} breakable>
+        <div className="space-y-8 print:space-y-4">
           {roles.map((role) => (
-            <div key={`${role.company}-${role.title}`} className="cv-avoid-break pl-4 border-l-2 border-subtle">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1 gap-x-4">
-                <h3 className="text-sm font-bold">{role.title}</h3>
-                <span className="font-label-mono text-secondary text-[10px] shrink-0">{role.period}</span>
+            <div key={`${role.company}-${role.title}`}>
+              <div className="flex flex-col md:flex-row print:flex-row md:justify-between print:justify-between md:items-baseline print:items-baseline gap-x-4">
+                <h3 className="text-sm print:text-[13.5px] font-bold">
+                  {role.title} — {role.company}
+                </h3>
+                <span className="font-label-mono text-secondary text-[10px] shrink-0">
+                  {role.period}
+                </span>
               </div>
-              <p className="text-accent-ink text-xs font-medium mb-2">
-                {role.company}
-                {role.context && <span className="text-secondary font-normal"> · {role.context}</span>}
-              </p>
-              <ul className="text-secondary text-sm leading-relaxed mb-3 list-disc pl-4 space-y-1">
+              {role.context && (
+                <p className="text-accent-ink text-xs print:text-[12px] font-medium">{role.context}</p>
+              )}
+              <ul className={`${body} list-disc pl-4 mt-2 print:mt-1 space-y-1 print:space-y-0.5`}>
                 {role.bullets.map((bullet) => (
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
-              <div className="flex flex-wrap items-center gap-1.5">
-                {role.skills.map((skill, i) => (
-                  <span key={skill} className="contents">
-                    {i > 0 && (
-                      <span aria-hidden="true" className="text-secondary text-[9px]">
-                        ·
-                      </span>
-                    )}
-                    <span className="px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[9px] uppercase">
-                      {skill}
-                    </span>
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Proyectos destacados */}
-      <section className="mb-12">
-        <SectionHeading>{t("sections.projects")}</SectionHeading>
-        <div className="space-y-6">
-          {projects.map((p) => (
-            <div key={p.title} className="cv-avoid-break pl-4 border-l-2 border-subtle">
-              <h3 className="text-sm font-bold">{p.title}</h3>
-              <p className="font-label-mono text-secondary text-[10px] uppercase tracking-wide mb-1">
-                {p.role}
+              <p className="text-xs print:text-[12px] text-secondary mt-2 print:mt-1">
+                <span className="font-medium text-primary">{t("techLabel")}:</span>{" "}
+                {role.skills.join(" · ")}
               </p>
-              <p className="text-secondary text-sm leading-relaxed">{p.result}</p>
-              {p.clients && (
-                <p className="text-accent-ink text-xs font-medium mt-2">
-                  {p.clients.map((client, i) => (
-                    <span key={client.name}>
-                      {i > 0 && " · "}
-                      <a href={client.href} className="hover:underline">
-                        {client.name}
-                      </a>
-                    </span>
-                  ))}
-                </p>
-              )}
             </div>
           ))}
         </div>
-      </section>
+      </Section>
 
-      {/* Stack */}
-      <section className="mb-12 cv-avoid-break">
-        <SectionHeading>{t("sections.stack")}</SectionHeading>
-        <div className="grid sm:grid-cols-2 print:grid-cols-1 gap-x-10 gap-y-5">
+      <Section title={t("sections.projects")}>
+        <div className="space-y-3 print:space-y-1.5">
+          {cases.map((p) => (
+            <div key={p.slug} className="cv-avoid-break">
+              <p className="text-sm print:text-[13px]">
+                <span className="font-bold">{p.title}</span>
+                <span className="text-secondary"> · {p.tags.join(" · ")}</span>
+              </p>
+              <p className="text-xs print:text-[12px] text-secondary">
+                {p.stack.join(" · ")}
+                {p.url && (
+                  <>
+                    {" — "}
+                    <a href={p.url} className="text-accent-ink hover:underline">
+                      {new URL(p.url).host}
+                    </a>
+                  </>
+                )}
+              </p>
+            </div>
+          ))}
+          <p className="text-sm print:text-[13px] cv-avoid-break">
+            <span className="font-bold">{t("landingsLabel")}</span>
+            {" — "}
+            {landings.map((l, i) => (
+              <span key={l.slug}>
+                {i > 0 && " · "}
+                <a href={l.url} className="text-accent-ink hover:underline">
+                  {l.title}
+                </a>
+              </span>
+            ))}
+          </p>
+        </div>
+      </Section>
+
+      <Section title={t("sections.stack")}>
+        <div className="space-y-1.5 print:space-y-0.5">
           {stack.map((cat) => (
-            <div key={cat.name}>
-              <h4 className="font-label-mono text-[10px] uppercase tracking-widest text-secondary mb-2 flex items-center gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-                {cat.name}
-              </h4>
-              <p className="text-sm">{cat.items.join(" · ")}</p>
-            </div>
+            <p key={cat.name} className="text-sm print:text-[13px]">
+              <span className="font-bold">{cat.name}:</span>{" "}
+              <span className="text-secondary">{cat.items.join(" · ")}</span>
+            </p>
           ))}
         </div>
-      </section>
+      </Section>
 
-      {/* Educación */}
-      <section className="mb-12 cv-avoid-break">
-        <SectionHeading>{t("sections.education")}</SectionHeading>
-        <div className="space-y-3">
+      <Section title={t("sections.education")}>
+        <div className="space-y-1.5 print:space-y-0.5">
           {education.map((edu) => (
-            <div key={edu.institution} className="pl-4 border-l-2 border-subtle">
-              <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1 gap-x-4">
-                <h3 className="text-sm font-bold">{edu.institution}</h3>
-                <span className="font-label-mono text-secondary text-[10px] shrink-0">{edu.period}</span>
-              </div>
-              <p className="text-accent-ink text-xs font-medium mb-1.5">{edu.degree}</p>
-              <span className="inline-block px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[9px] uppercase tracking-wide text-secondary">
-                {edu.status === "inProgress"
-                  ? tEducation("inProgressLabel")
-                  : tEducation("completedLabel")}
+            <div
+              key={edu.institution}
+              className="flex flex-col md:flex-row print:flex-row md:justify-between print:justify-between md:items-baseline print:items-baseline gap-x-4"
+            >
+              <p className="text-sm print:text-[13px]">
+                <span className="font-bold">{edu.degree}</span>
+                <span className="text-secondary">
+                  {" — "}
+                  {edu.institution}
+                  {edu.status === "inProgress" &&
+                    ` (${tEducation("inProgressLabel").toLowerCase()})`}
+                </span>
+              </p>
+              <span className="font-label-mono text-secondary text-[10px] shrink-0">
+                {edu.period}
               </span>
             </div>
           ))}
         </div>
-      </section>
+      </Section>
 
-      {/* Cursos y Certificaciones */}
-      <section className="mb-12 cv-avoid-break">
-        <SectionHeading>{t("sections.certifications")}</SectionHeading>
-        <div className="grid sm:grid-cols-2 print:grid-cols-1 gap-x-10 gap-y-3">
+      <Section title={t("sections.certifications")}>
+        <ul className="space-y-1 print:space-y-0">
           {certifications.map((cert) => (
-            <div key={cert.title}>
-              <h3 className="text-sm font-bold">{cert.title}</h3>
-              <p className="text-accent-ink text-xs font-medium">{cert.issuer}</p>
-            </div>
+            <li key={cert.title} className="text-sm print:text-[13px]">
+              <span className="font-bold">{cert.title}</span>
+              <span className="text-secondary"> — {cert.issuer}</span>
+            </li>
           ))}
-        </div>
-      </section>
+        </ul>
+      </Section>
 
-      {/* Idiomas */}
-      <section className="cv-avoid-break">
-        <SectionHeading>{t("sections.languages")}</SectionHeading>
-        <div className="flex flex-wrap gap-x-10 gap-y-3">
-          {languages.map((lang) => (
-            <div key={lang.name}>
-              <span className="text-sm font-medium">{lang.name}</span>
-              <span className="text-secondary text-sm"> — {lang.level}</span>
-            </div>
+      <Section title={t("sections.languages")}>
+        <p className="text-sm print:text-[13px]">
+          {languages.map((lang, i) => (
+            <span key={lang.name}>
+              {i > 0 && <span className="text-secondary"> · </span>}
+              <span className="font-medium">{lang.name}</span>
+              <span className="text-secondary"> — {lang.level}</span>
+            </span>
           ))}
-        </div>
-      </section>
+        </p>
+      </Section>
 
       <PrintButton label={t("printButton")} />
     </main>

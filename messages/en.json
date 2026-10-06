@@ -29,8 +29,7 @@
     "heading": "Professional Profile",
     "lead": "My work focuses on turning ideas and needs into intuitive, accessible, and maintainable web solutions.",
     "paragraphs": [
-      "With 2+ years of experience, I build modern web applications and interfaces, combining frontend development, API integration, and backend knowledge with a strong UX/UI perspective.",
-      "I work mainly with React, Next.js, and Laravel, contributing to web solutions where design, user experience, and code work together. I currently build full stack projects end to end with Next.js, Prisma, and MySQL, creating scalable solutions centered on users' needs."
+      "Frontend Developer with 2+ years of experience building web applications with React, Next.js, TypeScript and Laravel, backed by a solid UX/UI foundation. I founded ula studio, where I built the frontend of a medical platform in production for a clinic in Spain, with ongoing maintenance, and designed and built unda, my own scheduling SaaS, full stack with Next.js, Prisma and MySQL. Looking for a remote Frontend or Full Stack (Next.js) role."
     ]
   },
   "Experience": {
@@ -55,19 +54,19 @@
         "period": "May 2024 — June 2026",
         "bullets": [
           "Developed and maintained web interfaces for internal systems with Laravel, Livewire and Tailwind CSS.",
-          "Implemented reusable components and UX/UI and accessibility improvements following frontend best practices.",
+          "Implemented reusable components and UX/UI and accessibility (WCAG) improvements following frontend best practices.",
           "Collaborated on the evolution of the user experience, technical SEO and interface design."
         ],
-        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "UI/UX Design", "Accessibility", "Figma", "Claude Code"]
+        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "UX/UI", "Web Accessibility (WCAG)", "Figma", "Claude Code"]
       }
     ]
   },
   "TechStack": {
     "categories": [
-      { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React / Next.js", "Tailwind CSS", "shadcn/ui", "React Hook Form", "Sass", "Bootstrap", "Alpine.js"] },
-      { "name": "Backend", "items": ["Next.js API Routes", "Prisma", "MySQL", "REST APIs", "Authentication (sessions / JWT)", "Zod", "Laravel", "PHP", "Livewire"] },
-      { "name": "Design / UX", "items": ["UX/UI Design", "Figma", "Design Systems", "WCAG / Accessibility", "Photoshop"] },
-      { "name": "Tools", "items": ["Git / GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
+      { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "shadcn/ui", "React Hook Form", "Sass", "Bootstrap", "Alpine.js"] },
+      { "name": "Backend", "items": ["Node.js (Next.js API Routes)", "REST API", "Prisma", "MySQL", "Authentication (sessions / JWT)", "Zod", "Laravel", "PHP", "Livewire"] },
+      { "name": "Design / UX", "items": ["UX/UI", "Figma", "Design Systems", "Web Accessibility (WCAG)", "Photoshop"] },
+      { "name": "Tools", "items": ["Git", "GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
     ]
   },
   "Education": {
@@ -78,13 +77,13 @@
       {
         "institution": "UTN BA",
         "degree": "University Technical Degree in Programming",
-        "period": "Aug. 2026 – Aug. 2028",
+        "period": "August 2026 — August 2028",
         "status": "inProgress"
       },
       {
         "institution": "National University of Quilmes",
         "degree": "Bachelor's Degree in International Trade",
-        "period": "Mar. 2007 – Dec. 2014",
+        "period": "March 2007 — December 2014",
         "status": "completed"
       }
     ]
@@ -143,48 +142,27 @@
   "CvPage": {
     "backLink": "← Back to site",
     "name": "Laura Pommarés",
-    "titleMain": "Web Developer",
-    "titleAccent": "& UX/UI Designer",
+    "titleMain": "Frontend Developer",
+    "titleAccent": "· Next.js & UX/UI",
     "contact": [
       { "label": "Email", "value": "laurapommares@gmail.com", "href": "mailto:laurapommares@gmail.com" },
       { "label": "WhatsApp", "value": "+54 9 2346 507655", "href": "https://wa.me/5492346507655" },
-      { "label": "Location", "value": "Chivilcoy, Buenos Aires, ARG" },
+      { "label": "Location", "value": "Chivilcoy, Buenos Aires, Argentina · Remote" },
       { "label": "Portfolio", "value": "laura-pommares.vercel.app", "href": "https://laura-pommares.vercel.app/" },
       { "label": "LinkedIn", "value": "linkedin.com/in/laura-pommarés", "href": "https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/" },
       { "label": "GitHub", "value": "github.com/laupommares", "href": "https://github.com/laupommares" }
     ],
     "sections": {
-      "profile": "Profile",
+      "profile": "Summary",
       "experience": "Experience",
       "projects": "Projects",
-      "stack": "Skills / Tech Stack",
+      "stack": "Skills",
       "education": "Education",
       "certifications": "Certifications",
       "languages": "Languages"
     },
-    "projects": [
-      {
-        "title": "Medical Studies Management Platform",
-        "role": "Frontend Developer — Laravel · Livewire · Tailwind CSS",
-        "result": "Optimized the flow for assigning, uploading, and reporting studies between the clinic and doctors."
-      },
-      {
-        "title": "Medical Appointment Management Platform",
-        "role": "UX/UI & Frontend — Next.js · Figma · REST API Consumption · JWT Auth",
-        "result": "Appointment system with multi-role logic for clinic, doctors, patients, and companies, with REST API integration for real-time data."
-      },
-      {
-        "title": "Conversion Landing Pages",
-        "role": "Next.js · Figma · Tailwind CSS",
-        "result": "Portfolios and booking sites for independent professionals, focused on identity and conversion.",
-        "clients": [
-          { "name": "Sofía Capuano", "href": "https://sofiacapuano.com/" },
-          { "name": "Juliana Re", "href": "https://julianareconecta.com/" },
-          { "name": "Jori Armonía Yoga", "href": "https://joriarmoniayoga.com/" },
-          { "name": "Las Coquettes", "href": "https://www.lascoquettes.com/" }
-        ]
-      }
-    ],
+    "techLabel": "Technologies",
+    "landingsLabel": "Websites & landing pages",
     "languages": [
       { "name": "Spanish", "level": "Native" },
       { "name": "Portuguese", "level": "Advanced" },
