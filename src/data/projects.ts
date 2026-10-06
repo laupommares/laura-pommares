@@ -98,8 +98,8 @@ export const projects: Project[] = [
     role: "Frontend Developer · Backend support",
     stack: ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Alpine.js"],
     result: {
-      es: "En producción desde mayo de 2025. El cliente pagó el desarrollo y mantiene contratado el mantenimiento: más de un año de trabajo continuo.",
-      en: "In production since May 2025. The client paid for the build and has kept the maintenance contract ever since: over a year of continuous work.",
+      es: "En producción desde mayo de 2025, con el mantenimiento contratado desde entonces: más de un año de trabajo continuo.",
+      en: "In production since May 2025, with maintenance under contract ever since: over a year of continuous work.",
     },
     confidential: {
       notice: {

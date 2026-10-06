@@ -40,7 +40,7 @@ function ProjectImage({ image, badge }: { image: ResolvedImage; badge?: string }
         className={`w-full h-full object-cover ${objectPositionClass[image.objectPosition]}`}
       />
       {badge && (
-        <span className="absolute left-3 bottom-3 inline-flex items-center gap-1.5 whitespace-nowrap bg-background/90 backdrop-blur-sm border border-subtle px-2 sm:px-2.5 py-1 font-label-mono text-[10px] uppercase tracking-wide sm:tracking-widest text-secondary">
+        <span className="absolute left-3 bottom-3 inline-flex items-center gap-1.5 max-[390px]:max-w-[calc(100%-1.5rem)] min-[390px]:whitespace-nowrap bg-background/90 backdrop-blur-sm border border-subtle px-2 sm:px-2.5 py-1 font-label-mono text-[10px] uppercase tracking-wide sm:tracking-widest text-secondary">
           <span className="material-symbols-outlined text-[14px]! leading-none" aria-hidden="true">
             lock
           </span>
