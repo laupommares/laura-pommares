@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 export default async function HeroSection() {
   const t = await getTranslations("Hero");
   const tCv = await getTranslations("Cv");
-  const stats = t.raw("stats") as { label: string; value: string }[];
+  const stats = t.raw("stats") as { label: string; value: string; href?: string }[];
 
   return (
     <section className="px-margin-mobile max-w-container-max mx-auto mb-16 md:mb-section-gap reveal">
@@ -25,7 +25,16 @@ export default async function HeroSection() {
                 {stat.label}
               </span>
               <span className="text-[13px] md:text-sm font-medium leading-snug text-right md:text-left">
-                {stat.value}
+                {stat.href ? (
+                  <a
+                    href={stat.href}
+                    className="underline decoration-subtle underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
+                  >
+                    {stat.value}
+                  </a>
+                ) : (
+                  stat.value
+                )}
               </span>
             </div>
           ))}

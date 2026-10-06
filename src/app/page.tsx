@@ -17,9 +17,9 @@ export default function Home() {
       <NavHeader />
       <main className="pt-24 md:pt-40">
         <HeroSection />
-        <ProfileSection />
-        <ExperienceSection />
         <ProjectsSection />
+        <ExperienceSection />
+        <ProfileSection />
         <TechStackSection />
         <EducationSection />
         <CertificationsSection />

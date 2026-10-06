@@ -6,9 +6,9 @@ export default async function SiteFooter() {
   const tCv = await getTranslations("Cv");
 
   const links = [
-    { href: "#perfil", label: tNav("links.trajectory") },
-    { href: "#experiencia", label: tNav("links.experience") },
     { href: "#proyectos", label: tNav("links.projects") },
+    { href: "#experiencia", label: tNav("links.experience") },
+    { href: "#perfil", label: tNav("links.trajectory") },
     { href: "#stack", label: tNav("links.stack") },
     { href: "#educacion", label: tNav("links.education") },
     { href: "#certificaciones", label: tNav("links.certifications") },

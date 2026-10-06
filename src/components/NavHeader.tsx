@@ -8,13 +8,14 @@ export default async function NavHeader() {
   const tCv = await getTranslations("Cv");
   const locale = (await getLocale()) as Locale;
 
-  const mobileLinks = [
-    { href: "#perfil", label: t("links.trajectory") },
-    { href: "#experiencia", label: t("links.experience") },
+  // Same order as the sections on the page. Certifications stays reachable by
+  // scrolling and from the footer, but is left out of the menu to keep it light.
+  const links = [
     { href: "#proyectos", label: t("links.projects") },
+    { href: "#experiencia", label: t("links.experience") },
+    { href: "#perfil", label: t("links.trajectory") },
     { href: "#stack", label: t("links.stack") },
     { href: "#educacion", label: t("links.education") },
-    { href: "#certificaciones", label: t("links.certifications") },
   ];
 
   return (
@@ -27,42 +28,15 @@ export default async function NavHeader() {
           {t("brand")}
         </a>
         <nav className="hidden md:flex items-center gap-8">
-          <a
-            className="text-sm font-medium hover:text-accent transition-colors"
-            href="#perfil"
-          >
-            {t("links.trajectory")}
-          </a>
-          <a
-            className="text-sm font-medium hover:text-accent transition-colors"
-            href="#experiencia"
-          >
-            {t("links.experience")}
-          </a>
-          <a
-            className="text-sm font-medium hover:text-accent transition-colors"
-            href="#proyectos"
-          >
-            {t("links.projects")}
-          </a>
-          <a
-            className="text-sm font-medium hover:text-accent transition-colors"
-            href="#stack"
-          >
-            {t("links.stack")}
-          </a>
-          <a
-            className="text-sm font-medium hover:text-accent transition-colors"
-            href="#educacion"
-          >
-            {t("links.education")}
-          </a>
-          <a
-            className="text-sm font-medium hover:text-accent transition-colors"
-            href="#certificaciones"
-          >
-            {t("links.certifications")}
-          </a>
+          {links.map((link) => (
+            <a
+              key={link.href}
+              className="text-sm font-medium hover:text-accent transition-colors"
+              href={link.href}
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
         <div className="flex items-center gap-5 md:gap-6">
           <LocaleSwitch currentLocale={locale} />
@@ -79,7 +53,7 @@ export default async function NavHeader() {
             {t("cta")}
           </a>
           <MobileNav
-            links={mobileLinks}
+            links={links}
             downloadCvHref={tCv("downloadHref")}
             downloadCvLabel={t("downloadCv")}
             ctaLabel={t("cta")}

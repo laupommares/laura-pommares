@@ -3,7 +3,7 @@ import LinkedText from "./LinkedText";
 
 type RoleItem = {
   title: string;
-  company: string;
+  company?: string;
   context?: string;
   contextUrl?: string;
   period: string;
@@ -28,13 +28,13 @@ export default async function ExperienceSection() {
         </div>
         <div className="md:col-span-8 space-y-16">
           {roles.map((role) => (
-            <div key={`${role.company}-${role.title}`}>
+            <div key={role.title}>
               <div className="flex flex-col md:flex-row justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-bold mb-1">{role.title}</h3>
-                  <p className="text-accent text-sm font-medium">
-                    {role.company}
-                  </p>
+                  {role.company && (
+                    <p className="text-accent text-sm font-medium">{role.company}</p>
+                  )}
                   {role.context && (
                     <p className="text-secondary text-xs mt-1">
                       <LinkedText
@@ -45,7 +45,7 @@ export default async function ExperienceSection() {
                     </p>
                   )}
                 </div>
-                <span className="font-label-mono text-secondary text-[12px] mt-2 md:mt-0">
+                <span className="font-label-mono text-secondary text-[12px] mt-2 md:mt-0 md:ml-6 shrink-0 whitespace-nowrap">
                   {role.period}
                 </span>
               </div>

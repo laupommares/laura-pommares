@@ -13,7 +13,7 @@ import LinkedText from "@/components/LinkedText";
 type ContactItem = { label: string; value: string; href?: string };
 type RoleItem = {
   title: string;
-  company: string;
+  company?: string;
   context?: string;
   contextUrl?: string;
   period: string;
@@ -133,10 +133,11 @@ export default async function CvPage() {
       <Section title={t("sections.experience")} breakable>
         <div className="space-y-8 print:space-y-4">
           {roles.map((role) => (
-            <div key={`${role.company}-${role.title}`}>
+            <div key={role.title}>
               <div className="flex flex-col md:flex-row print:flex-row md:justify-between print:justify-between md:items-baseline print:items-baseline gap-x-4">
                 <h3 className="text-sm print:text-[13.5px] font-bold">
-                  {role.title} — {role.company}
+                  {role.title}
+                  {role.company && ` — ${role.company}`}
                 </h3>
                 <span className="font-label-mono text-secondary text-[10px] shrink-0">
                   {role.period}

@@ -110,8 +110,8 @@ export const projects: Project[] = [
     role: "Frontend Developer · Backend support",
     stack: ["Laravel", "Livewire", "Tailwind CSS", "JavaScript", "Alpine.js"],
     result: {
-      es: "En producción desde mayo de 2025, con el mantenimiento contratado desde entonces: más de un año de trabajo continuo.",
-      en: "In production since May 2025, with maintenance under contract ever since: over a year of continuous work.",
+      es: "En producción desde julio de 2025, con el mantenimiento contratado desde entonces: más de un año de trabajo continuo.",
+      en: "In production since July 2025, with maintenance under contract ever since: over a year of continuous work.",
     },
     confidential: {
       notice: {
@@ -153,19 +153,19 @@ export const projects: Project[] = [
     whatIDid: {
       es: [
         "Diseñé el producto entero en Figma: flujos, pantallas y sistema visual.",
-        "Lo desarrollé full stack con Next.js, Prisma y MySQL: panel, agenda, clientes, servicios y reservas sobre una misma base.",
+        "Lo desarrollé full stack con Next.js, Prisma y PostgreSQL: panel, agenda, clientes, servicios y reservas sobre una misma base.",
         "Implementé el registro con prueba gratis de 30 días, la autenticación por sesiones y la validación con Zod.",
       ],
       en: [
         "Designed the entire product in Figma: flows, screens and visual system.",
-        "Built it full stack with Next.js, Prisma and MySQL: dashboard, calendar, clients, services and bookings on a single shared base.",
+        "Built it full stack with Next.js, Prisma and PostgreSQL: dashboard, calendar, clients, services and bookings on a single shared base.",
         "Implemented sign-up with a 30-day free trial, session-based authentication and Zod validation.",
       ],
     },
     role: "Product Designer & Full Stack Developer",
     stack: {
-      es: ["Next.js", "TypeScript", "Prisma", "MySQL", "Auth por sesiones", "Zod", "Tailwind CSS", "shadcn/ui", "Figma"],
-      en: ["Next.js", "TypeScript", "Prisma", "MySQL", "Session auth", "Zod", "Tailwind CSS", "shadcn/ui", "Figma"],
+      es: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Auth por sesiones", "Zod", "Tailwind CSS", "shadcn/ui", "Figma"],
+      en: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Session auth", "Zod", "Tailwind CSS", "shadcn/ui", "Figma"],
     },
     result: {
       es: "En producción en agendaunda.com y en beta con sus primeros profesionales, con registro abierto y prueba gratis de 30 días.",

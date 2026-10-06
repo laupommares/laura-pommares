@@ -13,14 +13,28 @@
     "cta": "Contactar"
   },
   "Hero": {
-    "titleLine1": "Web Developer &",
-    "titleLine2": "UX/UI Designer",
-    "description": "Construyo interfaces modernas, accesibles y responsivas con React, Next.js y Laravel, combinando desarrollo frontend con una sólida base en UX/UI para crear productos fáciles de usar y mantener.",
+    "titleLine1": "Full Stack Developer",
+    "titleLine2": "Next.js & UX/UI",
+    "description": "Full Stack Developer con base fuerte en frontend y UX/UI. Construyo aplicaciones web con React, Next.js y TypeScript. Tengo experiencia en equipo con Scrum en VALIDA y trabajo real en producción: la plataforma de una clínica en España, con mantenimiento activo, y unda, mi SaaS de agenda.",
     "stats": [
-      { "label": "Ubicación", "value": "Chivilcoy, Buenos Aires, ARG" },
-      { "label": "Stack Principal", "value": "Next.js · React · Laravel" },
-      { "label": "Enfoque", "value": "Frontend · Backend · UX/UI" },
-      { "label": "Disponibilidad", "value": "Disponibilidad inmediata" }
+      {
+        "label": "En producción",
+        "value": "Plataforma médica · Cliente en España",
+        "href": "#gestion-estudios-medicos"
+      },
+      {
+        "label": "SaaS propio",
+        "value": "unda · agendaunda.com",
+        "href": "#unda"
+      },
+      {
+        "label": "Estudio",
+        "value": "ula studio · Fundadora"
+      },
+      {
+        "label": "Disponibilidad",
+        "value": "Inmediata · Argentina · Remoto"
+      }
     ],
     "viewProjects": "Ver Proyectos",
     "downloadCv": "Descargar CV"
@@ -29,45 +43,45 @@
     "heading": "Perfil Profesional",
     "lead": "Mi trabajo se centra en transformar ideas y necesidades en soluciones web intuitivas, accesibles y mantenibles.",
     "paragraphs": [
-      "Frontend Developer con más de 2 años de experiencia construyendo aplicaciones web con React, Next.js, TypeScript y Laravel, con una base sólida en UX/UI. Fundé ula studio, donde desarrollé el frontend de una plataforma médica en producción para una clínica en España, con mantenimiento activo, y diseñé y desarrollé full stack unda, un SaaS propio de agenda con Next.js, Prisma y MySQL. Busco un rol Frontend o Full Stack (Next.js) en remoto."
+      "Full Stack Developer con base fuerte en frontend y UX/UI, y más de 2 años de experiencia construyendo aplicaciones web con React, Next.js, TypeScript y Laravel. En VALIDA desarrollé y mantuve sistemas internos dentro de un equipo Scrum. Como freelance desarrollé el frontend de la plataforma de una clínica en España, en producción y con mantenimiento activo, y diseñé y desarrollé full stack unda, mi SaaS de agenda con Next.js, Prisma y PostgreSQL. Desde septiembre de 2026 trabajo bajo mi estudio, ula studio. Busco un rol Full Stack (Next.js) o Frontend en remoto."
     ]
   },
   "Experience": {
     "heading": "Experiencia Profesional",
     "roles": [
       {
-        "title": "Frontend Developer · Fundadora",
-        "company": "ula studio",
-        "context": "Estudio propio de diseño y desarrollo web · somosulastudio.com",
+        "title": "Full Stack Developer · Freelance",
+        "context": "Proyectos para clientes y productos propios · desde septiembre de 2026 bajo mi estudio ula studio (somosulastudio.com)",
+        "contextUrl": "https://somosulastudio.com",
         "period": "Mayo 2025 — Presente",
         "bullets": [
-          "Desarrollé el frontend completo de una plataforma de estudios médicos para una clínica en España, con Laravel, Livewire y Tailwind CSS; trabajé con un desarrollador backend y aporté en base de datos y lógica de servidor. En producción desde mayo de 2025, con mantenimiento activo.",
-          "Diseñé y desarrollé full stack unda (agendaunda.com), un SaaS de agenda para profesionales: API REST propia, modelado de datos con Prisma y MySQL, autenticación por sesiones y validación con Zod. En producción, en beta.",
-          "Diseñé la UX/UI multi-rol de una plataforma de turnos médicos y desarrollé su frontend con Next.js y TypeScript, consumiendo una API REST externa con auth JWT en cookies httpOnly.",
-          "Diseñé y desarrollé sitios web y landings para clientes de Argentina y España con Next.js, Tailwind CSS y Figma."
+          "Desarrollé la plataforma de estudios médicos de una clínica en España con Laravel y Livewire: frontend completo y participación en base de datos y backend, junto a un desarrollador backend. En producción desde julio de 2025, con mantenimiento activo.",
+          "Diseñé y desarrollé full stack unda (agendaunda.com), un SaaS de agenda: API REST propia con Next.js, Prisma y PostgreSQL, autenticación por sesiones y validación con Zod. En producción, en beta.",
+          "Diseñé y desarrollé sitios y landings, además de la UX/UI y el frontend de una plataforma de turnos multi-rol, con Next.js, TypeScript y Figma."
         ],
-        "skills": ["Next.js", "React", "TypeScript", "JavaScript", "REST API", "Prisma", "MySQL", "Laravel", "Livewire", "Tailwind CSS", "Figma", "UX/UI"],
-        "contextUrl": "https://somosulastudio.com"
+        "skills": ["Next.js", "React", "TypeScript", "REST API", "Prisma", "PostgreSQL", "Laravel", "Livewire", "Tailwind CSS", "Figma", "UX/UI"]
       },
       {
         "title": "Frontend Developer",
         "company": "VALIDA",
         "period": "Mayo 2024 — Junio 2026",
         "bullets": [
-          "Desarrollé y mantuve interfaces web para sistemas internos con Laravel, Livewire y Tailwind CSS.",
-          "Implementé componentes reutilizables y mejoras de UX/UI y accesibilidad (WCAG) siguiendo buenas prácticas de frontend.",
-          "Colaboré en la evolución de la experiencia de usuario, el SEO técnico y el diseño de interfaces."
+          "Desarrollé y mantuve interfaces para sistemas internos con Laravel, Livewire y Tailwind CSS, con componentes reutilizables y mejoras de UX/UI y accesibilidad (WCAG).",
+          "Trabajé en un equipo ágil con Scrum (sprints, dailies, planning y retrospectivas), con gestión de tareas en Jira.",
+          "Apliqué control de versiones con Git y GitLab: ramas, merge requests y code review.",
+          "Colaboré con perfiles de backend, diseño y QA.",
+          "Participé en el SEO técnico y en la evolución del diseño de interfaces."
         ],
-        "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "UX/UI", "Accesibilidad web (WCAG)", "Figma", "Claude Code"]
+        "skills": ["Laravel", "Livewire", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Git", "GitLab", "Jira", "Scrum", "UX/UI", "Accesibilidad web (WCAG)", "Figma"]
       }
     ]
   },
   "TechStack": {
     "categories": [
       { "name": "Frontend", "items": ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Next.js", "Tailwind CSS", "shadcn/ui", "React Hook Form", "Sass", "Bootstrap", "Alpine.js"] },
-      { "name": "Backend", "items": ["Node.js (Next.js API Routes)", "REST API", "Prisma", "MySQL", "Autenticación (sesiones / JWT)", "Zod", "Laravel", "PHP", "Livewire"] },
+      { "name": "Backend", "items": ["Node.js (Next.js API Routes)", "REST API", "Prisma", "PostgreSQL", "MySQL", "Autenticación (sesiones / JWT)", "Zod", "Laravel", "PHP", "Livewire"] },
       { "name": "Diseño / UX", "items": ["UX/UI", "Figma", "Design Systems", "Accesibilidad web (WCAG)", "Photoshop"] },
-      { "name": "Herramientas", "items": ["Git", "GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code"] }
+      { "name": "Herramientas y metodologías", "items": ["Git", "GitHub", "GitLab", "Jira", "Vercel", "Docker", "Postman", "Slack", "Claude Code", "Scrum", "Metodologías ágiles", "Code review"] }
     ]
   },
   "Education": {
@@ -131,7 +145,7 @@
   },
   "Footer": {
     "brand": "LAURA POMMARÉS",
-    "copyright": "© 2026 — Web Developer & UX/UI Designer",
+    "copyright": "© 2026 — Full Stack Developer · Next.js & UX/UI",
     "links": {
       "projects": "Proyectos",
       "experience": "Experiencia",
@@ -144,7 +158,7 @@
   "CvPage": {
     "backLink": "← Volver al sitio",
     "name": "Laura Pommarés",
-    "titleMain": "Frontend Developer",
+    "titleMain": "Full Stack Developer",
     "titleAccent": "· Next.js & UX/UI",
     "contact": [
       { "label": "Email", "value": "laurapommares@gmail.com", "href": "mailto:laurapommares@gmail.com" },

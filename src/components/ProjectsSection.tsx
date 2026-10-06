@@ -422,7 +422,7 @@ export default async function ProjectsSection() {
           const imageFirst = i % 2 === 0;
 
           return (
-            <div key={project.slug} className="space-y-10 md:space-y-12">
+            <div key={project.slug} id={project.slug} className="space-y-10 md:space-y-12 scroll-mt-24">
               <article className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-center reveal">
                 {imageFirst ? (
                   <>
