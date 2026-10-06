@@ -46,7 +46,8 @@
           "Designed the multi-role UX/UI of a medical appointment platform and built its frontend with Next.js and TypeScript, consuming an external REST API with JWT auth in httpOnly cookies.",
           "Designed and built websites and landing pages for clients in Argentina and Spain with Next.js, Tailwind CSS and Figma."
         ],
-        "skills": ["Next.js", "React", "TypeScript", "JavaScript", "REST API", "Prisma", "MySQL", "Laravel", "Livewire", "Tailwind CSS", "Figma", "UX/UI"]
+        "skills": ["Next.js", "React", "TypeScript", "JavaScript", "REST API", "Prisma", "MySQL", "Laravel", "Livewire", "Tailwind CSS", "Figma", "UX/UI"],
+        "contextUrl": "https://somosulastudio.com"
       },
       {
         "title": "Frontend Developer",
@@ -83,7 +84,6 @@
       {
         "institution": "National University of Quilmes",
         "degree": "Bachelor's Degree in International Trade",
-        "period": "March 2007 — December 2014",
         "status": "completed"
       }
     ]
@@ -149,7 +149,7 @@
       { "label": "WhatsApp", "value": "+54 9 2346 507655", "href": "https://wa.me/5492346507655" },
       { "label": "Location", "value": "Chivilcoy, Buenos Aires, Argentina · Remote" },
       { "label": "Portfolio", "value": "laura-pommares.vercel.app", "href": "https://laura-pommares.vercel.app/" },
-      { "label": "LinkedIn", "value": "linkedin.com/in/laura-pommarés", "href": "https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/" },
+      { "label": "LinkedIn", "value": "linkedin.com/in/laurapommares", "href": "https://www.linkedin.com/in/laurapommares" },
       { "label": "GitHub", "value": "github.com/laupommares", "href": "https://github.com/laupommares" }
     ],
     "sections": {
@@ -166,7 +166,7 @@
     "languages": [
       { "name": "Spanish", "level": "Native" },
       { "name": "Portuguese", "level": "Advanced" },
-      { "name": "English", "level": "B1" }
+      { "name": "English", "level": "B1 (fluent technical reading)" }
     ],
     "printButton": "Print / Save as PDF"
   }

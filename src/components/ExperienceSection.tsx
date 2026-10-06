@@ -1,9 +1,11 @@
 import { getTranslations } from "next-intl/server";
+import LinkedText from "./LinkedText";
 
 type RoleItem = {
   title: string;
   company: string;
   context?: string;
+  contextUrl?: string;
   period: string;
   bullets: string[];
   skills: string[];
@@ -34,7 +36,13 @@ export default async function ExperienceSection() {
                     {role.company}
                   </p>
                   {role.context && (
-                    <p className="text-secondary text-xs mt-1">{role.context}</p>
+                    <p className="text-secondary text-xs mt-1">
+                      <LinkedText
+                        text={role.context}
+                        url={role.contextUrl}
+                        className="underline underline-offset-2 hover:text-accent"
+                      />
+                    </p>
                   )}
                 </div>
                 <span className="font-label-mono text-secondary text-[12px] mt-2 md:mt-0">

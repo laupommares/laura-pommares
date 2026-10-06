@@ -5,6 +5,7 @@ import { getProjects } from "@/data/projects";
 import type { Locale } from "@/i18n/config";
 import "./print.css";
 import PrintButton from "./PrintButton";
+import LinkedText from "@/components/LinkedText";
 
 // ATS-friendly CV: one column, plain text (no key info inside icons or chips),
 // standard section titles, clickable links. Print styles keep it to 2 A4 pages.
@@ -14,6 +15,7 @@ type RoleItem = {
   title: string;
   company: string;
   context?: string;
+  contextUrl?: string;
   period: string;
   bullets: string[];
   skills: string[];
@@ -22,7 +24,7 @@ type StackCategory = { name: string; items: string[] };
 type EducationItem = {
   institution: string;
   degree: string;
-  period: string;
+  period?: string;
   status: "completed" | "inProgress";
 };
 type CertificationItem = { title: string; issuer: string };
@@ -141,11 +143,16 @@ export default async function CvPage() {
                 </span>
               </div>
               {role.context && (
-                <p className="text-accent-ink text-xs print:text-[12px] font-medium">{role.context}</p>
+                <p className="text-accent-ink text-xs print:text-[12px] font-medium">
+                  <LinkedText text={role.context} url={role.contextUrl} className="hover:underline" />
+                </p>
               )}
-              <ul className={`${body} list-disc pl-4 mt-2 print:mt-1 space-y-1 print:space-y-0.5`}>
+              <ul className={`${body} mt-2 print:mt-1 space-y-1 print:space-y-0.5`}>
                 {role.bullets.map((bullet) => (
-                  <li key={bullet}>{bullet}</li>
+                  // "•" is real text (not a CSS marker) so it survives plain-text extraction.
+                  <li key={bullet} className="pl-3.5 -indent-3.5">
+                    •&nbsp;&nbsp;{bullet}
+                  </li>
                 ))}
               </ul>
               <p className="text-xs print:text-[12px] text-secondary mt-2 print:mt-1">
@@ -220,9 +227,11 @@ export default async function CvPage() {
                     ` (${tEducation("inProgressLabel").toLowerCase()})`}
                 </span>
               </p>
-              <span className="font-label-mono text-secondary text-[10px] shrink-0">
-                {edu.period}
-              </span>
+              {edu.period && (
+                <span className="font-label-mono text-secondary text-[10px] shrink-0">
+                  {edu.period}
+                </span>
+              )}
             </div>
           ))}
         </div>

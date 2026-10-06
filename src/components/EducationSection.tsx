@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 type StudyItem = {
   institution: string;
   degree: string;
-  period: string;
+  period?: string;
   status: "completed" | "inProgress";
 };
 
@@ -32,9 +32,11 @@ export default async function EducationSection() {
                     {study.degree}
                   </p>
                 </div>
-                <span className="font-label-mono text-secondary text-[12px] mt-2 md:mt-0">
-                  {study.period}
-                </span>
+                {study.period && (
+                  <span className="font-label-mono text-secondary text-[12px] mt-2 md:mt-0">
+                    {study.period}
+                  </span>
+                )}
               </div>
               <span className="inline-block px-2 py-0.5 bg-surface-alt border border-subtle font-label-mono text-[10px] uppercase tracking-widest text-secondary">
                 {study.status === "inProgress"

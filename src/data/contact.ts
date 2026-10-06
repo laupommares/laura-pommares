@@ -1,5 +1,7 @@
 export const WHATSAPP_NUMBER = "5492346507655";
 export const EMAIL = "laurapommares@gmail.com";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/laurapommares";
+export const GITHUB_URL = "https://github.com/laupommares";
 
 export function whatsappUrl(message?: string) {
   const base = `https://wa.me/${WHATSAPP_NUMBER}`;

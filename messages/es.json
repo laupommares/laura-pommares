@@ -46,7 +46,8 @@
           "Diseñé la UX/UI multi-rol de una plataforma de turnos médicos y desarrollé su frontend con Next.js y TypeScript, consumiendo una API REST externa con auth JWT en cookies httpOnly.",
           "Diseñé y desarrollé sitios web y landings para clientes de Argentina y España con Next.js, Tailwind CSS y Figma."
         ],
-        "skills": ["Next.js", "React", "TypeScript", "JavaScript", "REST API", "Prisma", "MySQL", "Laravel", "Livewire", "Tailwind CSS", "Figma", "UX/UI"]
+        "skills": ["Next.js", "React", "TypeScript", "JavaScript", "REST API", "Prisma", "MySQL", "Laravel", "Livewire", "Tailwind CSS", "Figma", "UX/UI"],
+        "contextUrl": "https://somosulastudio.com"
       },
       {
         "title": "Frontend Developer",
@@ -83,7 +84,6 @@
       {
         "institution": "Universidad Nacional de Quilmes",
         "degree": "Licenciatura en Comercio Internacional",
-        "period": "Marzo 2007 — Diciembre 2014",
         "status": "completed"
       }
     ]
@@ -151,7 +151,7 @@
       { "label": "WhatsApp", "value": "+54 9 2346 507655", "href": "https://wa.me/5492346507655" },
       { "label": "Ubicación", "value": "Chivilcoy, Buenos Aires, Argentina · Remoto" },
       { "label": "Portfolio", "value": "laura-pommares.vercel.app", "href": "https://laura-pommares.vercel.app/" },
-      { "label": "LinkedIn", "value": "linkedin.com/in/laura-pommarés", "href": "https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/" },
+      { "label": "LinkedIn", "value": "linkedin.com/in/laurapommares", "href": "https://www.linkedin.com/in/laurapommares" },
       { "label": "GitHub", "value": "github.com/laupommares", "href": "https://github.com/laupommares" }
     ],
     "sections": {
@@ -168,7 +168,7 @@
     "languages": [
       { "name": "Español", "level": "Nativo" },
       { "name": "Portugués", "level": "Avanzado" },
-      { "name": "Inglés", "level": "B1" }
+      { "name": "Inglés", "level": "B1 (lectura técnica fluida)" }
     ],
     "printButton": "Imprimir / Guardar como PDF"
   }

@@ -1,5 +1,5 @@
 import { getTranslations } from "next-intl/server";
-import { whatsappUrl } from "@/data/contact";
+import { GITHUB_URL, LINKEDIN_URL, whatsappUrl } from "@/data/contact";
 
 export default async function ContactSection() {
   const t = await getTranslations("Contact");
@@ -29,13 +29,13 @@ export default async function ContactSection() {
             </a>
             <a
               className="text-sm font-bold border-b-2 border-primary hover:border-accent hover:text-accent transition-all pb-1"
-              href="https://www.linkedin.com/in/laura-pommar%C3%A9s-40959127b/"
+              href={LINKEDIN_URL}
             >
               {t("linkedin")}
             </a>
             <a
               className="text-sm font-bold border-b-2 border-primary hover:border-accent hover:text-accent transition-all pb-1"
-              href="https://github.com/laupommares"
+              href={GITHUB_URL}
             >
               {t("github")}
             </a>
