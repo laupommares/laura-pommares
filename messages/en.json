@@ -93,100 +93,23 @@
   "Projects": {
     "heading": "Featured Projects",
     "subheading": "Work & Case Studies",
-    "items": [
-      {
-        "num": "01",
-        "category": "Frontend Development with Backend Support",
-        "title": "Medical Studies Management Platform",
-        "challengeLabel": "Problem",
-        "challenge": "Development of features for a web platform used by healthcare professionals to record, review, and manage patients' medical studies in a secure, centralized environment.",
-        "col1Label": "Role",
-        "col1Value": "Frontend Developer",
-        "col2Label": "Stack",
-        "col2Value": "Laravel · Livewire · Tailwind CSS · JavaScript · Alpine.js",
-        "resultLabel": "Result",
-        "result": "Optimized the flow for assigning, uploading, and reporting studies between the clinic and doctors.",
-        "image": { "src": "/portal-de-estudios.jpeg", "alt": "Medical Studies Management Portal", "objectPositionClassName": "object-top" },
-        "imageFirst": true
-      },
-      {
-        "num": "02",
-        "category": "UX/UI & Frontend Development",
-        "title": "Medical Appointment Management Platform",
-        "challengeLabel": "The Challenge",
-        "challenge": "Design an appointment management system that coordinates the assignment, booking, and reporting of studies across different user profiles: clinic, doctors, patients, and companies, while keeping the flow clear and fast.",
-        "col1Label": "Process",
-        "col1Value": "Design Systems & Prototyping",
-        "col2Label": "Technologies",
-        "col2Value": "Next.js · TypeScript · REST API Consumption · JWT Auth · Figma",
-        "resultLabel": "Solution",
-        "result": "Designed an appointment system with multi-role logic, where each user accesses flows specific to their role, consuming real-time data via REST APIs to optimize the assignment and tracking of clinical studies. API integration was handled through custom Next.js route handlers, with session state in httpOnly cookies and automatic token refresh.",
-        "image": { "src": "/portal-de-turnos.jpeg", "alt": "Services Marketplace", "objectPositionClassName": "object-top" },
-        "imageFirst": false
-      }
-    ],
+    "labels": {
+      "need": "The need",
+      "whatIDid": "What I did",
+      "role": "Role",
+      "stack": "Stack",
+      "result": "Result"
+    },
+    "confidential": {
+      "badge": "Illustrative images · Confidential project",
+      "cta": "Request a live walkthrough →",
+      "emailCta": "or email me",
+      "emailSubject": "Live walkthrough: {title}"
+    },
     "landingsLabel": "Also",
     "landingsHeading": "Landings & One-Pagers",
     "landingsDescription": "Fast websites with a clear identity and a focus on conversion for independent professionals.",
-    "viewSite": "View site →",
-    "landings": [
-      {
-        "id": "L1",
-        "category": "Yoga & Wellness",
-        "title": "Jori Armonía Yoga",
-        "subtitle": "Jorgelina Cantone — Yoga Instructor",
-        "description": "Class booking site for a Therapeutic Yoga, Ashtanga Vinyasa, and Prenatal Yoga instructor. Organic design centered on calm and wellbeing.",
-        "stack": ["Next.js", "Figma"],
-        "gradient": "from-[#31332c] via-[#4a4b27] to-[#696b33]",
-        "accentColor": "#696b33",
-        "lines": ["philosophy", "classes", "offerings", "book now"],
-        "href": "https://joriarmoniayoga.com/",
-        "image": "/landing-yoga.jpg",
-        "video": "/landing-yoga.mp4"
-      },
-      {
-        "id": "L2",
-        "category": "Shows & Events",
-        "title": "Las Coquettes",
-        "subtitle": "Jazz Girls Club — Barcelona",
-        "description": "Site for a jazz, theatre, and glamour show company based in Barcelona. Repertoire, tailored services, and bookings for hotels, galas, and private events.",
-        "stack": ["Next.js", "Tailwind CSS", "Figma"],
-        "gradient": "from-stone-900 via-red-950 to-neutral-900",
-        "accentColor": "#770303",
-        "lines": ["repertoire", "services", "gallery", "bookings"],
-        "href": "https://www.lascoquettes.com/",
-        "image": "/landing-coquettes.jpg",
-        "video": "/landing-coquettes.mp4"
-      },
-      {
-        "id": "L3",
-        "category": "Fine Art Photography",
-        "title": "Sofía Capuano",
-        "subtitle": "Fine Art Photographer",
-        "description": "Bilingual portfolio for a photographer specializing in weddings, beach sessions, and intimate portraits. Minimalist design focused on natural light and emotion.",
-        "stack": ["Next.js", "Tailwind CSS", "Figma"],
-        "gradient": "from-stone-900 via-amber-950 to-stone-800",
-        "accentColor": "#d4a96a",
-        "lines": ["portfolio", "about me", "process", "contact"],
-        "href": "https://sofiacapuano.com/",
-        "image": "/landing-photographer.jpg",
-        "video": "/landing-photographer.mp4"
-      },
-      {
-        "id": "L4",
-        "category": "Nutrition & Coaching",
-        "title": "Juliana Re",
-        "subtitle": "Nutritionist & Ontological Coach",
-        "description": "Landing page for a nutritionist focused on mindful, intuitive eating. 1:1 programs, group retreats, and family support.",
-        "stack": ["Next.js", "Figma"],
-        "gradient": "from-[#2b2819] via-[#4a3b12] to-[#7a5a0e]",
-        "accentColor": "#dfa924",
-        "lines": ["focus", "programs", "who guides you", "consultation"],
-        "href": "https://julianareconecta.com/",
-        "image": "/landing-nutritionist.jpg",
-        "video": "/landing-nutritionist-en.mp4"
-      }
-    ]
+    "viewSite": "View site →"
   },
   "Contact": {
     "headingLine1": "Let's talk about your next",

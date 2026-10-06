@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import { whatsappUrl } from "@/data/contact";
 
 export default async function ContactSection() {
   const t = await getTranslations("Contact");
@@ -20,7 +21,7 @@ export default async function ContactSection() {
           <div className="flex gap-8">
             <a
               className="text-sm font-bold border-b-2 border-primary hover:border-accent hover:text-accent transition-all pb-1"
-              href="https://wa.me/5492346507655"
+              href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
             >

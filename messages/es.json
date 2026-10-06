@@ -39,7 +39,7 @@
       {
         "title": "Web Developer & UX/UI Designer (Freelance)",
         "company": "Independiente",
-        "period": "Septiembre 2025 — Presente",
+        "period": "Mayo 2025 — Presente",
         "description": "Diseño y desarrollo de aplicaciones web end-to-end para proyectos freelance, incluyendo un sistema de gestión de turnos multi-rol con API REST propia, modelado de datos y autenticación por sesiones, además de un portal de gestión de estudios médicos y landings enfocadas en conversión. Trabajo completo de UX/UI, frontend y backend con Next.js y Prisma.",
         "skills": ["Next.js", "React", "JavaScript", "TypeScript", "Next.js API Routes", "API REST", "Prisma", "MySQL", "Autenticación por sesiones", "Zod", "Tailwind CSS", "shadcn/ui", "Laravel", "Figma", "Claude Code"]
       },
@@ -93,100 +93,23 @@
   "Projects": {
     "heading": "Proyectos Destacados",
     "subheading": "Trabajos & Casos de estudio",
-    "items": [
-      {
-        "num": "01",
-        "category": "Frontend Development with Backend Support",
-        "title": "Plataforma para Gestión de Estudios Médicos",
-        "challengeLabel": "Problema",
-        "challenge": "Desarrollo de funcionalidades para una plataforma web utilizada por profesionales de la salud para registrar, consultar y gestionar estudios médicos de pacientes en un entorno seguro y centralizado.",
-        "col1Label": "Rol",
-        "col1Value": "Frontend Developer",
-        "col2Label": "Stack",
-        "col2Value": "Laravel · Livewire · Tailwind CSS · JavaScript · Alpine.js",
-        "resultLabel": "Resultado",
-        "result": "Optimización del flujo de asignación, carga e informe de estudios entre clínica y médicos.",
-        "image": { "src": "/portal-de-estudios.jpeg", "alt": "Portal para Gestión de Estudios Médicos", "objectPositionClassName": "object-top" },
-        "imageFirst": true
-      },
-      {
-        "num": "02",
-        "category": "UX/UI & Frontend Development",
-        "title": "Plataforma de Gestión de Turnos Médicos",
-        "challengeLabel": "El Desafío",
-        "challenge": "Diseñar un sistema de gestión de turnos que permita coordinar la asignación, reserva e información de estudios entre distintos perfiles: clínica, médicos, pacientes y empresas, manteniendo claridad y rapidez en el flujo.",
-        "col1Label": "Proceso",
-        "col1Value": "Design Systems & Prototyping",
-        "col2Label": "Tecnologías",
-        "col2Value": "Next.js · TypeScript · Consumo de APIs REST · Auth con JWT · Figma",
-        "resultLabel": "Solución",
-        "result": "Diseño de un sistema de turnos con lógica multi-rol, donde cada usuario accede a flujos específicos según su función, consumiendo datos en tiempo real vía APIs REST para optimizar la asignación y seguimiento de estudios clínicos. La integración con el API se resolvió desde route handlers propios en Next.js, con sesión en cookies httpOnly y renovación automática de tokens.",
-        "image": { "src": "/portal-de-turnos.jpeg", "alt": "Marketplace Servicios", "objectPositionClassName": "object-top" },
-        "imageFirst": false
-      }
-    ],
+    "labels": {
+      "need": "La necesidad",
+      "whatIDid": "Qué hice",
+      "role": "Rol",
+      "stack": "Stack",
+      "result": "Resultado"
+    },
+    "confidential": {
+      "badge": "Imágenes ilustrativas · Proyecto confidencial",
+      "cta": "Pedir un recorrido en vivo →",
+      "emailCta": "o escribime por mail",
+      "emailSubject": "Recorrido en vivo: {title}"
+    },
     "landingsLabel": "También",
     "landingsHeading": "Landing pages y sitios web",
     "landingsDescription": "Sitios rápidos, con identidad clara y enfoque en conversión para profesionales independientes.",
-    "viewSite": "Ver sitio →",
-    "landings": [
-      {
-        "id": "L1",
-        "category": "Yoga & Bienestar",
-        "title": "Jori Armonía Yoga",
-        "subtitle": "Jorgelina Cantone — Instructora de Yoga",
-        "description": "Sitio de reserva de clases para instructora de Yoga Terapéutico, Ashtanga Vinyasa y Prenatal. Diseño orgánico centrado en calma y bienestar.",
-        "stack": ["Next.js", "Figma"],
-        "gradient": "from-[#31332c] via-[#4a4b27] to-[#696b33]",
-        "accentColor": "#696b33",
-        "lines": ["filosofía", "clases", "propuestas", "reservar"],
-        "href": "https://joriarmoniayoga.com/",
-        "image": "/landing-yoga.jpg",
-        "video": "/landing-yoga.mp4"
-      },
-      {
-        "id": "L2",
-        "category": "Espectáculos & Eventos",
-        "title": "Las Coquettes",
-        "subtitle": "Jazz Girls Club — Barcelona",
-        "description": "Sitio para una compañía de shows de jazz, teatro y glamour en Barcelona. Repertorio, servicios a medida y reservas para hoteles, galas y eventos privados.",
-        "stack": ["Next.js", "Tailwind CSS", "Figma"],
-        "gradient": "from-stone-900 via-red-950 to-neutral-900",
-        "accentColor": "#770303",
-        "lines": ["repertorio", "servicios", "galería", "reservas"],
-        "href": "https://www.lascoquettes.com/",
-        "image": "/landing-coquettes.jpg",
-        "video": "/landing-coquettes.mp4"
-      },
-      {
-        "id": "L3",
-        "category": "Nutrición & Coaching",
-        "title": "Juliana Re",
-        "subtitle": "Nutricionista & Coach Ontológica",
-        "description": "Landing para nutricionista con enfoque en alimentación consciente e intuitiva. Programas 1:1, retiros grupales y acompañamiento familiar.",
-        "stack": ["Next.js", "Figma"],
-        "gradient": "from-[#2b2819] via-[#4a3b12] to-[#7a5a0e]",
-        "accentColor": "#dfa924",
-        "lines": ["enfoque", "programas", "quién acompaña", "consulta"],
-        "href": "https://julianareconecta.com/",
-        "image": "/landing-nutritionist.jpg",
-        "video": "/landing-nutritionist.mp4"
-      },
-      {
-        "id": "L4",
-        "category": "Fine Art Photography",
-        "title": "Sofía Capuano",
-        "subtitle": "Fine Art Photographer",
-        "description": "Portfolio bilingüe para fotógrafa especializada en bodas, sesiones de playa y retratos íntimos. Diseño minimalista con foco en la luz natural y la emoción.",
-        "stack": ["Next.js", "Tailwind CSS", "Figma"],
-        "gradient": "from-stone-900 via-amber-950 to-stone-800",
-        "accentColor": "#d4a96a",
-        "lines": ["portfolio", "sobre mí", "proceso", "contacto"],
-        "href": "https://sofiacapuano.com/",
-        "image": "/landing-photographer.jpg",
-        "video": "/landing-photographer.mp4"
-      }
-    ]
+    "viewSite": "Ver sitio →"
   },
   "Contact": {
     "headingLine1": "Hablemos de tu próximo",
