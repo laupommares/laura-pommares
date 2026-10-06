@@ -2,7 +2,10 @@ import { getTranslations } from "next-intl/server";
 
 export default async function ProfileSection() {
   const t = await getTranslations("Profile");
-  const paragraphs = t.raw("paragraphs") as string[];
+  // The "seeking" sentence is web-only; the CV reads the same paragraphs without it.
+  const paragraphs = (t.raw("paragraphs") as string[]).map((paragraph, i, all) =>
+    i === all.length - 1 ? `${paragraph} ${t("seeking")}` : paragraph,
+  );
 
   return (
     <section

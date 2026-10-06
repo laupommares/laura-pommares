@@ -49,8 +49,9 @@
     "heading": "Professional Profile",
     "lead": "My work focuses on turning ideas and needs into intuitive, accessible, and maintainable web solutions.",
     "paragraphs": [
-      "Full Stack Developer with a strong frontend and UX/UI foundation and 2+ years of experience building web applications with React, Next.js, TypeScript and Laravel. At VALIDA I built and maintained internal systems as part of a Scrum team. As a freelancer I built the frontend of a medical platform in production for a clinic in Spain, with ongoing maintenance, and designed and built unda, my own scheduling SaaS, full stack with Next.js, Prisma and PostgreSQL. Looking for a remote Full Stack (Next.js) or Frontend role."
-    ]
+      "Full Stack Developer with a strong frontend and UX/UI foundation and 2+ years of experience building web applications with React, Next.js, TypeScript and Laravel. At VALIDA I built and maintained internal systems as part of a Scrum team. As a freelancer I built the frontend of a medical platform in production for a clinic in Spain, with ongoing maintenance, and designed and built unda, my own scheduling SaaS, full stack with Next.js, Prisma and PostgreSQL."
+    ],
+    "seeking": "Looking for a remote Full Stack (Next.js) or Frontend role."
   },
   "Experience": {
     "heading": "Professional Experience",
