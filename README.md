@@ -76,10 +76,3 @@ src/i18n/          Configuración de next-intl y cambio de idioma
 ## Deploy
 
 Desplegado en Vercel. Cada push a `main` publica automáticamente.
-
-## AGENTS.md / CLAUDE.md
-
-Archivos de instrucciones para asistentes de IA (Claude Code, Cursor, etc.), no afectan al build.
-`AGENTS.md` es el formato estándar que leen varias herramientas; `CLAUDE.md` solo lo importa
-con `@AGENTS.md` para que Claude Code lea el mismo archivo y no haya dos copias que se
-desincronicen.
