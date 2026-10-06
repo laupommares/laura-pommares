@@ -7,8 +7,9 @@ type ContactItem = { label: string; value: string; href?: string };
 type RoleItem = {
   title: string;
   company: string;
+  context?: string;
   period: string;
-  description: string;
+  bullets: string[];
   skills: string[];
 };
 type ProjectItem = {
@@ -108,13 +109,20 @@ export default async function CvPage() {
         <SectionHeading>{t("sections.experience")}</SectionHeading>
         <div className="space-y-8">
           {roles.map((role) => (
-            <div key={role.title} className="cv-avoid-break pl-4 border-l-2 border-subtle">
+            <div key={`${role.company}-${role.title}`} className="cv-avoid-break pl-4 border-l-2 border-subtle">
               <div className="flex flex-col md:flex-row md:justify-between md:items-baseline mb-1 gap-x-4">
                 <h3 className="text-sm font-bold">{role.title}</h3>
                 <span className="font-label-mono text-secondary text-[10px] shrink-0">{role.period}</span>
               </div>
-              <p className="text-accent-ink text-xs font-medium mb-2">{role.company}</p>
-              <p className="text-secondary text-sm leading-relaxed mb-3">{role.description}</p>
+              <p className="text-accent-ink text-xs font-medium mb-2">
+                {role.company}
+                {role.context && <span className="text-secondary font-normal"> · {role.context}</span>}
+              </p>
+              <ul className="text-secondary text-sm leading-relaxed mb-3 list-disc pl-4 space-y-1">
+                {role.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
               <div className="flex flex-wrap items-center gap-1.5">
                 {role.skills.map((skill, i) => (
                   <span key={skill} className="contents">

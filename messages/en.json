@@ -37,17 +37,27 @@
     "heading": "Professional Experience",
     "roles": [
       {
-        "title": "Web Developer & UX/UI Designer (Freelance)",
-        "company": "Self-employed",
+        "title": "Frontend Developer · Founder",
+        "company": "ula studio",
+        "context": "Independent design & development studio · somosulastudio.com",
         "period": "May 2025 — Present",
-        "description": "Design and development of end-to-end web applications for freelance projects, including a multi-role appointment management system with its own REST API, data modeling, and session-based authentication, plus a medical studies management portal and conversion-focused landing pages. Full UX/UI, frontend, and backend work with Next.js and Prisma.",
-        "skills": ["Next.js", "React", "JavaScript", "TypeScript", "Next.js API Routes", "REST APIs", "Prisma", "MySQL", "Session Authentication", "Zod", "Tailwind CSS", "shadcn/ui", "Laravel", "Figma", "Claude Code"]
+        "bullets": [
+          "Built the entire frontend of a medical studies platform for a clinic in Spain with Laravel, Livewire and Tailwind CSS, working with a backend developer and contributing to the database and server-side logic. In production since May 2025, with ongoing maintenance.",
+          "Designed and built unda (agendaunda.com) full stack, a scheduling SaaS for professionals: own REST API, data modeling with Prisma and MySQL, session-based authentication and Zod validation. Live, in beta.",
+          "Designed the multi-role UX/UI of a medical appointment platform and built its frontend with Next.js and TypeScript, consuming an external REST API with JWT auth in httpOnly cookies.",
+          "Designed and built websites and landing pages for clients in Argentina and Spain with Next.js, Tailwind CSS and Figma."
+        ],
+        "skills": ["Next.js", "React", "TypeScript", "JavaScript", "REST API", "Prisma", "MySQL", "Laravel", "Livewire", "Tailwind CSS", "Figma", "UX/UI"]
       },
       {
         "title": "Frontend Developer",
         "company": "VALIDA",
         "period": "May 2024 — June 2026",
-        "description": "Development and maintenance of web interfaces for internal systems using Laravel. Involved in building reusable components, improving UX/UI, and optimizing accessibility following frontend development best practices. Collaboration on the evolution of the user experience, technical SEO, and interface design.",
+        "bullets": [
+          "Developed and maintained web interfaces for internal systems with Laravel, Livewire and Tailwind CSS.",
+          "Implemented reusable components and UX/UI and accessibility improvements following frontend best practices.",
+          "Collaborated on the evolution of the user experience, technical SEO and interface design."
+        ],
         "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "UI/UX Design", "Accessibility", "Figma", "Claude Code"]
       }
     ]

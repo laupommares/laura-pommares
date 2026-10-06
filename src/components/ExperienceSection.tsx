@@ -3,8 +3,9 @@ import { getTranslations } from "next-intl/server";
 type RoleItem = {
   title: string;
   company: string;
+  context?: string;
   period: string;
-  description: string;
+  bullets: string[];
   skills: string[];
 };
 
@@ -25,21 +26,26 @@ export default async function ExperienceSection() {
         </div>
         <div className="md:col-span-8 space-y-16">
           {roles.map((role) => (
-            <div key={role.title}>
+            <div key={`${role.company}-${role.title}`}>
               <div className="flex flex-col md:flex-row justify-between mb-4">
                 <div>
                   <h3 className="text-xl font-bold mb-1">{role.title}</h3>
                   <p className="text-accent text-sm font-medium">
                     {role.company}
                   </p>
+                  {role.context && (
+                    <p className="text-secondary text-xs mt-1">{role.context}</p>
+                  )}
                 </div>
                 <span className="font-label-mono text-secondary text-[12px] mt-2 md:mt-0">
                   {role.period}
                 </span>
               </div>
-              <p className="text-secondary text-sm leading-relaxed mb-6 max-w-2xl">
-                {role.description}
-              </p>
+              <ul className="text-secondary text-sm leading-relaxed mb-6 max-w-2xl list-disc pl-4 space-y-2">
+                {role.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
               <div className="flex flex-wrap gap-2">
                 {role.skills.map((skill) => (
                   <span

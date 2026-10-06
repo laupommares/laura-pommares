@@ -37,17 +37,27 @@
     "heading": "Experiencia Profesional",
     "roles": [
       {
-        "title": "Web Developer & UX/UI Designer (Freelance)",
-        "company": "Independiente",
+        "title": "Frontend Developer · Fundadora",
+        "company": "ula studio",
+        "context": "Estudio propio de diseño y desarrollo web · somosulastudio.com",
         "period": "Mayo 2025 — Presente",
-        "description": "Diseño y desarrollo de aplicaciones web end-to-end para proyectos freelance, incluyendo un sistema de gestión de turnos multi-rol con API REST propia, modelado de datos y autenticación por sesiones, además de un portal de gestión de estudios médicos y landings enfocadas en conversión. Trabajo completo de UX/UI, frontend y backend con Next.js y Prisma.",
-        "skills": ["Next.js", "React", "JavaScript", "TypeScript", "Next.js API Routes", "API REST", "Prisma", "MySQL", "Autenticación por sesiones", "Zod", "Tailwind CSS", "shadcn/ui", "Laravel", "Figma", "Claude Code"]
+        "bullets": [
+          "Desarrollé el frontend completo de una plataforma de estudios médicos para una clínica en España, con Laravel, Livewire y Tailwind CSS; trabajé con un desarrollador backend y aporté en base de datos y lógica de servidor. En producción desde mayo de 2025, con mantenimiento activo.",
+          "Diseñé y desarrollé full stack unda (agendaunda.com), un SaaS de agenda para profesionales: API REST propia, modelado de datos con Prisma y MySQL, autenticación por sesiones y validación con Zod. En producción, en beta.",
+          "Diseñé la UX/UI multi-rol de una plataforma de turnos médicos y desarrollé su frontend con Next.js y TypeScript, consumiendo una API REST externa con auth JWT en cookies httpOnly.",
+          "Diseñé y desarrollé sitios web y landings para clientes de Argentina y España con Next.js, Tailwind CSS y Figma."
+        ],
+        "skills": ["Next.js", "React", "TypeScript", "JavaScript", "REST API", "Prisma", "MySQL", "Laravel", "Livewire", "Tailwind CSS", "Figma", "UX/UI"]
       },
       {
         "title": "Frontend Developer",
         "company": "VALIDA",
         "period": "Mayo 2024 — Junio 2026",
-        "description": "Desarrollo y mantenimiento de interfaces web para sistemas internos utilizando Laravel. Participación en la implementación de componentes reutilizables, mejoras de UX/UI y optimización de la accesibilidad siguiendo buenas prácticas de desarrollo frontend. Colaboración en la evolución de la experiencia de usuario, el SEO técnico y el diseño de interfaces.",
+        "bullets": [
+          "Desarrollé y mantuve interfaces web para sistemas internos con Laravel, Livewire y Tailwind CSS.",
+          "Implementé componentes reutilizables y mejoras de UX/UI y accesibilidad siguiendo buenas prácticas de frontend.",
+          "Colaboré en la evolución de la experiencia de usuario, el SEO técnico y el diseño de interfaces."
+        ],
         "skills": ["Laravel", "JavaScript", "Tailwind CSS", "Bootstrap", "Sass", "Livewire", "Diseño UI/UX", "Accesibilidad", "Figma", "Claude Code"]
       }
     ]
