@@ -1,4 +1,10 @@
 {
+  "Meta": {
+    "title": "Laura Pommarés — Full Stack Developer · Next.js & UX/UI",
+    "description": "Full Stack Developer con base fuerte en frontend y UX/UI: React, Next.js, TypeScript y PostgreSQL. Trabajo en producción y SaaS propio. Remoto desde Argentina.",
+    "cvTitle": "CV — Laura Pommarés · Full Stack Developer",
+    "cvDescription": "CV de Laura Pommarés, Full Stack Developer con base fuerte en frontend y UX/UI: React, Next.js, TypeScript, PostgreSQL y Laravel. Descargable en PDF."
+  },
   "Nav": {
     "brand": "LAURA POMMARÉS",
     "links": {
@@ -160,14 +166,7 @@
     "name": "Laura Pommarés",
     "titleMain": "Full Stack Developer",
     "titleAccent": "· Next.js & UX/UI",
-    "contact": [
-      { "label": "Email", "value": "laurapommares@gmail.com", "href": "mailto:laurapommares@gmail.com" },
-      { "label": "WhatsApp", "value": "+54 9 2346 507655", "href": "https://wa.me/5492346507655" },
-      { "label": "Ubicación", "value": "Chivilcoy, Buenos Aires, Argentina · Remoto" },
-      { "label": "Portfolio", "value": "laura-pommares.vercel.app", "href": "https://laura-pommares.vercel.app/" },
-      { "label": "LinkedIn", "value": "linkedin.com/in/laurapommares", "href": "https://www.linkedin.com/in/laurapommares" },
-      { "label": "GitHub", "value": "github.com/laupommares", "href": "https://github.com/laupommares" }
-    ],
+    "location": "Chivilcoy, Buenos Aires, Argentina · Remoto",
     "sections": {
       "profile": "Perfil",
       "experience": "Experiencia",

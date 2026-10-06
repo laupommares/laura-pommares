@@ -1,7 +1,18 @@
 import type { ReactNode } from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
+import { pageMetadata } from "@/data/metadata";
 import { getProjects } from "@/data/projects";
+import {
+  EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  SITE_URL,
+  WHATSAPP_DISPLAY,
+  displayUrl,
+  whatsappUrl,
+} from "@/data/contact";
 import type { Locale } from "@/i18n/config";
 import "./print.css";
 import PrintButton from "./PrintButton";
@@ -78,6 +89,16 @@ function ContactLine({ items }: { items: ContactItem[] }) {
   );
 }
 
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Meta");
+  return pageMetadata({
+    title: t("cvTitle"),
+    description: t("cvDescription"),
+    path: "/cv",
+    locale: await getLocale(),
+  });
+}
+
 const body = "text-secondary text-sm print:text-[13px] leading-relaxed print:leading-snug";
 
 export default async function CvPage() {
@@ -93,7 +114,15 @@ export default async function CvPage() {
   const locale = (await getLocale()) as Locale;
   const { cases, landings } = getProjects(locale);
 
-  const contact = t.raw("contact") as ContactItem[];
+  // Contact data comes from src/data/contact.ts; only the location is translated.
+  const contact: ContactItem[] = [
+    { label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
+    { label: "WhatsApp", value: WHATSAPP_DISPLAY, href: whatsappUrl() },
+    { label: "Location", value: t("location") },
+    { label: "Portfolio", value: displayUrl(SITE_URL), href: SITE_URL },
+    { label: "LinkedIn", value: displayUrl(LINKEDIN_URL), href: LINKEDIN_URL },
+    { label: "GitHub", value: displayUrl(GITHUB_URL), href: GITHUB_URL },
+  ];
   const profileParagraphs = tProfile.raw("paragraphs") as string[];
   const roles = tExperience.raw("roles") as RoleItem[];
   const stack = tStack.raw("categories") as StackCategory[];

@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Geist, JetBrains_Mono } from "next/font/google";
 
 import { NextIntlClientProvider } from "next-intl";
-import { getLocale } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
+import PersonJsonLd from "@/components/PersonJsonLd";
+import { SITE_URL } from "@/data/contact";
+import { pageMetadata } from "@/data/metadata";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -16,11 +19,20 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500"],
 });
 
-export const metadata: Metadata = {
-  title: "Laura Pommarés — Frontend Engineer & Design Systems",
-  description:
-    "Especializada en la intersección del código, el pensamiento de producto y el diseño de sistemas escalables.",
-};
+// The locale comes from a cookie, so crawlers and link previews always get Spanish;
+// visitors who switched to English get the English title and description.
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("Meta");
+  return {
+    metadataBase: new URL(SITE_URL),
+    ...pageMetadata({
+      title: t("title"),
+      description: t("description"),
+      path: "/",
+      locale: await getLocale(),
+    }),
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -28,6 +40,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const locale = await getLocale();
+  const tMeta = await getTranslations("Meta");
 
   return (
     <html
@@ -41,6 +54,7 @@ export default async function RootLayout({
         />
       </head>
       <body className="bg-background text-primary antialiased selection:bg-accent/10 selection:text-accent">
+        <PersonJsonLd description={tMeta("description")} />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
       </body>
     </html>
