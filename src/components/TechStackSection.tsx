@@ -13,10 +13,10 @@ export default async function TechStackSection() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat) => (
             <div key={cat.name} className="p-5 bg-background border border-subtle">
-              <h4 className="font-label-mono text-[10px] uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
+              <h3 className="font-label-mono text-[10px] uppercase tracking-widest text-secondary mb-4 flex items-center gap-2">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent" />
                 {cat.name}
-              </h4>
+              </h3>
               <div className="flex flex-wrap gap-1.5">
                 {cat.items.map((item) => (
                   <span

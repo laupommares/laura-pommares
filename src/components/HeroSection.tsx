@@ -1,4 +1,5 @@
 import { getTranslations } from "next-intl/server";
+import Icon from "./Icon";
 
 export default async function HeroSection() {
   const t = await getTranslations("Hero");
@@ -6,7 +7,7 @@ export default async function HeroSection() {
   const stats = t.raw("stats") as { label: string; value: string; href?: string }[];
 
   return (
-    <section className="px-margin-mobile max-w-container-max mx-auto mb-16 md:mb-section-gap reveal">
+    <section className="px-margin-mobile max-w-container-max mx-auto mb-16 md:mb-section-gap">
       <div className="max-w-5xl">
         <h1 className="font-headline text-display mb-6 md:mb-8">
           {t("titleLine1")} <br />
@@ -51,7 +52,7 @@ export default async function HeroSection() {
             href={tCv("downloadHref")}
             download
           >
-            <span className="material-symbols-outlined">download</span>
+            <Icon name="download" className="text-[1.1rem]" />
             {t("downloadCv")}
           </a>
         </div>

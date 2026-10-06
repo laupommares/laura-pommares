@@ -21,11 +21,11 @@ export default async function SiteFooter() {
           <span className="text-primary font-bold text-lg tracking-tighter max-md:text-center">
             {t("brand")}
           </span>
-          <nav className="flex flex-wrap justify-center gap-x-6 gap-y-2 font-label-mono text-[10px] uppercase tracking-widest text-secondary">
+          <nav className="flex flex-wrap justify-center gap-x-6 font-label-mono text-[10px] uppercase tracking-widest text-secondary">
             {links.map((link) => (
               <a
                 key={link.href}
-                className="hover:text-accent transition-colors"
+                className="inline-block py-1.5 hover:text-accent transition-colors"
                 href={link.href}
               >
                 {link.label}

@@ -174,7 +174,7 @@ export default async function CvPage() {
               </div>
               {role.context && (
                 <p className="text-accent-ink text-xs print:text-[12px] font-medium">
-                  <LinkedText text={role.context} url={role.contextUrl} className="hover:underline" />
+                  <LinkedText text={role.context} url={role.contextUrl} className="underline decoration-accent-ink/30 underline-offset-2 hover:decoration-accent-ink" />
                 </p>
               )}
               <ul className={`${body} mt-2 print:mt-1 space-y-1 print:space-y-0.5`}>
@@ -207,7 +207,7 @@ export default async function CvPage() {
                 {p.url && (
                   <>
                     {" — "}
-                    <a href={p.url} className="text-accent-ink hover:underline">
+                    <a href={p.url} className="text-accent-ink underline decoration-accent-ink/30 underline-offset-2 hover:decoration-accent-ink">
                       {new URL(p.url).host}
                     </a>
                   </>
@@ -221,7 +221,7 @@ export default async function CvPage() {
             {landings.map((l, i) => (
               <span key={l.slug}>
                 {i > 0 && " · "}
-                <a href={l.url} className="text-accent-ink hover:underline">
+                <a href={l.url} className="text-accent-ink underline decoration-accent-ink/30 underline-offset-2 hover:decoration-accent-ink">
                   {l.title}
                 </a>
               </span>

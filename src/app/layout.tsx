@@ -47,12 +47,6 @@ export default async function RootLayout({
       lang={locale}
       className={`${geistSans.variable} ${jetbrainsMono.variable}`}
     >
-      <head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
-        />
-      </head>
       <body className="bg-background text-primary antialiased selection:bg-accent/10 selection:text-accent">
         <PersonJsonLd description={tMeta("description")} />
         <NextIntlClientProvider>{children}</NextIntlClientProvider>

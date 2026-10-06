@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import LandingVideo from "./LandingVideo";
+import Icon from "./Icon";
 import {
   getProjects,
   type ResolvedCase,
@@ -44,9 +45,7 @@ function ProjectImage({ image, badge }: { image: ResolvedImage; badge?: string }
       />
       {badge && (
         <span className="absolute left-3 bottom-3 inline-flex items-center gap-1.5 max-[390px]:max-w-[calc(100%-1.5rem)] min-[390px]:whitespace-nowrap bg-background/90 backdrop-blur-sm border border-subtle px-2 sm:px-2.5 py-1 font-label-mono text-[10px] uppercase tracking-wide sm:tracking-widest text-secondary">
-          <span className="material-symbols-outlined text-[14px]! leading-none" aria-hidden="true">
-            lock
-          </span>
+          <Icon name="lock" className="text-[14px]" />
           {badge}
         </span>
       )}
@@ -245,9 +244,7 @@ function ConfidentialNotice({
   return (
     <aside className="border border-subtle border-l-2 border-l-accent bg-surface-alt p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6 md:gap-10 reveal">
       <div className="flex gap-4 flex-1">
-        <span className="material-symbols-outlined text-accent shrink-0" aria-hidden="true">
-          verified_user
-        </span>
+        <Icon name="verified_user" className="text-[1.1rem] text-accent" />
         <p className="text-sm leading-relaxed text-primary">{notice}</p>
       </div>
       <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row items-start sm:items-center md:items-start lg:items-center gap-3 sm:gap-5 shrink-0">
