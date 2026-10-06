@@ -86,8 +86,8 @@ export const projects: Project[] = [
       en: "Medical Studies Management Platform",
     },
     tags: {
-      es: ["Cliente real · España", "En producción", "Mantenimiento activo"],
-      en: ["Real client · Spain", "In production", "Ongoing maintenance"],
+      es: ["Cliente: clínica en España", "En producción", "Mantenimiento activo"],
+      en: ["Client: clinic in Spain", "In production", "Ongoing maintenance"],
     },
     need: {
       es: "Una clínica en España necesitaba centralizar la asignación, la carga y el informe de los estudios médicos de sus pacientes entre el equipo de la clínica y los médicos, en un entorno seguro.",
