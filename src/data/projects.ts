@@ -77,24 +77,24 @@ export const projects: Project[] = [
       en: "Medical Studies Management Platform",
     },
     tags: {
-      es: ["Cliente: clínica en España", "En producción", "Mantenimiento activo"],
-      en: ["Client: clinic in Spain", "In production", "Ongoing maintenance"],
+      es: ["Cliente: sector salud · España", "En producción", "Mantenimiento activo"],
+      en: ["Client: healthcare · Spain", "In production", "Ongoing maintenance"],
     },
     need: {
-      es: "Una clínica en España necesitaba centralizar la asignación, la carga y el informe de los estudios médicos de sus pacientes entre el equipo de la clínica y los médicos, en un entorno seguro.",
-      en: "A clinic in Spain needed to centralize how patient medical studies are assigned, uploaded and reported between clinic staff and doctors, in a secure environment.",
+      es: "Un cliente del sector salud en España necesitaba una plataforma médica privada de gestión interna para centralizar la asignación, la carga y el informe de estudios médicos entre su equipo y los médicos, en un entorno seguro.",
+      en: "A healthcare client in Spain needed a private internal medical management platform to centralize how medical studies are assigned, uploaded and reported between its staff and doctors, in a secure environment.",
     },
     whatIDid: {
       es: [
         "Me encargué del frontend completo: interfaces en Laravel, Livewire y Alpine.js, con componentes reutilizables en Tailwind CSS.",
         "Trabajé en equipo con un desarrollador backend y participé también en la base de datos y en la lógica del servidor.",
-        "Rediseñé el flujo de asignación, carga e informe de estudios entre la clínica y los médicos.",
+        "Rediseñé el flujo de asignación, carga e informe de estudios entre el equipo interno y los médicos.",
         "Sigo a cargo del mantenimiento y de las mejoras, en contacto directo con el cliente.",
       ],
       en: [
         "Owned the entire frontend: Laravel, Livewire and Alpine.js interfaces with reusable Tailwind CSS components.",
         "Worked alongside a backend developer and also contributed to the database and server-side logic.",
-        "Redesigned the assignment, upload and reporting flow between the clinic and doctors.",
+        "Redesigned the assignment, upload and reporting flow between internal staff and doctors.",
         "Still responsible for maintenance and improvements, working directly with the client.",
       ],
     },
@@ -179,8 +179,8 @@ export const projects: Project[] = [
           es: "Pantalla de acceso de unda en el celular, con el formulario de email y contraseña.",
           en: "unda sign-in screen on a phone, with the email and password form.",
         },
-        width: 385,
-        height: 704,
+        width: 414,
+        height: 742,
       },
     },
     images: [

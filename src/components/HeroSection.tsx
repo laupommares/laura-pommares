@@ -1,5 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import Icon from "./Icon";
+import HeroMockup from "./HeroMockup";
 
 export default async function HeroSection() {
   const t = await getTranslations("Hero");
@@ -8,14 +9,19 @@ export default async function HeroSection() {
 
   return (
     <section className="px-margin-mobile max-w-container-max mx-auto mb-16 md:mb-section-gap">
+      <div className="xl:grid xl:grid-cols-[minmax(0,1fr)_420px] xl:gap-12 xl:items-center mb-10 md:mb-12">
+        <div className="max-w-5xl">
+          <h1 className="font-headline text-display mb-6 md:mb-8">
+            <span className="xl:whitespace-nowrap">{t("titleLine1")}</span> <br />
+            <span className="text-accent italic">{t("titleLine2")}</span>
+          </h1>
+          <p className="font-body text-body-lg text-secondary">{t("description")}</p>
+        </div>
+        <div className="hidden xl:block">
+          <HeroMockup />
+        </div>
+      </div>
       <div className="max-w-5xl">
-        <h1 className="font-headline text-display mb-6 md:mb-8">
-          {t("titleLine1")} <br />
-          <span className="text-accent italic">{t("titleLine2")}</span>
-        </h1>
-        <p className="font-body text-body-lg text-secondary mb-10 md:mb-12">
-          {t("description")}
-        </p>
         <div className="grid md:grid-cols-4 md:gap-8 divide-y divide-subtle md:divide-y-0 py-2 md:py-10 border-y border-subtle mb-10 md:mb-12">
           {stats.map((stat) => (
             <div

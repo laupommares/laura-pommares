@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import LandingVideo from "./LandingVideo";
 import Icon from "./Icon";
+import DeviceFrame from "./DeviceFrame";
 import {
   getProjects,
   type ResolvedCase,
@@ -80,41 +81,31 @@ function DeviceShowcase({ showcase }: { showcase: NonNullable<ResolvedCase["show
   const { laptop, phone } = showcase;
 
   return (
-    <div className="relative pb-[6%]">
-      <div className="mx-[5%] rounded-t-xl bg-neutral-900 p-[1.4%] pb-[1.8%] shadow-xl">
-        <div className="relative aspect-16/9 overflow-hidden rounded-[3px] bg-surface-alt">
-          <Image
-            src={laptop.src}
-            alt={laptop.alt}
-            fill
-            sizes="(min-width: 768px) 55vw, 90vw"
-            className="object-cover object-left-top"
-          />
-        </div>
-      </div>
-      <div className="relative h-2.5 sm:h-3.5 rounded-b-xl bg-linear-to-b from-neutral-300 to-neutral-400 shadow-md">
-        <div className="absolute left-1/2 top-0 h-1/2 w-[14%] -translate-x-1/2 rounded-b-md bg-neutral-400" />
-      </div>
-      {phone && (
-        <div className="hidden sm:block absolute right-0 bottom-0 w-[20%]">
-          <div className="rounded-[1.4rem] lg:rounded-[1.75rem] bg-neutral-900 p-[5%] shadow-2xl ring-1 ring-black/10">
-            <div
-              className="relative overflow-hidden rounded-[1rem] lg:rounded-[1.3rem] bg-surface-alt"
-              style={{ aspectRatio: `${phone.width} / ${phone.height}` }}
-            >
-              <Image
-                src={phone.src}
-                alt={phone.alt}
-                fill
-                sizes="(min-width: 768px) 12vw, 20vw"
-                className="object-cover object-top"
-              />
-              <span className="absolute left-1/2 top-[2.5%] h-[3.5%] w-[30%] -translate-x-1/2 rounded-full bg-neutral-900" />
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
+    <DeviceFrame
+      laptop={
+        <Image
+          src={laptop.src}
+          alt={laptop.alt}
+          fill
+          sizes="(min-width: 768px) 55vw, 90vw"
+          className="object-cover object-left-top"
+        />
+      }
+      phone={
+        phone && {
+          aspectRatio: `${phone.width} / ${phone.height}`,
+          image: (
+            <Image
+              src={phone.src}
+              alt={phone.alt}
+              fill
+              sizes="(min-width: 768px) 12vw, 20vw"
+              className="object-cover object-top"
+            />
+          ),
+        }
+      }
+    />
   );
 }
 

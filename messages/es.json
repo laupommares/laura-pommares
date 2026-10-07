@@ -22,11 +22,11 @@
   "Hero": {
     "titleLine1": "Full Stack Developer",
     "titleLine2": "Next.js & UX/UI",
-    "description": "Full Stack Developer con base fuerte en frontend y UX/UI. Construyo aplicaciones web con React, Next.js y TypeScript. Tengo experiencia en equipo con Scrum en VALIDA y trabajo real en producción: la plataforma de una clínica en España, con mantenimiento activo, y unda, mi SaaS de agenda.",
+    "description": "Full Stack Developer con base fuerte en frontend y UX/UI. Construyo aplicaciones web con React, Next.js y TypeScript. Tengo experiencia en equipo con Scrum en VALIDA y trabajo real en producción: una plataforma médica privada para un cliente en España, con mantenimiento activo, y unda, mi SaaS de agenda.",
     "stats": [
       {
         "label": "En producción",
-        "value": "Plataforma médica · Cliente en España",
+        "value": "Plataforma médica · España",
         "href": "#gestion-estudios-medicos"
       },
       {
@@ -44,13 +44,16 @@
       }
     ],
     "viewProjects": "Ver Proyectos",
-    "downloadCv": "Descargar CV"
+    "downloadCv": "Descargar CV",
+    "mockupAlt": "Mockup de unda, SaaS de agenda para profesionales: vista semanal de turnos en una notebook y la pantalla de acceso en un celular.",
+    "mockupCaption": "unda · SaaS de agenda · Ver caso →",
+    "mockupLink": "Ver el caso de unda en Proyectos"
   },
   "Profile": {
     "heading": "Perfil Profesional",
     "lead": "Mi trabajo se centra en transformar ideas y necesidades en soluciones web intuitivas, accesibles y mantenibles.",
     "paragraphs": [
-      "Full Stack Developer con base fuerte en frontend y UX/UI, y más de 2 años de experiencia construyendo aplicaciones web con React, Next.js, TypeScript y Laravel. En VALIDA desarrollé y mantuve sistemas internos dentro de un equipo Scrum. Como freelance desarrollé el frontend de una plataforma médica en producción para una clínica en España, con mantenimiento activo, y diseñé y desarrollé full stack unda, mi SaaS de agenda con Next.js, Prisma y PostgreSQL."
+      "Full Stack Developer con base fuerte en frontend y UX/UI, y más de 2 años de experiencia construyendo aplicaciones web con React, Next.js, TypeScript y Laravel. En VALIDA desarrollé y mantuve sistemas internos dentro de un equipo Scrum. Como freelance desarrollé el frontend de una plataforma médica privada para un cliente del sector salud en España, en producción y con mantenimiento activo, y diseñé y desarrollé full stack unda, mi SaaS de agenda con Next.js, Prisma y PostgreSQL."
     ],
     "seeking": "Busco un rol Full Stack (Next.js) o Frontend en remoto."
   },
@@ -63,7 +66,7 @@
         "contextUrl": "https://somosulastudio.com",
         "period": "Mayo 2025 — Presente",
         "bullets": [
-          "Desarrollé la plataforma de estudios médicos de una clínica en España con Laravel y Livewire: frontend completo y participación en base de datos y backend, junto a un desarrollador backend. En producción desde julio de 2025, con mantenimiento activo.",
+          "Desarrollé una plataforma médica privada de gestión interna para un cliente del sector salud en España, con Laravel y Livewire: frontend completo y participación en base de datos y backend, junto a un desarrollador backend. En producción desde julio de 2025, con mantenimiento activo.",
           "Diseñé y desarrollé full stack unda (agendaunda.com), un SaaS de agenda: API REST propia con Next.js, Prisma y PostgreSQL, autenticación por sesiones y validación con Zod. En producción, en beta.",
           "Diseñé y desarrollé sitios y landings, además de la UX/UI y el frontend de una plataforma de turnos multi-rol, con Next.js, TypeScript y Figma."
         ],
