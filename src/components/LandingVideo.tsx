@@ -8,11 +8,11 @@ type Props = {
   label: string;
 };
 
-// Only one landing video plays at a time across the page.
+// En toda la página se reproduce un solo video de landing a la vez.
 let active: HTMLVideoElement | null = null;
 
-// Plays only while the card is hovered (or, on touch screens, while it's in view),
-// so the landing videos never download or run all at once.
+// Se reproduce solo mientras se pasa el mouse sobre la tarjeta (o, en pantallas táctiles,
+// mientras está a la vista), así los videos nunca se descargan ni corren todos juntos.
 export default function LandingVideo({ src, poster, label }: Props) {
   const ref = useRef<HTMLVideoElement>(null);
 

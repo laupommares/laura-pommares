@@ -1,7 +1,6 @@
 import { EMAIL, GITHUB_URL, LINKEDIN_URL, SITE_URL } from "@/data/contact";
 
-// schema.org Person for search engines. Only data already published on the site;
-// the phone number is left out on purpose so it isn't harvested by bots.
+// Sin teléfono a propósito, para que no lo recolecten bots.
 export default function PersonJsonLd({ description }: { description: string }) {
   const person = {
     "@context": "https://schema.org",
@@ -49,7 +48,6 @@ export default function PersonJsonLd({ description }: { description: string }) {
   return (
     <script
       type="application/ld+json"
-      // Escape "<" so the JSON can never close the script tag (per the Next.js JSON-LD guide).
       dangerouslySetInnerHTML={{ __html: JSON.stringify(person).replace(/</g, "\\u003c") }}
     />
   );

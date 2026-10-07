@@ -1,28 +1,21 @@
 import type { Locale } from "@/i18n/config";
 
-// Single source for the case studies and landings in ProjectsSection.
-// Order in `projects` is the order on the page. UI labels ("La necesidad",
-// "Ver sitio →", …) stay in messages/*.json; only content lives here.
-
 export type Localized<T = string> = Record<Locale, T>;
-// Anything that reads the same in both languages can be written once.
 export type Translatable<T = string> = T | Localized<T>;
 
-// Placeholder for content that hasn't been written yet. It is never rendered.
+// Contenido pendiente: nunca se muestra.
 export const TODO = "TODO";
 
 export type ProjectImage = {
   src: string;
   alt: Translatable;
-  caption?: Translatable; // shown only in the gallery, never on the cover
+  caption?: Translatable;
   objectPosition?: "top" | "center" | "bottom";
-  // Intrinsic size. When set, gallery images keep their own aspect ratio
-  // instead of being cropped to the default 15:10 frame.
+  // Si se define, la imagen de la galería no se recorta al 15:10.
   width?: number;
   height?: number;
 };
 
-// Main visual for featured cases: a laptop screen with an optional phone on top.
 export type Showcase = {
   laptop: ProjectImage;
   phone?: ProjectImage;
@@ -46,32 +39,30 @@ type BaseProject = {
   stack: Translatable<string[]>;
   result: Translatable;
   url?: string;
-  images: [ProjectImage, ...ProjectImage[]]; // the first one is the cover
+  images: [ProjectImage, ...ProjectImage[]]; // la primera es la portada
   video?: ProjectVideo;
 };
 
-// Private systems can't show real screens: the images are illustrative and the
-// case offers a live walkthrough instead (see ConfidentialNotice).
 export type Confidential = {
   notice: Translatable;
-  contactMessage: Translatable; // prefilled WhatsApp text and email body
+  contactMessage: Translatable;
 };
 
 export type CaseProject = BaseProject & {
   type: "case";
-  tags: Translatable<string[]>; // status chips: "En producción", "Multi-rol", …
+  tags: Translatable<string[]>;
   need: Translatable;
   whatIDid: Translatable<Bullets>;
   role: Translatable;
   confidential?: Confidential;
-  // With a showcase, every entry in `images` goes to the gallery.
+  // Con mockup, todas las imágenes de `images` van a la galería.
   showcase?: Showcase;
 };
 
 export type LandingProject = BaseProject & {
   type: "landing";
   description: Translatable;
-  theme: { gradient: string; accent: string }; // browser mockup colors
+  theme: { gradient: string; accent: string };
 };
 
 export type Project = CaseProject | LandingProject;
@@ -378,9 +369,6 @@ export const projects: Project[] = [
   },
 ];
 
-// ---------------------------------------------------------------------------
-// Locale resolution: components receive plain strings in a single language.
-
 function isLocalized<T>(value: Translatable<T>): value is Localized<T> {
   return (
     typeof value === "object" && value !== null && !Array.isArray(value) && "es" in value
@@ -391,7 +379,6 @@ function pick<T>(value: Translatable<T>, locale: Locale): T {
   return isLocalized(value) ? value[locale] : value;
 }
 
-// TODO placeholders resolve to undefined / are dropped, so they never reach the page.
 function text(value: Translatable | undefined, locale: Locale): string | undefined {
   if (value === undefined) return undefined;
   const resolved = pick(value, locale);

@@ -3,7 +3,8 @@
     "title": "Laura Pommarés — Full Stack Developer · Next.js & UX/UI",
     "description": "Full Stack Developer with a strong frontend and UX/UI foundation: React, Next.js, TypeScript and PostgreSQL. Work in production and my own SaaS. Remote from Argentina.",
     "cvTitle": "CV — Laura Pommarés · Full Stack Developer",
-    "cvDescription": "CV of Laura Pommarés, Full Stack Developer with a strong frontend and UX/UI foundation: React, Next.js, TypeScript, PostgreSQL and Laravel. Downloadable as PDF."
+    "cvDescription": "CV of Laura Pommarés, Full Stack Developer with a strong frontend and UX/UI foundation: React, Next.js, TypeScript, PostgreSQL and Laravel. Downloadable as PDF.",
+    "ogAlt": "Laura Pommarés — Full Stack Developer · Next.js & UX/UI, next to the weekly view of unda, her scheduling SaaS."
   },
   "Nav": {
     "brand": "LAURA POMMARÉS",

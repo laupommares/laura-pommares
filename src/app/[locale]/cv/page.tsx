@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/data/metadata";
 import { getProjects } from "@/data/projects";
 import {
@@ -14,12 +13,10 @@ import {
   whatsappUrl,
 } from "@/data/contact";
 import type { Locale } from "@/i18n/config";
+import { Link } from "@/i18n/navigation";
 import "./print.css";
 import PrintButton from "./PrintButton";
 import LinkedText from "@/components/LinkedText";
-
-// ATS-friendly CV: one column, plain text (no key info inside icons or chips),
-// standard section titles, clickable links. Print styles keep it to 2 A4 pages.
 
 type ContactItem = { label: string; value: string; href?: string };
 type RoleItem = {
@@ -52,7 +49,6 @@ function SectionHeading({ children }: { children: ReactNode }) {
   );
 }
 
-// Short sections stay on one page; long ones (experience) may break.
 function Section({
   title,
   children,
@@ -89,32 +85,37 @@ function ContactLine({ items }: { items: ContactItem[] }) {
   );
 }
 
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations("Meta");
+type Props = { params: Promise<{ locale: Locale }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
   return pageMetadata({
     title: t("cvTitle"),
     description: t("cvDescription"),
     path: "/cv",
-    locale: await getLocale(),
+    locale,
+    ogAlt: t("ogAlt"),
   });
 }
 
 const body = "text-secondary text-sm print:text-[13px] leading-relaxed print:leading-snug";
 
-export default async function CvPage() {
-  // CV-specific copy: title, contact, section labels, languages.
+export default async function CvPage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
+  // Textos propios del CV: título, contacto, nombres de sección e idiomas.
   const t = await getTranslations("CvPage");
-  // Shared content — the CV reads the same sources the site uses, so there is a
-  // single source of truth and editing the site updates the downloadable CV too.
+  // Contenido compartido: el CV lee las mismas fuentes que la web, así hay una sola
+  // fuente de verdad y al editar la web también cambia el CV descargable.
   const tProfile = await getTranslations("Profile");
   const tExperience = await getTranslations("Experience");
   const tStack = await getTranslations("TechStack");
   const tEducation = await getTranslations("Education");
   const tCertifications = await getTranslations("Certifications");
-  const locale = (await getLocale()) as Locale;
   const { cases, landings } = getProjects(locale);
 
-  // Contact data comes from src/data/contact.ts; only the location is translated.
   const contact: ContactItem[] = [
     { label: "Email", value: EMAIL, href: `mailto:${EMAIL}` },
     { label: "WhatsApp", value: WHATSAPP_DISPLAY, href: whatsappUrl() },
@@ -139,7 +140,7 @@ export default async function CvPage() {
         {t("backLink")}
       </Link>
 
-      {/* Header */}
+      {/* Encabezado */}
       <header className="mb-10 print:mb-4 pb-6 print:pb-3 border-b border-subtle">
         <h1 className="font-headline text-headline-lg print:text-[28px] print:leading-tight mb-1">
           {t("name")}
@@ -179,7 +180,7 @@ export default async function CvPage() {
               )}
               <ul className={`${body} mt-2 print:mt-1 space-y-1 print:space-y-0.5`}>
                 {role.bullets.map((bullet) => (
-                  // "•" is real text (not a CSS marker) so it survives plain-text extraction.
+                  // "•" como texto para que el ATS lo lea al extraer el PDF.
                   <li key={bullet} className="pl-3.5 -indent-3.5">
                     •&nbsp;&nbsp;{bullet}
                   </li>

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import NavHeader from "@/components/NavHeader";
 import HeroSection from "@/components/HeroSection";
 import ProfileSection from "@/components/ProfileSection";
@@ -9,8 +11,27 @@ import CertificationsSection from "@/components/CertificationsSection";
 import ContactSection from "@/components/ContactSection";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollEffects from "@/components/ScrollEffects";
+import { pageMetadata } from "@/data/metadata";
+import type { Locale } from "@/i18n/config";
 
-export default function Home() {
+type Props = { params: Promise<{ locale: Locale }> };
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Meta" });
+  return pageMetadata({
+    title: t("title"),
+    description: t("description"),
+    path: "/",
+    locale,
+    ogAlt: t("ogAlt"),
+  });
+}
+
+export default async function Home({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <ScrollEffects />

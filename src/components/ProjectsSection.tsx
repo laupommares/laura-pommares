@@ -53,7 +53,6 @@ function ProjectImage({ image, badge }: { image: ResolvedImage; badge?: string }
   );
 }
 
-// Light browser chrome around a screenshot, with the product's URL in the bar.
 function BrowserFrame({ host, image, sizes }: { host: string; image: ResolvedImage; sizes: string }) {
   return (
     <div className="border border-subtle bg-background overflow-hidden">
@@ -77,7 +76,6 @@ function BrowserFrame({ host, image, sizes }: { host: string; image: ResolvedIma
   );
 }
 
-// Laptop with the main screen and, from sm up, a phone overlapping its corner.
 function DeviceShowcase({ showcase }: { showcase: NonNullable<ResolvedCase["showcase"]> }) {
   const { laptop, phone } = showcase;
 
@@ -272,9 +270,9 @@ function LandingCard({ landing, viewSite }: { landing: ResolvedLanding; viewSite
 
   return (
     <article className="group flex flex-col border border-subtle bg-surface-alt overflow-hidden hover:border-accent/40 transition-colors duration-300">
-      {/* Browser mockup */}
+      {/* Mockup de navegador */}
       <div className={`relative bg-linear-to-br ${landing.theme.gradient} overflow-hidden`}>
-        {/* Browser chrome */}
+        {/* Barra del navegador */}
         <div className="h-7 bg-black/40 flex items-center px-3 gap-1.5">
           <span className="w-2 h-2 rounded-full bg-white/20" />
           <span className="w-2 h-2 rounded-full bg-white/20" />
@@ -283,7 +281,7 @@ function LandingCard({ landing, viewSite }: { landing: ResolvedLanding; viewSite
             className="ml-2 flex-1 h-3 rounded-sm bg-white/10 max-w-30"
           />
         </div>
-        {/* Viewport: same aspect as the landing videos (1280×620), so they show uncropped */}
+        {/* Viewport con la misma proporción que los videos (1280×620), para que no se recorten */}
         <div className="relative aspect-[1280/620]">
           {landing.video ? (
             <LandingVideo
@@ -300,14 +298,14 @@ function LandingCard({ landing, viewSite }: { landing: ResolvedLanding; viewSite
             />
           )}
         </div>
-        {/* Accent line at bottom */}
+        {/* Línea de acento abajo */}
         <div
           className="absolute bottom-0 inset-x-0 h-0.5 opacity-60 group-hover:opacity-100 transition-opacity"
           style={{ backgroundColor: landing.theme.accent }}
         />
       </div>
 
-      {/* Card body */}
+      {/* Cuerpo de la tarjeta */}
       <div className="p-6 flex flex-col gap-4 flex-1">
         <span className="font-label-mono text-[10px] uppercase tracking-widest text-secondary">
           {landing.category}
@@ -393,15 +391,12 @@ export default async function ProjectsSection() {
         {cases.map((project, i) => {
           const num = String(i + 1).padStart(2, "0");
           const [cover, ...rest] = project.images;
-          // With a device showcase as the main visual, every image goes to the gallery.
           const gallery = project.showcase ? project.images : rest;
           const visual = project.showcase ? (
             <DeviceShowcase showcase={project.showcase} />
           ) : (
             <ProjectImage image={cover} badge={project.confidential && confidentialLabels.badge} />
           );
-          // Featured cases (with a showcase) give the visual more room and stay
-          // stacked, visual on top, until lg; regular cases split at md.
           const layout = project.showcase
             ? {
                 visual: "md:col-span-12 lg:col-span-7",
@@ -415,7 +410,6 @@ export default async function ProjectsSection() {
                 visualSecond: "order-1 md:order-2",
                 contentFirst: "order-2 md:order-1",
               };
-          // Cases alternate sides: image left on odd rows, right on even rows.
           const imageFirst = i % 2 === 0;
 
           return (
@@ -455,7 +449,7 @@ export default async function ProjectsSection() {
         })}
       </div>
 
-      {/* Landings grid */}
+      {/* Grilla de landings */}
       <div className="mt-20 md:mt-40 reveal">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
           <div>

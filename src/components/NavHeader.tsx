@@ -8,8 +8,6 @@ export default async function NavHeader() {
   const tCv = await getTranslations("Cv");
   const locale = (await getLocale()) as Locale;
 
-  // Same order as the sections on the page. Certifications stays reachable by
-  // scrolling and from the footer, but is left out of the menu to keep it light.
   const links = [
     { href: "#proyectos", label: t("links.projects") },
     { href: "#experiencia", label: t("links.experience") },

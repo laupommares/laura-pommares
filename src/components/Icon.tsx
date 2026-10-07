@@ -1,7 +1,4 @@
-// Icons extracted from Material Symbols Outlined with the settings the site used
-// for the icon font (FILL 0, wght 300, GRAD 0, opsz 20), so they look the same
-// without loading the 4 MB font. Sized in em and colored with currentColor, like
-// the font glyphs they replace.
+// Trazos extraídos de Material Symbols Outlined (FILL 0, wght 300, GRAD 0, opsz 20).
 const paths = {
   download:
     "M480 712L317 549L354 512L454 612L454 260L506 260L506 612L606 512L643 549ZM276 844Q249 844 230.5 825.5Q212 807 212 780L212 719L264 719L264 780Q264 784 268 788Q272 792 276 792L684 792Q688 792 692 788Q696 784 696 780L696 719L748 719L748 780Q748 807 729.5 825.5Q711 844 684 844Z",

@@ -9,7 +9,6 @@ export default async function ContactSection() {
   const tCv = await getTranslations("Cv");
   const tNav = await getTranslations("Nav");
 
-  // LinkedIn first: it's the channel recruiters use most.
   const links = [
     { href: LINKEDIN_URL, label: t("linkedin"), external: true },
     { href: tCv("downloadHref"), label: tNav("downloadCv"), download: true },

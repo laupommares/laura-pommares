@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colors */
+  /* Colores */
   --color-primary: #111111;
   --color-secondary: #666666;
   --color-background: #ffffff;
@@ -10,7 +10,7 @@
   --color-accent-ink: #0f766e;
   --color-surface-alt: #f9f9f9;
 
-  /* Border radius — all sharp except full */
+  /* Bordes redondeados: todo recto salvo full */
   --radius: 0px;
   --radius-sm: 0px;
   --radius-md: 0px;
@@ -19,13 +19,13 @@
   --radius-2xl: 0px;
   --radius-3xl: 0px;
 
-  /* Font families */
+  /* Familias tipográficas */
   --font-headline: var(--font-geist-sans), "Inter", sans-serif;
   --font-body: var(--font-geist-sans), "Inter", sans-serif;
   --font-label-mono: var(--font-jetbrains-mono), monospace;
 }
 
-/* Custom typography utilities */
+/* Utilidades tipográficas propias */
 @utility text-display {
   font-size: clamp(36px, 9vw, 78px);
   line-height: 1.05;
@@ -63,7 +63,7 @@
   }
 }
 
-/* Layout utilities */
+/* Utilidades de layout */
 @utility max-w-container-max {
   max-width: 1280px;
 }
@@ -82,7 +82,7 @@
   padding-bottom: 160px;
 }
 
-/* Scroll reveal animation */
+/* Animación de aparición al hacer scroll */
 .reveal {
   opacity: 0;
   transform: translateY(30px);

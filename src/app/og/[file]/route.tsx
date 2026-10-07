@@ -1,23 +1,28 @@
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { notFound } from "next/navigation";
 import { ImageResponse } from "next/og";
 import { SITE_URL, displayUrl } from "@/data/contact";
+import { localizedPath, locales, type Locale } from "@/i18n/config";
 
-// Social preview (LinkedIn, WhatsApp, X…): name + title on the left, unda's weekly
-// view in a browser frame on the right. Text is language-neutral, so one image
-// serves both locales.
+export function generateStaticParams() {
+  return locales.map((locale) => ({ file: `${locale}.png` }));
+}
+export const dynamicParams = false;
 
-export const alt =
-  "Laura Pommarés — Full Stack Developer · Next.js & UX/UI, junto a la vista semanal de unda";
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
-
+const size = { width: 1200, height: 630 };
 const ink = "#111111";
 const muted = "#6b7280";
 const accent = "#0d9488";
 const line = "#e5e7eb";
 
-export default async function Image() {
+const remote: Record<Locale, string> = { es: "Remoto · Argentina", en: "Remote · Argentina" };
+
+export async function GET(_request: Request, { params }: { params: Promise<{ file: string }> }) {
+  const { file } = await params;
+  const locale = locales.find((l) => file === `${l}.png`);
+  if (!locale) notFound();
+
   const screenshot = await readFile(
     join(process.cwd(), "public/projects/unda/og-vista-semanal.jpg"),
   );
@@ -59,12 +64,12 @@ export default async function Image() {
           <div style={{ marginTop: 32, fontSize: 22, color: muted, lineHeight: 1.4 }}>
             React · Next.js · TypeScript · PostgreSQL · Figma
           </div>
-          <div style={{ marginTop: 40, fontSize: 20, color: accent }}>
-            {displayUrl(SITE_URL)}
+          <div style={{ marginTop: 32, fontSize: 22, color: ink }}>{remote[locale]}</div>
+          <div style={{ marginTop: 28, fontSize: 20, color: accent }}>
+            {displayUrl(SITE_URL + localizedPath(locale, "/")).replace(/\/$/, "")}
           </div>
         </div>
 
-        {/* Browser frame, bleeding off the right edge */}
         <div
           style={{
             display: "flex",
@@ -105,6 +110,7 @@ export default async function Image() {
               agendaunda.com
             </div>
           </div>
+          {/* eslint-disable-next-line @next/next/no-img-element -- ImageResponse solo acepta <img> */}
           <img src={screenshotSrc} width={640} height={400} alt="" style={{ objectFit: "cover" }} />
         </div>
       </div>

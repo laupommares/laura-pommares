@@ -1,5 +1,4 @@
-// Renders `text`, turning the first mention of `url`'s host (e.g. "somosulastudio.com")
-// into a link to `url`. Without a url, or if the host isn't in the text, it's plain text.
+// Convierte en link la primera mención del dominio de `url` dentro de `text`.
 export default function LinkedText({
   text,
   url,

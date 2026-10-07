@@ -1,52 +1,40 @@
 "use client";
 
-import { useTransition } from "react";
-import { setLocale } from "@/i18n/actions";
-import type { Locale } from "@/i18n/config";
+import Link from "next/link";
+import { usePathname } from "@/i18n/navigation";
+import { localizedPath, type Locale } from "@/i18n/config";
 
 export default function LocaleSwitch({ currentLocale }: { currentLocale: Locale }) {
-  const [isPending, startTransition] = useTransition();
+  const pathname = usePathname();
 
-  function handleChange(locale: Locale) {
-    if (locale === currentLocale) return;
-    startTransition(() => {
-      setLocale(locale);
-    });
-  }
+  const option = (locale: Locale, label: string, name: string) => (
+    <Link
+      href={localizedPath(locale, pathname)}
+      hrefLang={locale}
+      lang={locale}
+      aria-label={name}
+      aria-current={currentLocale === locale ? "page" : undefined}
+      className={
+        currentLocale === locale
+          ? "font-bold text-primary"
+          : "text-secondary hover:text-accent transition-colors"
+      }
+    >
+      {label}
+    </Link>
+  );
 
   return (
     <div
       className="flex items-center gap-1.5 font-label-mono text-[11px]"
       role="group"
-      aria-label="Language selector"
+      aria-label={currentLocale === "en" ? "Language" : "Idioma"}
     >
-      <button
-        type="button"
-        onClick={() => handleChange("es")}
-        disabled={isPending}
-        aria-pressed={currentLocale === "es"}
-        className={
-          currentLocale === "es"
-            ? "font-bold text-primary"
-            : "text-secondary hover:text-accent transition-colors"
-        }
-      >
-        ES
-      </button>
-      <span className="text-secondary">/</span>
-      <button
-        type="button"
-        onClick={() => handleChange("en")}
-        disabled={isPending}
-        aria-pressed={currentLocale === "en"}
-        className={
-          currentLocale === "en"
-            ? "font-bold text-primary"
-            : "text-secondary hover:text-accent transition-colors"
-        }
-      >
-        EN
-      </button>
+      {option("es", "ES", "Español")}
+      <span className="text-secondary" aria-hidden="true">
+        /
+      </span>
+      {option("en", "EN", "English")}
     </div>
   );
 }
